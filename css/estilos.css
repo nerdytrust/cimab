@@ -1,0 +1,507 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.brand {
+	padding: 20px 0px !important;
+	border-bottom: 1px solid #e5e5e5;
+}
+.brand .logo img {
+	float: initial;
+	margin: 0 auto;
+}
+.brand .col-md-4 {
+	padding: 0px !important;
+}
+.logo {
+	float: left;
+}
+.dona {
+	float: right !important;
+}
+.dona img {
+	float: right;
+	margin-top: 10px;
+}
+
+.buscar button img {
+	max-width: 20px;
+}
+.top {
+	padding: 0px;
+	height: 40px;
+	background-color: #00aba2;
+}
+.top .col-md-4 {
+	padding: 0px;
+}
+.menu {
+	padding: 0px !important;
+}
+.top div {
+	float: right;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+}
+.top div img {
+	max-width: 20px;
+	padding-top: 9px;
+}
+.top .mail img {
+	padding-top: 13px; 
+}
+.top .twitter img {
+	padding-top: 11px;
+}
+.top .g-plus img {
+	padding-top: 11px;
+}
+.top .tienda {
+	background-color: #eeeeee;
+	width: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.top .tienda .img {
+	display: inline-block;
+}
+.top .tienda .img img {
+	padding-top: 0px;
+	margin-top: -5px;
+}
+.top .tienda .dato {
+	background-color: #fff;
+	color: #804e8c;
+	padding: 5px;
+	padding-top: 3px;
+	margin-left: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 15px;
+	display: inline-block;
+	height: 25px;
+	width: 25px;
+	margin-top: 7px;
+}
+.navbar-default {
+	background-color: transparent !important;
+	border: none !important;
+}
+.navbar ul.nav li a {
+	color: #671c77;
+	font-weight: bold;
+	padding-left: 8px;
+	padding-right: 8px;	
+}
+.navbar .collapse {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.navbar ul.nav li {
+	border-bottom: 4px solid #ffffff;
+}
+.navbar ul.nav li:hover {
+	border-bottom: 4px solid #8f9494;
+	color: #8f9494 !important;
+}
+.navbar ul.nav {
+	margin: 0 auto;
+}
+.contenido {
+	padding-bottom: 30px !important;
+	/*margin-bottom: 30px;*/
+}
+.contenido h1 {
+	font-size: 16px;
+	font-weight: bold;
+	color: #00aba2;
+	background-color: #f8f8f8;
+	text-align: center;
+	margin: 0px;
+	padding: 15px 0;
+}
+.contenido .intro {
+	background-color: #f8f8f8;
+	display: inline-block;
+}
+.contenido .intro p {
+	font-size: 25px;
+	font-weight: bold;
+	color: #000;
+	text-align: center;
+	padding: 0 20px;
+}
+.contenido .texto {
+	background-color: #f8f8f8;
+	padding: 30px;
+}
+.contenido .texto p {
+	font-weight: 14px;
+	color: #000;
+}
+.compartir {
+	background-color: #f8f8f8;
+	text-align: center;
+	padding-bottom: 20px;
+	margin-bottom: 30px;
+}
+.compartir a {
+	width: 120px;
+	padding: 8px 0;
+}
+.compartir a img {
+	max-width: 15px;
+	max-height: 12px
+}
+.compartir a.face {background-color: #44609e}
+.compartir a.tw {background-color: #00abf1}
+.compartir a.g {background-color: #e04a33}
+.compartir a.pin {background-color: #bf1b1b}
+.compartir a.lin {background-color: #1086bf}
+
+.comentarios, .relacionados, .galeria {
+	background-color: #f8f8f8;
+	padding: 0px !important;
+	/*margin-bottom: 30px;*/
+	padding-bottom: 20px !important;
+}
+.comentarios h3, .relacionados h3, .servicios h3, .testimonio h3, .catalogo h3, .formamos h3, .galeria h3 {
+	font-size: 18px;
+	background-color: #fff;
+	margin-top: 0px;
+	padding: 20px;
+	text-align: center;
+	border-top: solid 2px #00aba2;
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
+	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
+}
+.servicios h3, .testimonio h3, .catalogo h3, .formamos h3 {
+	margin-bottom: 0px !important;
+}
+.servicios img, .testimonio img, .catalogo img {
+	width: 100%;
+	height: auto;
+}
+.servicios div.uno {
+	border-left: 5px solid #02938b;
+}
+.servicios div.dos {
+	border-left: 5px solid #804e8c;
+}
+.servicios div.tres {
+	border-left: 5px solid #47bbea;
+}
+.servicios div.cuatro {
+	border-left: 5px solid #dc3771;
+}
+.servicios div.uno span {
+	background-color: #02938b;
+}
+.servicios div.dos span {
+	background-color: #804e8c;
+}
+.servicios div.tres span {
+	background-color: #47bbea;
+}
+.servicios div.cuatro span {
+	background-color: #dc3771;
+}
+.servicios div p {
+	font-size: 16px;
+	line-height: 40px;
+	margin: 0 0 0 10px;
+}
+.servicios div p span {
+	font-size: 20px;
+	font-weight: bold;
+	float: right;
+	width: 25px;
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+}
+.formamos .logos {
+	background-color: #f8f8f8;
+	padding: 10px 0;
+}
+.formamos .logos img {
+	width: 39%;
+	margin: 2.5% 5%;
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.17);
+	-moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.17);
+	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.17);
+}
+.comentarios form input, .comentarios form textarea {
+	width: 100% !important;
+}
+.comentarios .col-md-4, .comentarios .col-md-12, .comentarios .col-md-2 {
+	margin: 15px  0px;
+}
+
+.relacionados {
+	background-color: #f8f8f8; 
+}
+.notas {
+	background-color: #f8f8f8;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	margin-bottom: 30px;
+}
+.nota {
+	width: 100%;
+	background-color: #fff;
+	padding: 0px !important;
+	display: inline-block;
+	margin: 7px 0;
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.17);
+	-moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.17);
+	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.17);
+}
+.nota img {
+	max-width: 100%;
+	float: left;
+	margin-right: 10px;
+}
+
+.nota .info {
+	padding-right: 7px;
+}
+
+.nota .info h5 {
+	font-size: 12px;
+	font-weight: bold;
+	color: #f5b32e;
+}
+.nota .info h5 span {
+	color: #5f7cca;
+}
+.nota .info p {
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.bloque-der .col-md-12 {
+	margin-bottom: 30px;
+}
+
+.contenido h1.seccion {
+	font-size: 14px;
+	font-weight: lighter;
+	margin-left: -15px;
+	margin-right: -15px;
+	margin-bottom: 10px;
+	background-color: #00aba2;
+	color: #fff;
+	text-transform: uppercase;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-top: 0px;
+}
+.contenido .nota h5 {
+	color: #00aba2;
+}
+.contenido .nota img {
+	max-width: 40%;
+}
+.galeria .gal {
+	background-color: #fff;
+	display: inline-block;
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.17);
+	-moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.17);
+	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.17);
+}
+.gal .info h5, .gal .info p {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.gal .info p {
+	padding-bottom: 10px;
+}
+.gal img {
+	max-width: 100%;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+
+footer {
+	background-color: #373941;
+	padding: 20px 0 0 0;
+}
+footer .col-md-4 .col-md-12 {
+	background-color: #2b2d33;
+	padding-bottom: 20px;
+	margin-bottom: 0px;
+}
+footer .col-md-4 h5 {
+	background-color: #24262b;
+	color: #fff;
+	font-size: 16px;
+	padding: 20px;
+	margin-left: -15px;
+	margin-right: -15px;
+	margin-top: 0;
+}
+footer .boletin .col-md-12 {
+	height: 305px;
+}
+footer .contacto .verde {
+	color: #0c908a;
+	font-size: 10px;
+}
+footer .contacto .blanco {
+	color: #fff;
+	font-size: 11px;
+}
+footer .compartir {
+	text-align: center;
+	padding-bottom: 25px;
+	padding-top: 15px;
+	background-color: transparent;
+	margin-bottom: 0px;
+}
+footer .compartir a {
+	width: 40px;
+	padding: 12px 0;
+	border: none;
+}
+footer .compartir a img {
+	max-width: 15px;
+	max-height: 12px
+}
+footer .compartir a.face {background-color: #44609e}
+footer .compartir a.tw {background-color: #00abf1}
+footer .compartir a.g {background-color: #e04a33}
+footer .compartir a.pin {background-color: #bf1b1b}
+footer .compartir a.instagram {background-color: #2d5f89}
+footer .compartir a.rss {background-color: #ff9a00}
+footer div.medios .col-md-12:first-child {margin-bottom: 20px}
+
+footer .copy {background-color: #24262b; padding:10px 0 5px 0; color: #fff; text-align: center; font-size: 11px; margin-top: 10px; }
+footer .copy p {margin: 10px 0}
+
+@media screen and (max-width: 1024px) {
+
+form.navbar-right {
+	float: left !important;
+}
+
+}
+
+@media screen and (max-width: 768px) {
+.logo {
+	margin-left: 15px;
+}
+.logo img, .dona img {
+	width: 180px;
+}
+.navbar .collapse {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.compartir a {
+	margin-bottom: 10px;
+}
+.comentarios {
+	display: inline-block;
+}
+.comentarios .col-md-4 {
+	width: 33.333%;
+	float: left;
+}
+.comentarios .col-md-12 {
+	width: 100%;
+	clear: both;
+}
+.galeria {
+	display: inline-block;
+}
+.galeria .col-md-3 {
+	width: 25%;
+	float: left;
+}
+.testimonio, .catalogo {
+	width: 50%;
+	float: left;
+}
+.formamos {
+	width: 100%;
+	float: left
+}
+.formamos .logos img {
+	width: 21%;
+	margin: 10px 12px;
+}
+footer .medios .prensa {
+	height: auto;
+	display: inline-block;
+	width: 100%;
+}
+footer .medios .prensa .col-md-6 {
+	margin-bottom: 10px;
+	width: 25%;
+	float: left;
+}
+footer .boletin .col-md-12 {
+	height: auto;
+}
+}
+
+@media screen and (max-width: 767px) {
+
+form.navbar-right {
+	float: initial !important;
+}
+
+@media screen and (max-width: 480px) {
+.logo img, .dona img {
+	width: 160px;
+}	
+.contenido h1 {
+	display: inline-block;
+	width: 100%;
+}
+.contenido h1.seccion {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.galeria .col-md-3 {
+	width: 50%;
+	margin-bottom: 10px;
+}
+.gal img {
+	width: 100%;
+}
+.testimonio, .catalogo {
+	width: 100%;
+	float: left;
+}
+.formamos .logos img {
+	width: 26%;
+	margin: 10px 12px;
+}
+footer .medios .prensa .col-md-6 {
+	margin-bottom: 10px;
+	width: 100%;
+	float: left;
+}
+}
+
+@media screen and (max-width: 360px) {
+.logo img, .dona img {
+	width: 120px;
+}
+.formamos .logos img {
+	width: 39%;
+	margin: 10px 12px;
+}
+.comentarios {
+	width: 100%
+}
+.comentarios .col-md-4 {
+	width: 100%;
+}
+}
