@@ -1,6 +1,14 @@
 @charset "UTF-8";
 /* CSS Document */
 
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic);
+
+body {
+
+	font-family: 'Source Sans Pro', sans-serif !important;
+	font-weight: lighter;
+}
+
 .brand {
 	padding: 20px 0px !important;
 	border-bottom: 1px solid #e5e5e5;
@@ -23,8 +31,22 @@
 	margin-top: 10px;
 }
 
-.buscar button img {
-	max-width: 20px;
+.brand .buscar {
+	margin-top: 30px;
+}
+.brand .buscar input {
+	border-radius: 0 !important;
+	height: 38px;
+	background-color: #f6f6f6;
+	border: 0 !important;
+}
+.brand .buscar button {
+	height: 38px;
+	background-color: #f6f6f6;
+	border: 0 !important;
+}
+.brand .buscar button img {
+	height: 16px;
 }
 .top {
 	padding: 0px;
@@ -83,6 +105,7 @@
 	width: 25px;
 	margin-top: 7px;
 }
+.nav {width: 840px; margin-left: auto; margin-right: auto; float: none !important}
 .navbar-default {
 	background-color: transparent !important;
 	border: none !important;
@@ -90,8 +113,8 @@
 .navbar ul.nav li a {
 	color: #671c77;
 	font-weight: bold;
-	padding-left: 8px;
-	padding-right: 8px;	
+	padding-left: 15px;
+	padding-right: 15px;	
 }
 .navbar .collapse {
 	padding-left: 0px;
@@ -107,7 +130,11 @@
 .navbar ul.nav {
 	margin: 0 auto;
 }
+.container-fluid {
+	max-width: 1280px;
+}
 .contenido {
+
 	padding-bottom: 30px !important;
 	/*margin-bottom: 30px;*/
 }
@@ -125,7 +152,7 @@
 	display: inline-block;
 }
 .contenido .intro p {
-	font-size: 25px;
+	font-size: 30px;
 	font-weight: bold;
 	color: #000;
 	text-align: center;
@@ -136,7 +163,8 @@
 	padding: 30px;
 }
 .contenido .texto p {
-	font-weight: 14px;
+	font-size: 16px;
+	font-weight: 400;
 	color: #000;
 }
 .compartir {
@@ -147,11 +175,12 @@
 }
 .compartir a {
 	width: 120px;
-	padding: 8px 0;
+	height: 40px;
+	padding: 11px 0;
 }
 .compartir a img {
 	max-width: 15px;
-	max-height: 12px
+	max-height: 18px
 }
 .compartir a.face {background-color: #44609e}
 .compartir a.tw {background-color: #00abf1}
@@ -160,21 +189,30 @@
 .compartir a.lin {background-color: #1086bf}
 
 .comentarios, .relacionados, .galeria {
-	background-color: #f8f8f8;
+	background-color: #f9f9f9;
 	padding: 0px !important;
-	/*margin-bottom: 30px;*/
 	padding-bottom: 20px !important;
 }
 .comentarios h3, .relacionados h3, .servicios h3, .testimonio h3, .catalogo h3, .formamos h3, .galeria h3 {
 	font-size: 18px;
 	background-color: #fff;
 	margin-top: 0px;
-	padding: 20px;
+	padding: 16px;
 	text-align: center;
 	border-top: solid 2px #00aba2;
 	-webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
 	-moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
 	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
+}
+.comentarios form input, .comentarios form textarea, .cy {
+	background-color: #fafafa !important;
+	border: 1px solid #e0e0e0 !important;
+}
+.comentarios .btn-danger {
+	background: red !important;
+}
+.red {
+	color: red;
 }
 .servicios h3, .testimonio h3, .catalogo h3, .formamos h3 {
 	margin-bottom: 0px !important;
@@ -186,15 +224,19 @@
 .servicios div.uno {
 	border-left: 5px solid #02938b;
 }
+.servicios div.uno:hover {background-color: #02938b; color: #fff;}
 .servicios div.dos {
 	border-left: 5px solid #804e8c;
 }
+.servicios div.dos:hover {background-color: #804e8c; color: #fff;}
 .servicios div.tres {
 	border-left: 5px solid #47bbea;
 }
+.servicios div.tres:hover {background-color: #47bbea; color: #fff;}
 .servicios div.cuatro {
 	border-left: 5px solid #dc3771;
 }
+.servicios div.cuatro:hover {background-color: #dc3771; color: #fff;}
 .servicios div.uno span {
 	background-color: #02938b;
 }
@@ -269,10 +311,13 @@
 	padding-right: 7px;
 }
 
-.nota .info h5 {
+.relacionados .nota .info h5 {
 	font-size: 12px;
 	font-weight: bold;
-	color: #f5b32e;
+	color: #f5b32e  !important;
+}
+.relacionados .nota .info p {
+	font-size: 13px;
 }
 .nota .info h5 span {
 	color: #5f7cca;
@@ -287,8 +332,8 @@
 }
 
 .contenido h1.seccion {
-	font-size: 14px;
-	font-weight: lighter;
+	font-size: 19px;
+	font-weight: 500;
 	margin-left: -15px;
 	margin-right: -15px;
 	margin-bottom: 10px;
@@ -300,10 +345,14 @@
 	margin-top: 0px;
 }
 .contenido .nota h5 {
-	color: #00aba2;
+	color: #00aba2 !important;
+	font-size: 18px;
+}
+.contenido .nota p {
+	font-size: 18px;
 }
 .contenido .nota img {
-	max-width: 40%;
+	max-width: 350px;
 }
 .galeria .gal {
 	background-color: #fff;
@@ -346,15 +395,35 @@ footer .col-md-4 h5 {
 	margin-top: 0;
 }
 footer .boletin .col-md-12 {
-	height: 305px;
+	height: 343px;
+}
+footer .prensa {
+	height: 169px;
+}
+footer .boletin input.form-control {
+	border-radius: 0 !important;
+}
+footer .boletin button.btn {
+	background-color: #00aba2;
+	border-radius: 0;
+	border-color: transparent;
+	float: right;
+	width: 120px;
+}
+footer .boletin button.btn:hover {
+	background-color: #00aba2;
+}
+footer .boletin .form-group {
+	margin-bottom: 35px;
 }
 footer .contacto .verde {
 	color: #0c908a;
-	font-size: 10px;
+	font-size: 13px;
+	font-weight: 500;
 }
 footer .contacto .blanco {
 	color: #fff;
-	font-size: 11px;
+	font-size: 13px;
 }
 footer .compartir {
 	text-align: center;
@@ -364,13 +433,15 @@ footer .compartir {
 	margin-bottom: 0px;
 }
 footer .compartir a {
-	width: 40px;
-	padding: 12px 0;
+	width: 47px;
+	height: 47px;
+	padding: 17px 0;
 	border: none;
+	margin: 0 2px;
 }
 footer .compartir a img {
 	max-width: 15px;
-	max-height: 12px
+	max-height: 16px
 }
 footer .compartir a.face {background-color: #44609e}
 footer .compartir a.tw {background-color: #00abf1}
@@ -380,10 +451,22 @@ footer .compartir a.instagram {background-color: #2d5f89}
 footer .compartir a.rss {background-color: #ff9a00}
 footer div.medios .col-md-12:first-child {margin-bottom: 20px}
 
-footer .copy {background-color: #24262b; padding:10px 0 5px 0; color: #fff; text-align: center; font-size: 11px; margin-top: 10px; }
+footer .prensa h5 {
+	border-top: 15px solid #373941;
+}
+
+footer .copy {background-color: #24262b; padding:10px 0 5px 0; color: #fff; text-align: center; font-size: 13px; margin-top: 10px; }
 footer .copy p {margin: 10px 0}
 
 @media screen and (max-width: 1024px) {
+
+.brand .buscar {
+	clear: both;
+	padding-top: 20px !important;
+	max-width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 form.navbar-right {
 	float: left !important;
@@ -392,6 +475,7 @@ form.navbar-right {
 }
 
 @media screen and (max-width: 768px) {
+.nav {width: auto !important;}
 .logo {
 	margin-left: 15px;
 }
@@ -467,6 +551,9 @@ form.navbar-right {
 .contenido h1.seccion {
 	margin-left: 0px;
 	margin-right: 0px;
+}
+.contenido .intro p {
+	font-size: 22px;
 }
 .galeria .col-md-3 {
 	width: 50%;

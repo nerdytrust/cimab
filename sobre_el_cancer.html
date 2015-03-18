@@ -12,21 +12,29 @@
 </head>
 
 <body>
-	<div class="container top">
+	<div class="container-fluid top">
 		<div class="tienda"><span class="img"><img src="images/tienda.png"></span><span class="dato">2</span></div>
 		<div class="g-plus"><img src="images/g-plus.png"></div>
 		<div class="face"><img src="images/face.png"></div>
 		<div clas="twitter"><img src="images/twitter.png"></div>
 		<div class="mail"><img src="images/mail.png"></div>
 	</div>
-	<div class="container brand">
+	<div class="container-fluid brand">
 		<div class="col-md-4 logo"><a href="#"><img src="images/logo.jpg" class="img-responsive"></a></div>		   
 		<div class="col-md-4 dona"><a href="#"><img src="images/dona.jpg" class="img-responsive"></a></div>
+		
+		<div class="col-md-4 input-group buscar">
+	      <input type="text" class="form-control" placeholder="Buscar...">
+	      <span class="input-group-btn">
+	        <button class="btn btn-default" type="button"><img src="images/search.png"></button>
+	      </span>
+	    </div><!-- /input-group -->
+
 	</div>
 
-	<div class="container menu">
+	<div class="container-fluid menu">
 		<nav class="navbar navbar-default">
-		  <div class="container-fluid">
+		  <div class="container-fluid-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">
 		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -48,22 +56,17 @@
 		        <li><a href="#">NOTICIAS</a></li>
 		        <li><a href="#">ÚNETE</a></li>
 		        <li><a href="#">TIENDA EN LÍNEA</a></li>
-		      </ul>	      
+		      </ul>	     
 		      
-		      <form class="navbar-form navbar-right buscar" role="search">
-		      <div class="form-group">
-		        <input type="text" class="form-control" placeholder="Buscar">
-		      </div>
-		      <button type="submit" class="btn btn-default"><img src="images/search.png"></button>
-		    </form>
+		      
 		    </div><!-- /.navbar-collapse -->
 		    
-		  </div><!-- /.container-fluid -->
+		  </div><!-- /.container-fluid-fluid -->
 		</nav>
 
 	</div>
 
-	<div class="container cuerpo">
+	<div class="container-fluid cuerpo">
 		<div class="row">
 			<div class="col-md-8 contenido">
 				<div class="notas">
@@ -187,11 +190,13 @@
 
 				<div class="col-md-12 testimonio">
 					<h3>Testimonio</h3>
-					<img src="images/testimonio.jpg" class="img-responsive">
+					<div class="embed-responsive embed-responsive-16by9">
+					  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/8_zW6M8SfTU" frameborder="0" allowfullscreen></iframe>
+					</div>
 				</div>
 				<div class="col-md-12 catalogo">
 					<h3>Catálogo</h3>
-					<img src="images/catalogo.jpg" class="img-responsive">
+					<a href="#"><img src="images/catalogo.jpg" class="img-responsive"></a>
 				</div>	
 				<div class="col-md-12 formamos">
 					<h3>Formamos parte de</h3>
@@ -213,7 +218,7 @@
 	</div> <!-- fin de cuerpo -->
 
 	<footer>
-		<div class="container">
+		<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-4 boletin">
 				<div class="col-md-12">
