@@ -589,7 +589,7 @@
 		.nav > li{
 			float: inherit;
 		}
-		.apoyo, .cont{
+		.apoyo, .cont, .contenido{
 			margin-right: 0;
 			margin-left: 0;
 		}
