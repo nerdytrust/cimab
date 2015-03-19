@@ -623,6 +623,9 @@
 	.slider{
 		margin-bottom: 0;
 	}
+	.nota img{
+		width: 100% !important;
+	}
 
 	}
 
