@@ -582,6 +582,8 @@
 		}
 		.nav{
 			display: none;
+			z-index: 1000;
+			position: relative;
 		}
 		.nav > li{
 			width: 100%;
@@ -608,5 +610,8 @@
 		  padding: 25px 5px; 
 
 	}
+	.redes a {
+  width: 19%;
+}
 
 	}

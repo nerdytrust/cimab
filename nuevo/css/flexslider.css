@@ -110,8 +110,8 @@ html[xmlns] .flexslider .slides {
 .flex-direction-nav a {
   text-decoration: none;
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 60px;
   margin: -20px 0 0;
   position: absolute;
   top: 40%;
@@ -123,31 +123,24 @@ html[xmlns] .flexslider .slides {
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
  
 }
-.flex-direction-nav a:before {
-  font-family: "flexslider-icon";
-  font-size: 40px;
-  display: inline-block;
-  content: '<';
-}
-.flex-direction-nav a.flex-next:before {
-  content: '>';
-}
 .flex-direction-nav .flex-prev {
   left: 10px;
+   background: url("../images/fv-i.png");
 }
 .flex-direction-nav .flex-next {
   right: 10px;
   text-align: right;
+   background: url("../images/fv-d.png");
 }
 .flexslider:hover .flex-direction-nav .flex-prev {
-  opacity: 0.7;
+  opacity: 1;
   left: 10px;
 }
 .flexslider:hover .flex-direction-nav .flex-prev:hover {
   
 }
 .flexslider:hover .flex-direction-nav .flex-next {
-  opacity: 0.7;
+  opacity: 1;
   right: 10px;
 }
 .flexslider:hover .flex-direction-nav .flex-next:hover {
