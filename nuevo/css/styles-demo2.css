@@ -578,6 +578,7 @@
 		background: url("../images/menu.png")center no-repeat;
 		background-size: contain;
 		cursor: pointer;
+		  margin-top: 15px;
 			
 		}
 		.nav{
@@ -612,6 +613,21 @@
 	}
 	.redes a {
   width: 19%;
-}
+	}
+	.flex-direction-nav a{
+		display: none !important;
+	}
+	.flexslider{
+		margin: 0 !important;
+	}
+	.slider{
+		margin-bottom: 0;
+	}
 
+	}
+
+	@media screen and (max-width: 480px){
+		.flex-control-thumbs{
+			display: none !important;
+		}
 	}
