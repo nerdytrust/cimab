@@ -4,7 +4,6 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic);
 
 body {
-
 	font-family: 'Source Sans Pro', sans-serif !important;
 	font-weight: lighter;
 }
@@ -457,6 +456,12 @@ footer .prensa h5 {
 
 footer .copy {background-color: #24262b; padding:10px 0 5px 0; color: #fff; text-align: center; font-size: 13px; margin-top: 10px; }
 footer .copy p {margin: 10px 0}
+/**/
+.slider {
+  padding: 0;
+  margin-bottom: 47px;
+}
+
 
 @media screen and (max-width: 1024px) {
 
