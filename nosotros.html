@@ -98,35 +98,43 @@
 					<a class="btn btn-default lin" href="#" role="button"><img src="images/lin.png"></a>
 				</div>
 
-				<div class="col-md-12 comentarios">
-					<h3>Dejar un comentario</h3>
-					<form class="form-inline">
-						<div class="form-group col-md-4">
-							<label for="">Name<span class="red">*</span></label>
-    						<input type="text" class="form-control" id="" placeholder="">
-						</div>
-						<div class="form-group col-md-4">
-							<label for="">Email<span class="red">*</span></label>
-    						<input type="email" class="form-control" id="" placeholder="">
-						</div>
-						<div class="form-group col-md-4">
-							<label for="">Website</label>
-    						<input type="text" class="form-control" id="" placeholder="">
-						</div>
-						<div class="form-group col-md-12">
-							<label for="">Comment</label>
-							<textarea class="form-control" rows="7" placeholder="" style="width:100%"></textarea>
-						</div>
-						<div class="col-md-2">
-							 <button type="submit" class="btn btn-danger">Post comment</button>
-						</div>	
-					</form>
+				<div class="col-md-12 panel-group comentarios" id="accordion" role="tablist" aria-multiselectable="true">
+						
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<h3><img src="images/up-down.png">Dejar un comentario</h3>
+						</a>
+							<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+		      					<div class="panel-body">
+									<form class="form-inline">
+										<div class="form-group col-md-4">
+											<label for="">Name<span class="red">*</span></label>
+				    						<input type="text" class="form-control" id="" placeholder="Enter name">
+										</div>
+										<div class="form-group col-md-4">
+											<label for="">Email<span class="red">*</span></label>
+				    						<input type="email" class="form-control" id="" placeholder="Enter email">
+										</div>
+										<div class="form-group col-md-4">
+											<label for="">Website</label>
+				    						<input type="text" class="form-control" id="" placeholder="Enter website">
+										</div>
+										<div class="form-group col-md-12">
+											<label for="">Comment</label>
+											<textarea class="form-control" rows="3" placeholder="Comment" style="width:100%"></textarea>
+										</div>
+										<div class="col-md-2">
+											 <button type="submit" class="btn btn-danger">Post comment</button>
+										</div>	
+									</form>
 
-					<div class="col-md-12">
-						<label for="">Current Year<span class="red">*</span></label>
-    					<input type="text" class="form-control cy" id="" placeholder="3.4">
-					</div>
-			</div><!-- fin de comentarios -->
+									<div class="col-md-12">
+										<label for="">Current Year<span class="red">*</span></label>
+				    					<input type="text" class="form-control" id="" placeholder="3.4">
+									</div>
+								</div>
+	    					</div>
+
+					</div><!-- fin de comentarios -->
 
 			<div class="col-md-12 relacionados">
 				<h3>Notas relacionadas</h3>
