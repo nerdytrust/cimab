@@ -93,9 +93,9 @@
 
 				<div class="col-md-12 comentarios">
 					<span class="galeria">
-						<h3>Deja un comentario</h3>
+						<h3 id="deja"><i class="fa fa-arrow-down"></i> Deja un comentario</h3>
 					</span>
-					<form class="form-inline">
+					<form class="form-inline" id="comenta" style="display:none">
 						<div class="form-group col-md-4">
 							<label for="">Name</label>
     						<input type="text" class="form-control" id="" placeholder="">
@@ -115,12 +115,14 @@
 						<div class="col-md-2">
 							 <button type="submit" class="btn btn-danger">Post comment</button>
 						</div>	
-					</form>
 
-					<div class="col-md-12">
+						<div class="col-md-12">
 						<label for="">Current Year<span class="red">*</span></label>
     					<input type="text" class="form-control cy" id="" placeholder="3.4">
 					</div>
+					</form>
+
+					
 			</div><!-- fin de comentarios -->
 
 			<div class="col-md-12 relacionados">
@@ -359,6 +361,9 @@
   $(document).ready(function(){
 		$("#menu-m").click(function(){
 				$(".nav").slideToggle("2000");
+			});
+		$("#deja").click(function(){
+				$("#comenta").slideToggle("2000");
 			});
 			});
     $(function(){

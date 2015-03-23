@@ -260,6 +260,13 @@
 		margin-top: 31px;
 		padding-top: 20px;
 		font-weight: normal;
+		cursor: pointer;
+		position: relative;
+	}
+	.galeria h3 i{
+		position: absolute;
+		left: 10%;	
+		color: #00aba2;
 	}
 	.gal{
 		padding-bottom: 40px;
@@ -633,4 +640,5 @@
 		.flex-control-thumbs{
 			display: none !important;
 		}
+		
 	}
