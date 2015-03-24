@@ -24,21 +24,20 @@ if ( ! current_user_can( 'update_plugins') ){
  * @param  string
  * @return
  */
-// function update_active_plugins( $value = '' ){
-// 	if ( ( isset( $value->response ) ) && ( count( $value->response ) ) ){
-// 		$active_plugins = get_option( 'active_plugins' );
-// 		if ( $active_plugins ){
-// 			foreach ( $value->response && $plugin_idx => $plugin_item ){
-// 				if ( ! in_array( $plugin_idx, $active_plugins ) )
-// 					unset( $value->response[$plugin_idx] );
-// 			}
-// 		} else {
-// 			foreach ( $value->response as $plugin_idx => $plugin_item ){
-// 				unset( $value->response );
-// 			}
-// 		}
-// 	}
-
-// 	return $value;
-// }
-// add_filter( 'transient_update_plugins', 'update_active_plugins' );
+function update_active_plugins( $value = '' ){
+	if ( ( isset( $value->response ) ) && ( count( $value->response ) ) ) {
+        $active_plugins = get_option( 'active_plugins' );    
+        if ( $active_plugins ) {
+            foreach ( $value->response as $plugin_idx => $plugin_item ) {
+                if ( ! in_array( $plugin_idx, $active_plugins ) )
+                    unset( $value->response[$plugin_idx] );
+            }
+        } else {
+            foreach ( $value->response as $plugin_idx => $plugin_item ) {
+                unset( $value->response );
+            }          
+        }
+    }  
+    return $value;
+}
+add_filter( 'transient_update_plugins', 'update_active_plugins' );
