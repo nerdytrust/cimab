@@ -125,12 +125,12 @@ html[xmlns] .flexslider .slides {
 }
 .flex-direction-nav .flex-prev {
   left: 10px;
-   background: url("../images/fv-i.png");
+   background: url("../img/fv-i.png");
 }
 .flex-direction-nav .flex-next {
   right: 10px;
   text-align: right;
-   background: url("../images/fv-d.png");
+   background: url("../img/fv-d.png");
 }
 .flexslider:hover .flex-direction-nav .flex-prev {
   opacity: 1;

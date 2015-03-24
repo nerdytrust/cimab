@@ -25,7 +25,7 @@
 		height: 36px;
 		margin: 0;
 		padding: 0;
-		background: #eeeeee url("../images/icon_tienda.png") no-repeat 10px center;
+		background: #eeeeee url("../img/icon_tienda.png") no-repeat 10px center;
 		display: inline-block;
 		vertical-align: top;
 	}
@@ -575,7 +575,7 @@
 		display: block;
 		width: 8%;
 		height: 25px;
-		background: url("../images/menu.png")center no-repeat;
+		background: url("../img/menu.png")center no-repeat;
 		background-size: contain;
 		cursor: pointer;
 		  margin-top: 15px;
