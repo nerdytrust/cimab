@@ -219,3 +219,23 @@ function woocommerce_support(){
 }
 add_action( 'after_setup_theme', 'woocommerce_support' );
 
+
+/**
+ * Método para mostrar el total de items en el carrito de compra
+ * @return integer Total de Items en el Carrito
+ */
+function woocommerce_cart_total_items(){
+    global $woocommerce;
+    printf( _n( '%d', $woocommerce->cart->cart_contents_count, 'woothemes' ), $woocommerce->cart->cart_contents_count );
+}
+
+/**
+ * Método para mostrar la URL del carrito de compra
+ * @return string URL Carrito de Compra
+ */
+function woocommerce_cart_url(){
+    global $woocommerce;
+    printf( '%s', $woocommerce->cart->get_cart_url(), 'woothemes' );
+}
+
+

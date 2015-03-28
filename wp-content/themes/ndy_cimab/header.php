@@ -34,7 +34,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php echo wp_head(); ?>
 </head>
-<body>
+<body <?php body_class( $class ); ?>>
 	<div class="container-fluid">
 		<div class="row redes">
 			<!--<div class="col-xs-12 col-sm-6 col-sm-offset-6 col-md-5 col-md-offset-7 col-lg-4 col-lg-offset-8">-->
@@ -43,7 +43,7 @@
 				<a href="http://twitter.com" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
 				<a href="http://facebook.com" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
 				<a href="http://plus.google.com" target="_blank"><i class="fa fa-google-plus fa-2x"></i></a>
-				<a href="" class="market"><span>2</span></a>
+				<a href="<?php woocommerce_cart_url(); ?>" class="market"><span><?php woocommerce_cart_total_items(); ?></span></a>
 			</div>
 		</div>
 		<div class="row bloq1">
@@ -51,7 +51,7 @@
 				<a href="<?php echo bloginfo( 'url' ); ?>"><img src="<?php echo bloginfo( 'template_url' ); ?>/img/logo.png" class="img-responsive"></a>
 			</div>
 			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
-				<button class="btn-dona pull-right"><img src="<?php echo bloginfo( 'template_url' ); ?>/img/dona.png" alt="" class="img-respondive"></button>
+				<a href="<?php echo bloginfo( 'url' ); ?>/categoria-producto/vouchers-donacion/" class="btn-dona pull-right"><img src="<?php echo bloginfo( 'template_url' ); ?>/img/dona.png" alt="" class="img-respondive"></a>
 			</div>	
 			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 				<?php get_search_form(); ?>

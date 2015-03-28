@@ -268,14 +268,14 @@ body{
 	float: left;
 }
 
-.apoyo{
+.apoyo, .shop-index{
 	background: #f8f8f8;
 	margin-top: 23px;
 	margin-left: 60px;
 	margin-right: 80px;
 }
 
-.apoyo h1{
+.apoyo h1, .shop-index h1{
 	background: #804e8c;
 	color: #fff;
 	height: 58px;
@@ -284,7 +284,7 @@ body{
 	line-height: 2.5em;
 }
 
-.apoyo figure, .contenido figure{
+.apoyo figure, .contenido figure, .shop-index figure {
 	box-shadow: 0px 1px 5px 0px #000;
 	margin: 28px 0 0 0;
 	text-align: center;
@@ -638,7 +638,7 @@ div.g-apoyo span img{
 	color: #8f9494;
 }
 
-.active-m, .nav > li.current-menu-item {
+.active-m, .nav > li.current-menu-item, .woocommerce .nav > li#menu-item-63 {
 	background: none !important;
 	border-radius: 0 !important;
 	box-shadow: 0px -5px 0px -1px #8f9494 inset !important;
@@ -694,6 +694,37 @@ div.g-apoyo span img{
 	margin: 0 auto;
 }
 
+.shop-index figure h3 a {
+	color: #222;
+}
+
+.woocommerce div.product {
+	height: 372px;
+	max-height: 372px;
+}
+
+.woocommerce-pagination {
+	margin: 25px 0px;
+}
+
+.shop-index figure .price .amount {
+	color: #804e8c;
+	font-weight: bolder;
+}
+
+.shop-index figcaption p {
+	padding: 0 15px;
+	text-align: justify;
+}
+
+.shop-product .woocommerce-placeholder{
+	height: 159px;
+}
+
+.shop-product .product-short-description p {
+	font-size: 1.1em;
+}
+
 @media screen and (max-width: 1024px){
 	.bloq1 div img{
 		margin-left: 0px;
@@ -730,7 +761,7 @@ div.g-apoyo span img{
 		float: inherit;
 	}
 
-	.apoyo, .cont, .contenido{
+	.apoyo, .cont, .contenido, .shop-index{
 		margin-right: 0;
 		margin-left: 0;
 	}

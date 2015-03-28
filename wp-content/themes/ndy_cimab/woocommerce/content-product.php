@@ -5,7 +5,7 @@
  * 
  * @author Eric Bravo para Nerdy Trust <ebravo@itcitrus.mx>
  * @package Nerdy Trust - CIMAB/WooCommerce/Templates
- * @version 1.0
+ * @version 1.0.1
  */
 
 if ( ! defined( 'ABSPATH' ) )
@@ -41,13 +41,17 @@ if ( ! defined( 'ABSPATH' ) )
 	if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 		$classes[] = 'last';
 ?>
-	<div <?php post_class( $classes ); ?>>
-		<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
-		<a href="<?php the_permalink(); ?>">
-			<?php woocommerce_template_loop_product_thumbnail( 'shop_catalog', [ 'class' => 'img-responsive' ] ); ?>
-		</a>
-		<div class="info">
-			<a href="<?php the_permalink(); ?>"><h5><?php the_title(); ?></h5></a>
-			<span class="product-short-description"><?php echo custom_excerpt(23); ?></span>
-		</div>
+	<div class="col-xs-12 col-sm-6 col-md-6">
+		<figure>
+			<div <?php post_class( $classes ); ?>>
+				<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
+					<a href="<?php the_permalink(); ?>">
+						<?php woocommerce_template_loop_product_thumbnail( 'shop_catalog', [ 'class' => 'img-responsive' ] ); ?>
+					</a>
+					<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+					<?php do_action( 'woocommerce_after_shop_loop_item_title' ); ?>
+					<figcaption><?php echo custom_excerpt(23); ?></figcaption>
+				<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
+			</div>
+		</figure>
 	</div>
