@@ -60,6 +60,6 @@
 		<div class="row menu">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<div id="menu-m"></div>
-				<?php wp_nav_menu( [ 'menu' => 'Principal', 'menu_class' => 'nav' ] ); ?>
+				<?php wp_nav_menu( array( 'menu' => 'Principal', 'menu_class' => 'nav' ) ); ?>
 			</div>
 		</div>	<!--termina row menu-->

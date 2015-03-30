@@ -55,9 +55,12 @@ add_theme_support( 'menus' );
 /**
  * Agregando soporte HTML5 para formulario de búsqueda, formulario de comentarios, galerías, etc...
  */
-add_theme_support( 'html5', [ 'search-form', 'comment-form', 'gallery', 'caption', 'widgets' ] );
+add_theme_support( 'html5', array( 'search-form', 'comment-form', 'gallery', 'caption', 'widgets' ) );
 
-add_theme_support( 'post-formats', [ 'gallery', 'quote', 'image', 'video', 'audio' ] );
+/**
+ * Agregando soporte para tipos de posts
+ */
+add_theme_support( 'post-formats', array( 'gallery', 'quote', 'image', 'video', 'audio' ) );
 
 /**
  * Agregando soporte de excerpt para las páginas
@@ -107,9 +110,9 @@ add_action( 'wp_enqueue_scripts', 'theme_ndy_scripts' );
  * @return
  */
 /*function ndy_cimab_widgets_init(){
-    $widgets = [ __( 'Catálogo Sidebar' ) ];
+    $widgets = array( __( 'Catálogo Sidebar' ) );
     foreach ( $widgets as $widget ){
-        register_sidebar( [
+        register_sidebar( array(
             'name'          => $widget,
             'description'   => '',
             'class'         => '',
@@ -117,7 +120,7 @@ add_action( 'wp_enqueue_scripts', 'theme_ndy_scripts' );
             'after_widget'  => '</div>',
             'before_title'  => '<h3 class="widgettitle">',
             'after_title'   => '</h3>'
-        ] );
+        ) );
     }
 }
 add_action( 'widgets_init', 'ndy_cimab_widgets_init' );*/
@@ -136,18 +139,18 @@ add_filter( 'admin_footer_text', 'remove_footer_admin' );
  * @return
  */
 function create_posts_sliders_type(){
-    register_post_type( 'sliders', [
-        'labels'    => [
+    register_post_type( 'sliders', array(
+        'labels'    => array(
             'name'          => __( 'Sliders', 'cimab' ),
             'singular_name' => __( 'Slider', 'cimab' ),
-        ],
+        ),
         'public'            => true,
         'has_archive'       => true,
-        'rewrite'           => [ 'slug' => 'sliders' ],
-        'supports'          => [ 'title' ],
+        'rewrite'           => array( 'slug' => 'sliders' ),
+        'supports'          => array( 'title' ),
         'capability_type'   => 'post',
         'menu_icon'         => 'dashicons-money'
-    ] );
+    ) );
 }
 add_action( 'init', 'create_posts_sliders_type' );
 
@@ -156,18 +159,18 @@ add_action( 'init', 'create_posts_sliders_type' );
  * @return
  */
 function create_posts_banners_type(){
-    register_post_type( 'banners', [
-        'labels' => [
+    register_post_type( 'banners', array(
+        'labels' => array(
             'name'          => __( 'Banners' ),
             'singular'      => __( 'Banner' ),
-        ],
+        ),
         'public'            => true,
         'has_archive'       => true,
-        'rewrite'           => [ 'slug' => 'banners' ],
-        'supports'          => [ 'title' ],
+        'rewrite'           => array( 'slug' => 'banners' ),
+        'supports'          => array( 'title' ),
         'capability_type'   => 'post',
         'menu_icon'         => 'dashicons-images-alt'
-    ] );
+    ) );
 }
 add_action( 'init', 'create_posts_banners_type' );
 
@@ -176,18 +179,18 @@ add_action( 'init', 'create_posts_banners_type' );
  * @return
  */
 function create_posts_ongs_type(){
-    register_post_type( 'ongs', [
-        'labels' => [
+    register_post_type( 'ongs', array(
+        'labels' => array(
             'name'          => __( "ONG's" ),
             'singular'      => __( 'ONG' ),
-        ],
+        ),
         'public'            => true,
         'has_archive'       => true,
-        'rewrite'           => [ 'slug' => 'ongs' ],
-        'supports'          => [ 'title' ],
+        'rewrite'           => array( 'slug' => 'ongs' ),
+        'supports'          => array( 'title' ),
         'capability_type'   => 'post',
         'menu_icon'         => 'dashicons-groups'
-    ] );
+    ) );
 }
 add_action( 'init', 'create_posts_ongs_type' );
 

@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) )
 	 */
 	$woocommerce_loop['loop']++;
 
-	$classes = [];
+	$classes = array();
 	if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || $woocommerce_loop['columns'] )
 		$classes[] = 'first';
 
@@ -46,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) )
 			<div <?php post_class( $classes ); ?>>
 				<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 					<a href="<?php the_permalink(); ?>">
-						<?php woocommerce_template_loop_product_thumbnail( 'shop_catalog', [ 'class' => 'img-responsive' ] ); ?>
+						<?php woocommerce_template_loop_product_thumbnail( 'shop_catalog', array( 'class' => 'img-responsive' ) ); ?>
 					</a>
 					<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 					<?php do_action( 'woocommerce_after_shop_loop_item_title' ); ?>

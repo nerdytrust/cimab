@@ -6,7 +6,7 @@
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 					<div class="nota">
 						<?php if ( has_post_thumbnail() ) : ?>
-							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'medium', [ 'class' => 'img-responsive' ] ); ?></a>
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'medium', array( 'class' => 'img-responsive' ) ); ?></a>
 						<?php endif; ?>
 						<div class="info">
 							<h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
@@ -27,7 +27,7 @@
 				
 				<?php endwhile; ?>
 				<?php else: ?>
-					<h2><?php echo __( 'No existe el contenido' ); ?></h2>
+					<h2 class="not-found"><?php echo __( 'No existe el contenido' ); ?></h2>
 				<?php endif; ?>
 			</div>
 		</div>

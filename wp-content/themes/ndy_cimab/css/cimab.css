@@ -247,6 +247,10 @@ body{
 	font-weight: bold;
 }
 
+h2.not-found {
+	padding: 0px 15px;
+}
+
 .relacionados .nota .info h5 {
 	font-size: 12px;
 	font-weight: bold;

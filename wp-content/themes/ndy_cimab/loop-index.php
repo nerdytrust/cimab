@@ -1,5 +1,5 @@
 <h1><?php echo __( 'Apoyo emocional' ); ?></h1>
-<?php $emotional = new WP_Query( [ 'cat' => 2, 'post_type' => 'post', 'posts_per_page' => 6, 'order' => 'DESC', 'orderby' => 'date' ] ); ?>
+<?php $emotional = new WP_Query( array( 'cat' => 2, 'post_type' => 'post', 'posts_per_page' => 6, 'order' => 'DESC', 'orderby' => 'date' ) ); ?>
 <div class="row home-index">
 	<?php if ( $emotional->have_posts() ) : while ( $emotional->have_posts() ) : $emotional->the_post(); ?>
 		<div class="col-xs-12 col-sm-6 col-md-6">
