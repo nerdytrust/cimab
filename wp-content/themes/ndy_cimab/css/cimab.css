@@ -771,6 +771,14 @@ div.g-apoyo span img{
 	}
 }
 
+p.form-submit {
+	display: none;
+}
+
+.comment-submit {
+	padding: 20px 0px;
+}
+
 @media screen and (max-width: 640px){
 	.bloq1 div .btn-dona img{
 		width: 100%;
