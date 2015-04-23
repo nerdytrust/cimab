@@ -295,6 +295,11 @@ h2.not-found {
 	padding-bottom: 20px;
 }
 
+.home-index .apoyo figure {
+	height: 400px;
+	min-height: 400px;
+}
+
 .apoyo figure time{
 	margin: 22px 0 27px 0;
 	display: inline-block;
