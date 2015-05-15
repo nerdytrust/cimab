@@ -7,7 +7,7 @@
 				<h2><?php the_excerpt(); ?></h2>
 			</div>
 			<?php if ( has_post_thumbnail() ) : ?>
-				<?php the_post_thumbnail( 'large', [ 'class' => 'img-responsive' ] ); ?>
+				<?php the_post_thumbnail( 'large', array( 'class' => 'img-responsive' ) ); ?>
 			<?php endif; ?>
 			<div class="col-md-12 entry">
 				<?php the_content(); ?>
