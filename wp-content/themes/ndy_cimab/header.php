@@ -37,9 +37,8 @@
 <body <?php body_class( $class ); ?>>
 	<div class="container-fluid">
 		<div class="row redes">
-			<!--<div class="col-xs-12 col-sm-6 col-sm-offset-6 col-md-5 col-md-offset-7 col-lg-4 col-lg-offset-8">-->
 			<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 pull-right">
-				<a href="mailto:eric.bravo.rod@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+				<a href="mailto:ebravo@nerdytrust.com"><i class="fa fa-envelope fa-2x"></i></a>
 				<a href="http://twitter.com" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
 				<a href="http://facebook.com" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
 				<a href="http://plus.google.com" target="_blank"><i class="fa fa-google-plus fa-2x"></i></a>

@@ -242,4 +242,82 @@ function woocommerce_cart_url(){
     printf( '%s', $woocommerce->cart->get_cart_url(), 'woothemes' );
 }
 
+/**
+ * Método para reemplazar la URL del login en la pantalla de login del administrador
+ * @return string URL del Desarrollador
+ */
+function custom_url_login(){
+    return 'http://nerdytrust.com';
+}
+add_filter( 'login_headerurl', 'custom_url_login' );
+
+/**
+ * Método para customizar el logo del login en la pantalla de login del administrador
+ * @return
+ */
+function custom_login_logo(){
+    echo '<style type="text/css">
+        .login h1 a {
+            background-image: url(' . get_template_directory_uri() . '/img/logo_login.png);
+            padding-bottom: 30px;
+        }
+    </style>';
+}
+add_action( 'login_enqueue_scripts', 'custom_login_logo' );
+
+/**
+ * Métodos para agregar un widget en el dashboard con la información técnica del sistema
+ * @return
+ */
+function custom_dashboard_widget(){
+    echo '<ul>
+                <li>Release Date: Mayo 2015</li>
+                <li>Author: Eric Bravo para Nerdy Trust</li>
+                <li>Hosting Provider: Nerdy Trust</li>
+            </ul>';
+}
+
+function custom_add_dashboard_widgets(){
+    wp_add_dashboard_widget( 'wp_dashboard_widget', 'Información Técnica', 'custom_dashboard_widget' );
+}
+add_action( 'wp_dashboard_setup', 'custom_add_dashboard_widgets' );
+
+/**
+ * Método para customizar el logo del admin dashboard de Wordpress
+ * @return
+ */
+function custom_dashboard_logo(){
+    echo '<style type="text/css">
+        #wp-admin-bar-wp-logo {
+            width: 42px;
+        }
+        #wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {
+            content: url(' . get_template_directory_uri() . '/img/dashboard-logo.png) !important;
+            top: -4px;
+        }
+        #wpadminbar #wp-admin-bar-wp-logo > a.ab-item {
+            pointer-events: none;
+            cursor: default;
+        }
+    </style>';
+}
+add_action( 'wp_before_admin_bar_render', 'custom_dashboard_logo', 0 );
+
+function custom_login_url_title(){
+    return 'Powered by Nerdy Trust';
+}
+add_filter( 'login_headertitle', 'custom_login_url_title' );
+
+/**
+ * Método para reemplazar el placeholder de los productos de woocommerce
+ * cuando no tienen imagen adjuntada
+ * @return string URL de la imagen splash o placeholder asignada por nosotros
+ */
+function custom_fix_woocommerce_thumbnail(){
+    add_filter( 'woocommerce_placeholder_img_src', 'custom_woocommerce_placeholder_img_src' );
+    function custom_woocommerce_placeholder_img_src(){
+        return get_template_directory_uri() . '/img/splash_tienda.png';
+    }
+}
+add_action( 'init', 'custom_fix_woocommerce_thumbnail' );
 
