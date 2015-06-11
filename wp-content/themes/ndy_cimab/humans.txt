@@ -1,0 +1,32 @@
+/* MAIN */
+  Develop: Nerdy Forge SA de CV
+  Design: Nerdy Forge SA de CV
+  Site: http://nerdytrust.com
+
+/* TEAM */
+  CEO: Erick Vizcaya
+  Contact: erick@nerdytrust.com
+  From: Mexico
+
+  CFO / PM: Carlos Cuellar
+  Contact: carlos@nerdytrust.com
+  From: Mexico
+
+  Developer: Eric Bravo
+  Contact: ebravo@itcitrus.mx
+  Twitter: @gmaniako
+  From: Mexico
+  Site: http://itcitrus.mx, inside@itcitrus.mx
+  University: Instituto Tecnologico de Tlalnepantla (ITTLA)
+
+  FrontEnd: Raziel Irala
+  Contact: raggy69@gmail.com
+  From: Mexico
+
+/* SITE */
+  Last update: 01/06/2015
+  Doctype: HTML5
+  Standards: HTML5, CSS3
+  Components: jQuery, jQuery.form, jQuery.mousewheel, Bootstrap, Flexslider, jQuery.easing, 
+  Software: Wordpress CMS, Woocommerce
+  IDE: SublimeText2

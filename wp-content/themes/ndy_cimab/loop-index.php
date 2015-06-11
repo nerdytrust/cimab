@@ -10,7 +10,7 @@
 					</a>
 				<?php else : ?>
 					<a href="<?php echo the_permalink(); ?>">
-						<img src="<?php echo bloginfo( 'template_url' ); ?>/img/img1.png" alt="" class="img-responsive">
+						<img src="<?php echo bloginfo( 'template_url' ); ?>/img/splash_tienda.png" alt="" class="img-responsive">
 					</a>
 				<?php endif; ?>
 				<h3><a href="<?php echo the_permalink(); ?>"><?php echo the_title(); ?></a></h3>

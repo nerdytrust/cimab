@@ -2,6 +2,17 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="author" content="Nerdy Trust">
+	<link rel="apple-touch-icon-precomposed" href="<?php bloginfo( 'template_url' ); ?>/img/favicon-152.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="<?php bloginfo( 'template_url' ); ?>/img/favicon-144.png">
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php bloginfo( 'template_url' ); ?>/img/favicon-152.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php bloginfo( 'template_url' ); ?>/img/favicon-144.png">
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php bloginfo( 'template_url' ); ?>/img/favicon-120.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php bloginfo( 'template_url' ); ?>/img/favicon-114.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php bloginfo( 'template_url' ); ?>/img/favicon-72.png">
+	<link rel="apple-touch-icon-precomposed" href="<?php bloginfo( 'template_url' ); ?>/img/favicon-57.png">
+	<link rel="icon" href="<?php bloginfo( 'template_url' ); ?>/img/favicon-32.png" sizes="32x32">
 	<title>
 		<?php
             if ( function_exists('is_tag') && is_tag() ) {
@@ -32,6 +43,7 @@
 	</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="text/plain" rel="author" href="<?php bloginfo( 'template_url' ) ?>/humans.txt">
 	<?php echo wp_head(); ?>
 </head>
 <body <?php body_class( $class ); ?>>

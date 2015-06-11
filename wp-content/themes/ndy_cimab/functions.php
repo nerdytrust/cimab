@@ -176,6 +176,56 @@ function create_posts_banners_type(){
 add_action( 'init', 'create_posts_banners_type' );
 
 /**
+ * Método para agregar posts tipo galerías
+ * @return
+ */
+function create_posts_gallery_type(){
+    register_post_type( 'galleries', array(
+        'labels' => array(
+            'name'          => __( 'Galerias' ),
+            'singular'      => __( 'Galería' ),
+        ),
+        'public'            => true,
+        'has_archive'       => true,
+        'rewrite'           => array( 'slug' => 'galerias' ),
+        'supports'          => array( 'title', 'excerpt', 'thumbnail' ),
+        'capability_type'   => 'post',
+        'menu_icon'         => 'dashicons-format-gallery',
+        'taxonomies'        => array( 'category-gallery' )
+    ) );
+}
+add_action( 'init', 'create_posts_gallery_type' );
+
+/**
+ * Método para agregar categorías que aplican sólo para los posts tipo galerías
+ * @return
+ */
+function create_category_gallery_taxonomies(){
+    $labels = array(
+        'name'              => _x( 'Categorías', 'taxonomy general name' ),
+        'singular_items'    => _x( 'Categoría', 'taxonomy singular name' ),
+        'parent_item'       => __( 'Parent Category' ),
+        'parent_item_colon' => __( 'Parent Category:' ),
+        'edit_item'         => __( 'Edit Category' ),
+        'update_item'       => __( 'Update Category' ),
+        'add_new_item'      => __( 'Add New Category' ),
+        'new_item_name'     => __( 'New Category Name' ),
+        'menu_name'         => __( 'Categorías' )
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true
+    );
+
+    register_taxonomy( 'category-gallery', array( 'galleries' ), $args );
+}
+add_action( 'init', 'create_category_gallery_taxonomies' );
+
+/**
  * Método para agregar posts tipo ONG's
  * @return
  */
@@ -321,3 +371,5 @@ function custom_fix_woocommerce_thumbnail(){
 }
 add_action( 'init', 'custom_fix_woocommerce_thumbnail' );
 
+
+//flush_rewrite_rules();
