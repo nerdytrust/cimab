@@ -10,9 +10,13 @@
 							<h2><?php the_excerpt(); ?></h2>
 						</div>
 					<?php endif; ?>
-					<?php if ( has_post_thumbnail() ) : ?>
-						<?php the_post_thumbnail( 'large', array( 'class' => 'img-responsive' ) ); ?>
-					<?php endif; ?>
+					<div class="col-md-12">
+						<?php if ( get_field( 'tipo_de_video' ) == 'youtube' ) : ?>
+							<?php echo do_shortcode( '[youtube-responsive identifier="' . get_field( 'id_del_video' ) .'"]' ); ?>
+						<?php else : ?>
+							<?php echo do_shortcode( '[vimeo-responsive identifier="' . get_field( 'id_del_video' ) . '"]' ); ?>
+						<?php endif; ?>
+					</div>
 					<div class="col-md-12 entry">
 						<?php the_content(); ?>
 					</div>
@@ -28,6 +32,14 @@
 							</em>
 						</span>
 					<?php endif; ?>
+					<div class="col-md-12 btn-more-contents">
+						<div class="row">
+							<div class="col-md-6"></div>
+							<div class="col-md-6">
+								<a href="<?php echo bloginfo( 'url' ); ?>/videos" class="btn btn-cimab-green btn-lg btn-block pull-right"><?php echo __( 'Más videos' ); ?></a>
+							</div>
+						</div>
+					</div>
 					<!-- módulo de compartir -->
 						<?php get_template_part( 'shareit' ); ?>
 					<!-- /módulo de compartir -->

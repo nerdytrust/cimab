@@ -182,13 +182,13 @@ add_action( 'init', 'create_posts_banners_type' );
 function create_posts_gallery_type(){
     register_post_type( 'galleries', array(
         'labels' => array(
-            'name'          => __( 'Galerias' ),
+            'name'          => __( 'Galerías' ),
             'singular'      => __( 'Galería' ),
         ),
         'public'            => true,
         'has_archive'       => true,
         'rewrite'           => array( 'slug' => 'galerias' ),
-        'supports'          => array( 'title', 'excerpt', 'thumbnail' ),
+        'supports'          => array( 'title', 'excerpt', 'thumbnail', 'comments' ),
         'capability_type'   => 'post',
         'menu_icon'         => 'dashicons-format-gallery',
         'taxonomies'        => array( 'category-gallery' )
@@ -200,7 +200,7 @@ add_action( 'init', 'create_posts_gallery_type' );
  * Método para agregar categorías que aplican sólo para los posts tipo galerías
  * @return
  */
-function create_category_gallery_taxonomies(){
+function create_category_post_types_taxonomies(){
     $labels = array(
         'name'              => _x( 'Categorías', 'taxonomy general name' ),
         'singular_items'    => _x( 'Categoría', 'taxonomy singular name' ),
@@ -223,7 +223,44 @@ function create_category_gallery_taxonomies(){
 
     register_taxonomy( 'category-gallery', array( 'galleries' ), $args );
 }
-add_action( 'init', 'create_category_gallery_taxonomies' );
+add_action( 'init', 'create_category_post_types_taxonomies' );
+
+function create_posts_video_type(){
+    $labels = array(
+        'name'              => _x( 'Videos', 'post type general name' ),
+        'singular'          => _x( 'Video', 'post type singular name' ),
+        'menu_name'         => _x( 'Videos', 'admin-menu' ),
+        'name_admin_bar'    => _x( 'Video', 'add new on admin bar' ),
+        'add_new'           => _x( 'Agregar nuevo', 'video' ),
+        'add_new_item'      => __( 'Agregar nuevo video' )
+    );
+
+    $args = array(
+        'labels'            => $labels,
+        'public'            => true,
+        'show_ui'           => true,
+        'show_ui_menu'      => true,
+        'query_var'         => true,
+        'has_archive'       => true,
+        'rewrite'           => array( 'slug' => 'videos' ),
+        'supports'          => array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments' ),
+        'capability_type'   => 'post',
+        'menu_icon'         => 'dashicons-format-video'
+    );
+    register_post_type( 'videos', $args );
+
+    add_filter( 'manage_edit-videos_columns', function( $columns ){
+        $columns = array(
+            'cb'        => '<input type="checkbox" />',
+            'title'     => __( 'Nombre del video' ),
+            'author'    => __( 'Autor' ),
+            'comments'  => '<span class="vers comment-grey-bubble" title="Comentarios"><span class="screen-reader-text">Comentarios</span></span>',
+            'date'      => __( 'Fecha' )
+        );
+        return $columns;
+    } );
+}
+add_action( 'init', 'create_posts_video_type' );
 
 /**
  * Método para agregar posts tipo ONG's
@@ -327,6 +364,10 @@ function custom_dashboard_widget(){
             </ul>';
 }
 
+/**
+ * Método para agregar un widget de información técnica en el Dashboard del administrador
+ * @return
+ */
 function custom_add_dashboard_widgets(){
     wp_add_dashboard_widget( 'wp_dashboard_widget', 'Información Técnica', 'custom_dashboard_widget' );
 }
@@ -353,6 +394,10 @@ function custom_dashboard_logo(){
 }
 add_action( 'wp_before_admin_bar_render', 'custom_dashboard_logo', 0 );
 
+/**
+ * Método apra customizar el título del link del logo de la pantalla de login
+ * @return string
+ */
 function custom_login_url_title(){
     return 'Powered by Nerdy Trust';
 }
@@ -371,5 +416,62 @@ function custom_fix_woocommerce_thumbnail(){
 }
 add_action( 'init', 'custom_fix_woocommerce_thumbnail' );
 
+/**
+ * Método para crear un shortcode de TinyURL's
+ * @param  array $atts
+ * @return string       Enlace corto
+ */
+function shortcode_tinyurls( $atts ){
+    extract( shortcode_atts( array(
+        'url'   => get_permalink(),
+        'title' => '',
+        'rel'   => 'nofollow'
+    ), $atts ) );
+    if ( ! $title ) $title = $url;
+    if ( FALSE === ( $cache = get_transient( 'tinyurl_' + md5( $url ) ) ) ) :
+        $cache = wp_remote_retrieve_body( wp_remote_get( 'http://tinyurl.com/api-create.php?url=' . $url ) );
+        set_transient( 'tinyurl_' + md5( $url ), $cache, 60*60*24 ); //1 día de cache
+    endif;
 
-//flush_rewrite_rules();
+    return '<a href="' . esc_url( $cache ) . '" rel="' . esc_attr( $rel ) . '">' . esc_attr( 'title' ) . '</a>';
+}add_shortcode( 'tinyurl', 'shortcode_tinyurls' );
+
+/**
+ * Método para crear un shortcode personalizado de youtube
+ * @param  array $atts 
+ * @return string       iframe del video
+ */
+function youtube_shortcode( $atts ){
+    extract( shortcode_atts( array(
+        'identifier' => ''
+    ), $atts ) );
+    return '<div class="video-container"><iframe src="//www.youtube.com/embed/' . $identifier . '" height="320" width="480" allowfullscreen="" frameborder="0"></iframe></div>';
+}
+add_shortcode( 'youtube-responsive', 'youtube_shortcode' );
+
+/**
+ * Método para crear un shortcode personalizado de vimeo
+ * @param  array $atts
+ * @return string       iframe del video
+ */
+function vimeo_shortcode( $atts ){
+    extract( shortcode_atts( array(
+        'identifier' => ''
+    ), $atts ) );
+    return '<div class="video-container"><iframe src="//player.vimeo.com/video/' . $identifier . '" height="320" width="480" allowfullscreen="" frameborder="0"></iframe></div>';
+}
+add_shortcode( 'vimeo-responsive', 'vimeo_shortcode' );
+
+/**
+ * Método para obtener el nombre de la categoría de los tipos de posts personalizados
+ * @return string Nombre de la Categoría
+ */
+function get_category_tax(){
+    global $wp_query;
+    $term = $wp_query->get_queried_object();
+    $title = $term->labels->name;
+    return $title;
+}
+
+
+flush_rewrite_rules();

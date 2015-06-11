@@ -133,6 +133,17 @@ body{
 	padding: 0;
 }
 
+.btn-cimab-green {
+	color: #fff;
+	background-color: #00aba2;
+	border-color: #00bcb2;
+}
+
+.btn-cimab-green:hover {
+	color: #fff;
+	background-color: #00bcb2;
+}
+
 .cont, .contenido{
 	margin: 23px 60px 0px 60px;
 	background: #f8f8f8;
@@ -140,7 +151,11 @@ body{
 	margin-bottom: 30px;
 }
 
-.cont a {
+.btn-more-contents {
+	margin: 35px 0;
+}
+
+.entry a, .note-source a {
 	color: #00aba2;
 	font-weight: bold;
 }
@@ -744,6 +759,22 @@ div.g-apoyo span img{
 
 .shop-product .product-short-description p {
 	font-size: 1.1em;
+}
+
+.video-container {
+	position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+	position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 @media screen and (max-width: 1024px){

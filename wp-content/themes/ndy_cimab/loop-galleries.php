@@ -9,7 +9,7 @@
 				<figure>
 					<a href="<?php echo the_permalink(); ?>">
 						<?php if ( has_post_thumbnail() ): ?>
-							<?php the_post_thumbnail( 'posts_home' ); ?>
+							<?php the_post_thumbnail( 'posts_home', array( 'class' => 'img-responsive' ) ); ?>
 						<?php else: ?>
 							<img src="<?php echo bloginfo( 'template_url' ); ?>/img/img2.png" alt="" class="img-responsive">
 						<?php endif; ?>

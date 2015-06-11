@@ -8,6 +8,14 @@
 					<div class="col-md-12 intro">
 						<h2><?php the_excerpt(); ?></h2>
 					</div>
+					<div class="col-md-12 btn-more-contents">
+						<div class="row">
+							<div class="col-md-6"></div>
+							<div class="col-md-6">
+								<a href="<?php echo bloginfo( 'url' ); ?>/galerias" class="btn btn-cimab-green btn-lg btn-block pull-right"><?php echo __( 'Más galerías' ); ?></a>
+							</div>
+						</div>
+					</div>
 					
 					<!-- módulo de compartir -->
 						<?php get_template_part( 'shareit' ); ?>

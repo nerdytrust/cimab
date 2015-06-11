@@ -14,6 +14,10 @@
 		<!-- sidebar de testimonios -->
 			<?php get_template_part( 'sidebar', 'testimonios' ); ?>
 		<!-- /sidebar de testimonios -->
+
+		<!-- sidebar de videoteca -->
+			<?php get_template_part( 'sidebar', 'videoteca' ); ?>
+		<!-- /sidebar de videoteca -->
 	</div>
 	<div class="row">
 		<!-- sidebar catalogo -->
