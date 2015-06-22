@@ -11,7 +11,7 @@
 						</div>
 					<?php endif; ?>
 					<?php if ( has_post_thumbnail() ) : ?>
-						<?php the_post_thumbnail( 'large', array( 'class' => 'img-responsive' ) ); ?>
+						<?php the_post_thumbnail( 'large', array( 'class' => 'img-responsive img-full' ) ); ?>
 					<?php endif; ?>
 					<div class="col-md-12 entry">
 						<?php the_content(); ?>

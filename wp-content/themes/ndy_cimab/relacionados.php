@@ -12,11 +12,19 @@
 			<h3><?php echo __( 'Notas relacionadas' ); ?></h3>
 			<?php while ( $related->have_posts() ) : $related->the_post(); ?>
 				<div class="col-md-6">
-					<div class="nota">
-						<?php the_post_thumbnail( 'thumbnail', array( 'class' => 'img-responsive' )  ); ?>
+					<div class="nota nota-relacionada">
+						<div class="img-relacionada">
+							<a href="<?php the_permalink(); ?>" alt="<?php the_title(); ?>">
+								<?php if ( has_post_thumbnail() ) : ?>
+									<?php the_post_thumbnail( 'thumbnail', array( 'class' => 'img-responsive' )  ); ?>
+								<?php else : ?>
+									<img src="<?php echo bloginfo( 'template_url' ); ?>/img/placeholder_150x150.jpg" alt="" class="img-responsive">
+								<?php endif; ?>
+							</a>
+						</div>
 						<div class="info">
 							<?php $category = get_the_category(); ?>
-							<h5><?php the_title(); ?> <span><?php echo $category[0]->cat_name; ?></span></h5>
+							<h5><?php the_title(); ?> <span>&bull; <?php echo $category[0]->cat_name; ?></span></h5>
 							<?php echo custom_excerpt(12); ?>
 						</div>
 					</div>

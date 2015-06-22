@@ -60,7 +60,7 @@ add_theme_support( 'html5', array( 'search-form', 'comment-form', 'gallery', 'ca
 /**
  * Agregando soporte para tipos de posts
  */
-add_theme_support( 'post-formats', array( 'gallery', 'quote', 'image', 'video', 'audio' ) );
+add_theme_support( 'post-formats', array( 'quote', 'image' ) );
 
 /**
  * Agregando soporte de excerpt para las páginas
@@ -200,7 +200,7 @@ add_action( 'init', 'create_posts_gallery_type' );
  * Método para agregar categorías que aplican sólo para los posts tipo galerías
  * @return
  */
-function create_category_post_types_taxonomies(){
+function create_category_gallery_types_taxonomies(){
     $labels = array(
         'name'              => _x( 'Categorías', 'taxonomy general name' ),
         'singular_items'    => _x( 'Categoría', 'taxonomy singular name' ),
@@ -223,8 +223,12 @@ function create_category_post_types_taxonomies(){
 
     register_taxonomy( 'category-gallery', array( 'galleries' ), $args );
 }
-add_action( 'init', 'create_category_post_types_taxonomies' );
+add_action( 'init', 'create_category_gallery_types_taxonomies' );
 
+/**
+ * Método para agregar posts tipo video
+ * @return
+ */
 function create_posts_video_type(){
     $labels = array(
         'name'              => _x( 'Videos', 'post type general name' ),
@@ -281,6 +285,86 @@ function create_posts_ongs_type(){
     ) );
 }
 add_action( 'init', 'create_posts_ongs_type' );
+
+/**
+ * Método para agregar posts tipo Convenios Médicos
+ * @return
+ */
+function create_posts_agreements_type(){
+    register_post_type( 'agreements', array(
+        'labels' => array(
+            'name'          => __( 'Convenios Médicos' ),
+            'singular'      => __( 'Convenio Médico' )
+        ),
+        'public'            => true,
+        'has_archive'       => true,
+        'rewrite'           => array( 'slug' => 'convenios' ),
+        'supports'          => array( 'title', 'editor', 'thumbnail' ),
+        'capability_type'   => 'post',
+        'menu_icon'         => 'dashicons-share'
+    ) );
+
+    add_filter( 'manage_edit-agreements_columns', function( $columns ){
+        $columns = array(
+            'cb'        => '<input type="checkbox" />',
+            'title'     => __( 'Nombre del Hospital / Especialista' ),
+            'author'    => __( 'Autor' ),
+            'comments'  => '<span class="vers comment-grey-bubble" title="Comentarios"><span class="screen-reader-text">Comentarios</span></span>',
+            'date'      => __( 'Fecha' )
+        );
+        return $columns;
+    } );
+}
+add_action( 'init', 'create_posts_agreements_type' );
+
+/**
+ * Método para agregar categorías a los Posts Personalizados tipo Convenios Médicos
+ * @return [type] [description]
+ */
+function create_category_agreements_types_taxonomies(){
+    $labels = array(
+        'name'              => _x( 'Categorías', 'taxonomy general name' ),
+        'singular_items'    => _x( 'Categoría', 'taxonomy singular name' ),
+        'parent_item'       => __( 'Parent Category' ),
+        'parent_item_colon' => __( 'Parent Category:' ),
+        'edit_item'         => __( 'Edit Category' ),
+        'update_item'       => __( 'Update Category' ),
+        'add_new_item'      => __( 'Add New Category' ),
+        'new_item_name'     => __( 'New Category Name' ),
+        'menu_name'         => __( 'Categorías' )
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true
+    );
+
+    register_taxonomy( 'category-agreements', array( 'agreements' ), $args );
+}
+add_action( 'init', 'create_category_agreements_types_taxonomies' );
+
+/**
+ * Método para crear posts tipo Alianzas con Empresas
+ * @return
+ */
+function create_posts_partnerships_type(){
+    register_post_type( 'partnerships', array(
+        'labels' => array(
+            'name'          => __( 'Alianzas' ),
+            'singular'      => __( 'Alianza' ),
+        ),
+        'public'            => true,
+        'has_archive'       => true,
+        'rewrite'           => array( 'slug' => 'partnerships' ),
+        'supports'          => array( 'title', 'thumbnail' ),
+        'capability_type'   => 'post',
+        'menu_icon'         => 'dashicons-share-alt'
+    ) );
+}
+add_action( 'init', 'create_posts_partnerships_type' );
 
 /**
  * Método para customizar y limitar el excerpt a los caracteres que se quiera
@@ -472,6 +556,26 @@ function get_category_tax(){
     $title = $term->labels->name;
     return $title;
 }
+
+function get_the_category_custompost( $id = false, $tcat = '' ){
+    $categories = get_the_terms( $id, 'category-' . $tcat );
+    if ( ! $categories )
+        $category = array();
+
+    $category = array_values( $categories );
+    foreach (array_keys( $categories ) as $key ) {
+        _make_cat_compat( $categories[$key] );
+    }
+
+    return apply_filters( 'get_the_categories', $categories );
+}
+
+function add_query_vars_filter( $vars ){
+    $vars[] = 'estado';
+    $vars[] = 'servicio';
+    return $vars;
+}
+add_filter( 'query_vars', 'add_query_vars_filter' );
 
 
 flush_rewrite_rules();

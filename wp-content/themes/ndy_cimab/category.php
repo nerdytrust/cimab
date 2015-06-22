@@ -5,6 +5,9 @@
 			<div class="col-md-7 contenido">
 				<div class="notas">
 					<h1 class="seccion"><?php echo esc_html( single_cat_title() ); ?></h1>
+					<div class="col-sm-12 paginacion-seccion">
+						<?php if ( function_exists( 'wp_pagenavi' ) ) wp_pagenavi(); ?>
+					</div>
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 						<div class="nota">
 							<?php if ( has_post_thumbnail() ) : ?>
@@ -15,22 +18,13 @@
 								<?php echo custom_excerpt(12); ?>
 							</div>
 						</div>
-						<!-- módulo de compartir -->
-							<?php //get_template_part( 'shareit' ); ?>
-						<!-- /módulo de compartir -->
-
-						<!-- módulo de comentarios -->
-							<?php //get_template_part( 'comments', 'form' ); ?>
-						<!-- /módulo de comentarios -->
-
-						<!-- módulo de posts relacionados -->
-							<?php //get_template_part( 'relacionados' ); ?>
-						<!-- /módulo de posts relacionados -->
-					
 					<?php endwhile; ?>
 					<?php else: ?>
 						<h2 class="not-found"><?php echo __( 'No existe el contenido' ); ?></h2>
 					<?php endif; ?>
+				</div>
+				<div class="col-sm-12 paginacion-seccion">
+					<?php if ( function_exists( 'wp_pagenavi' ) ) wp_pagenavi(); ?>
 				</div>
 			</div>
 			<!-- sidebar -->

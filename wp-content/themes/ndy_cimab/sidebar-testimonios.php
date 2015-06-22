@@ -4,7 +4,7 @@
 	<?php if ( $testimonio->have_posts() ) : while ( $testimonio->have_posts() ) : $testimonio->the_post(); ?>
 		<?php if ( has_post_thumbnail() ) : ?>
 			<a href="<?php echo the_permalink(); ?>">
-				<?php the_post_thumbnail( 'posts_home', array( 'class' => 'img-responsive' ) ); ?>
+				<?php the_post_thumbnail( 'posts_home', array( 'class' => 'img-responsive img-full' ) ); ?>
 			</a>
 		<?php else : ?>
 			<a href="<?php echo the_permalink(); ?>">

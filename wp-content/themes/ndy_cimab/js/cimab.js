@@ -17,16 +17,36 @@ $(function(){
 	$("#menu-m").click(function(){
 		$(".nav").slideToggle("2000");
 	});
-
-	SyntaxHighlighter.all();
 });
 
 $(window).load(function(){
-	$('.flexslider').flexslider({
+	/*$('.flexslider').flexslider({
 		animation: "slide",
 		controlNav: "thumbnails",
 		start: function(slider){
 			$('body').removeClass('loading');
 		}
+	});*/
+	$('#carousel').flexslider({
+		animation: "slide",
+		controlNav: false,
+		animationLoop: false,
+		slideshow: false,
+		itemMargin: 5,
+		itemWidth: 480,
+		asNavFor: "#slider",
+	});
+
+	$('#slider').flexslider({
+		animation: "slide",
+		controlNav: false,
+		animationLoop: false,
+		slideshow: true,
+		sync: false,
+		//manualControls: '#carousel'
+		touch: true,
+		slideshowSpeed: 3600,
+		prevText: "",
+		nextText: "",
 	});
 });

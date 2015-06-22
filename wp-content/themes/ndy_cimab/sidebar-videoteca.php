@@ -5,7 +5,7 @@
 		<?php while ( $videos->have_posts() ) : $videos->the_post(); ?>
 			<a href="<?php echo the_permalink(); ?>">
 				<?php if ( has_post_thumbnail() ) : ?>
-					<?php the_post_thumbnail( 'posts_home', array( 'class' => 'img-responsive' ) ); ?>
+					<?php the_post_thumbnail( 'posts_home', array( 'class' => 'img-responsive img-full' ) ); ?>
 				<?php else : ?>
 					<img src="<?php echo bloginfo( 'template_url' ); ?>/img/splash_tienda.png" alt="" class="img-responsive">
 				<?php endif; ?>

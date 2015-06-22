@@ -34,6 +34,9 @@
 						<h2 class="not-found"><?php echo __( 'No existe el contenido' ); ?></h2>
 					<?php endif; ?>
 				</div>
+				<div class="col-sm-12 paginacion-seccion">
+					<?php if ( function_exists( 'wp_pagenavi' ) ) wp_pagenavi(); ?>
+				</div>
 			</div>
 			<!-- sidebar -->
 				<?php get_sidebar(); ?>
