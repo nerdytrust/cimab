@@ -50,10 +50,10 @@
 	<div class="container-fluid">
 		<div class="row redes">
 			<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 pull-right">
-				<a href="mailto:ebravo@nerdytrust.com"><i class="fa fa-envelope fa-2x"></i></a>
-				<a href="http://twitter.com" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
-				<a href="http://facebook.com" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
-				<a href="http://plus.google.com" target="_blank"><i class="fa fa-google-plus fa-2x"></i></a>
+				<a href="mailto:info@cimab.org"><i class="fa fa-envelope fa-2x"></i></a>
+				<a href="https://twitter.com/fundacion_cimab" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+				<a href="https://www.facebook.com/pages/Fundacion-Cimab/126791140757052" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
+				<!--<a href="http://plus.google.com" target="_blank"><i class="fa fa-google-plus fa-2x"></i></a>-->
 				<a href="<?php woocommerce_cart_url(); ?>" class="market"><span><?php woocommerce_cart_total_items(); ?></span></a>
 			</div>
 		</div>

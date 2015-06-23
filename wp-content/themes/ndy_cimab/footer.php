@@ -29,7 +29,7 @@
 				<div class="col-xs-12 col-md-4 skuare">
 					<div class="col-md-12 sk">
 						<h3><?php echo __( 'Contáctanos' ); ?></h3>
-						<h4><?php echo __( 'Centro de información df' ); ?></h4>
+						<h4><?php echo __( 'Centro de información Distrito Federal' ); ?></h4>
 						<p>
 							<?php echo __( 'Ometusco No.44, Hipodromo,' ); ?></br>
 							<?php echo __( 'Delegación Cuauhtémoc,' ); ?></br>
@@ -39,27 +39,27 @@
 							<?php echo __( 'info@cimab.org' ); ?>
 						</p>
 
-						<h4><?php echo __( 'Centro de información df' ); ?></h4>
+						<h4><?php echo __( 'Centro de información Monterrey' ); ?></h4>
 						<p>
-							<?php echo __( 'Ometusco No.44, Hipodromo,' ); ?></br>
-							<?php echo __( 'Delegación Cuauhtémoc,' ); ?></br>
-							<?php echo __( 'C.P.06100, México DF.' ); ?></br>
+							<?php echo __( 'Matamoros, Esq. Calle 5 de mayo, Palo Blanco,' ); ?></br>
+							<?php echo __( 'San Pedro Garza García,' ); ?></br>
+							<?php echo __( 'C.P.66230, Nuevo León.' ); ?></br>
 							<?php echo __( 'Horario de atención de L-V 9 a 18hrs.' ); ?></br>
-							<?php echo __( 'Teléfonos | 55.74.90.85 y 55.74.90.73' ); ?></br>
-							<?php echo __( 'info@cimab.org' ); ?>
+							<?php echo __( 'Teléfonos | 81.83.70.88 y 81.83.00.88' ); ?></br>
+							<?php echo __( 'infonl@cimab.org' ); ?>
 						</p>
 					</div>	
 				</div>
 				<div class="col-xs-12 col-md-4 skuare">
 					<div class="col-md-12 sk">
-						<h3><?php echo __( 'Siguenos' ); ?></h3>
+						<h3><?php echo __( 'Síguenos' ); ?></h3>
 						<div class="row sgns">
-							<a href="#" class=""><img src="<?php echo bloginfo( 'template_url' ); ?>/img/bt1.png" alt="" class=""></a>
-							<a href="http://twitter.com" class=""><img src="<?php echo bloginfo( 'template_url' ); ?>/img/bt2.png" alt="" class=""></a>
-							<a href="http://facebook.com" class=""><img src="<?php echo bloginfo( 'template_url' ); ?>/img/bt3.png" alt="" class=""></a>
-							<a href="http://plus.google.com" class=""><img src="<?php echo bloginfo( 'template_url' ); ?>/img/bt4.png" alt="" class=""></a>
-							<a href="http://pinterest.com" class=""><img src="<?php echo bloginfo( 'template_url' ); ?>/img/bt5.png" alt="" class=""></a>
-							<a href="#" class=""><img src="<?php echo bloginfo( 'template_url' ); ?>/img/bt6.png" alt="" class=""></a>
+							<a href="https://instagram.com/fundacion_cimab/" class="" target="_blank"><img src="<?php echo bloginfo( 'template_url' ); ?>/img/bt1.png" alt="" class=""></a>
+							<a href="https://twitter.com/fundacion_cimab" class="" target="_blank"><img src="<?php echo bloginfo( 'template_url' ); ?>/img/bt2.png" alt="" class=""></a>
+							<a href="https://www.facebook.com/pages/Fundacion-Cimab/126791140757052" class="" target="_blank"><img src="<?php echo bloginfo( 'template_url' ); ?>/img/bt3.png" alt="" class=""></a>
+							<!--<a href="http://plus.google.com" class="" target="_blank"><img src="<?php echo bloginfo( 'template_url' ); ?>/img/bt4.png" alt="" class=""></a>
+							<a href="http://pinterest.com" class="" target="_blank"><img src="<?php echo bloginfo( 'template_url' ); ?>/img/bt5.png" alt="" class=""></a>-->
+							<a href="<?php echo bloginfo( 'rss2_url' ); ?>" class="" target="_blank"><img src="<?php echo bloginfo( 'template_url' ); ?>/img/bt6.png" alt="" class=""></a>
 						</div>
 					</div>
 

@@ -93,6 +93,10 @@ body{
 	border-radius: 15px;
 }
 
+.colours-pink {
+	color: #dc3771;
+}
+
 .btn-cimab-pink {
 	color: #fff;
 	background-color: #dc3771;
@@ -727,15 +731,24 @@ div.g-apoyo span img{
 .video-sk{
 	text-align: center;
 	padding: 0;
-	margin-top: 40px;
+	margin-top: 10px;
 }
 
-.video-sk video{
+.footer2 .video-sk h4 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.footer2 .video-sk a {
+	color: #ffffff;
+}
+
+/**.video-sk video{
 	width: 40%;
 	height: auto;
 	display: inline-block;
 	margin: 0px 5px;
-}
+}*/
 
 .pie{
 	color: #fff;

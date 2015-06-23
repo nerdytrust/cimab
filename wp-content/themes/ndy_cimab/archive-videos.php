@@ -18,19 +18,7 @@
 								<h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 								<?php echo custom_excerpt(12); ?>
 							</div>
-						</div>
-						<!-- módulo de compartir -->
-							<?php //get_template_part( 'shareit' ); ?>
-						<!-- /módulo de compartir -->
-
-						<!-- módulo de comentarios -->
-							<?php //get_template_part( 'comments', 'form' ); ?>
-						<!-- /módulo de comentarios -->
-
-						<!-- módulo de posts relacionados -->
-							<?php //get_template_part( 'relacionados' ); ?>
-						<!-- /módulo de posts relacionados -->
-					
+						</div>			
 					<?php endwhile; ?>
 					<?php else: ?>
 						<h2 class="not-found"><?php echo __( 'No existe el contenido' ); ?></h2>
