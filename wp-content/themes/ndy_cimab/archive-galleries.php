@@ -11,6 +11,8 @@
 						<div class="nota">
 							<?php if ( has_post_thumbnail() ) : ?>
 								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'medium', array( 'class' => 'img-responsive' ) ); ?></a>
+							<?php else : ?>
+								<img src="<?php echo bloginfo( 'template_url' ); ?>/img/splash_tienda.png" alt="" class="img-responsive">
 							<?php endif; ?>
 							<div class="info">
 								<h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
