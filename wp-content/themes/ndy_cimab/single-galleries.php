@@ -8,6 +8,19 @@
 					<div class="col-md-12 intro">
 						<h2><?php the_excerpt(); ?></h2>
 					</div>
+					<div class="col-sm-12 entry">
+						<?php
+							$images = get_field( 'fotos' );
+							if ( $images ) :
+						?>
+							<?php foreach ( $images as $image) : ?>
+								<a href="<?php echo $image['sizes']['large']; ?>" data-toggle="lightbox" data-gallery="imagesizes" class="col-md-3">
+									<img src="<?php echo $image['sizes']['posts_home']; ?>" alt="<?php echo $image['alt']; ?>" class="img-thumbnail img-responsive">
+								</a>
+								<p><?php echo $image['caption']; ?></p>
+							<?php endforeach; ?>
+						<?php endif; ?>
+					</div>
 					<div class="col-md-12 btn-more-contents">
 						<div class="row">
 							<div class="col-md-6"></div>

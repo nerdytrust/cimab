@@ -85,20 +85,18 @@ add_filter( 'jpeg_quality', create_function( '', 'return 95;' ) );
  */
 function theme_ndy_scripts(){
     // CSS
-    /*wp_enqueue_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css', '20150324' );
-    wp_enqueue_style( 'fontawesome-min', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', '20150324' );*/
-    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', '20150324' );
+    wp_enqueue_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', '20150622' );
     wp_enqueue_style( 'fontawesome-min', get_template_directory_uri() . '/css/font-awesome.min.css', '20150324' );
+    wp_enqueue_style( 'ekko-lightbox-min', get_template_directory_uri() . '/css/ekko-lightbox.min.css', '20150622' );
     wp_enqueue_style( 'cimab', get_template_directory_uri() . '/css/cimab.css', '20150324' );
     wp_enqueue_style( 'flexslider', get_template_directory_uri() . '/css/flexslider.css', '20150324' );
     
     // JS
-    //wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js', array(), '1.11.2', true );
-    wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '1.11.2', true );
+    wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js', array(), '1.11.2', true );
     //wp_enqueue_script( 're_captcha', 'https://www.google.com/recaptcha/api.js', array(), '2.0', true );
     wp_enqueue_script( 'noconflict', get_template_directory_uri() . '/js/jquery.noconflict.js', array(), '20150324', true );
-    //wp_enqueue_script( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js', array(), '3.3.4', true );
-    wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '3.3.4', true );
+    wp_enqueue_script( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js', array(), '3.3.5', true );
+    wp_enqueue_script( 'ekko-lightbox-min', get_template_directory_uri() . '/js/ekko-lightbox.min.js', array(), '3.3.4', true );
     wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array(), '20150324', true );
     wp_enqueue_script( 'jquery_easing', get_template_directory_uri() . '/js/jquery.easing.js', array(), '20150324', true );
     wp_enqueue_script( 'jquery_mousewheel', get_template_directory_uri() . '/js/jquery.mousewheel.js', array(), '20150324', true );
@@ -557,6 +555,12 @@ function get_category_tax(){
     return $title;
 }
 
+/**
+ * Método para obtener la categoría de los posts personalizados
+ * @param  boolean $id
+ * @param  string  $tcat
+ * @return string        Nombre de la categoría
+ */
 function get_the_category_custompost( $id = false, $tcat = '' ){
     $categories = get_the_terms( $id, 'category-' . $tcat );
     if ( ! $categories )
@@ -570,6 +574,10 @@ function get_the_category_custompost( $id = false, $tcat = '' ){
     return apply_filters( 'get_the_categories', $categories );
 }
 
+/**
+ * Metodo para agregar variables GET aplicables para filtros de querys
+ * @param array $vars Arreglo de variables
+ */
 function add_query_vars_filter( $vars ){
     $vars[] = 'estado';
     $vars[] = 'servicio';

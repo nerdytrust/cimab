@@ -11,6 +11,10 @@
 			<?php get_template_part( 'sidebar', 'servicios' ); ?>
 		<!-- /sidebar de servicios -->
 
+		<!-- sidebar de podemos ayudarte -->
+			<?php get_template_part( 'sidebar', 'podemos-ayudarte' ); ?>
+		<!-- /sidebar de podemos ayudarte -->
+
 		<!-- sidebar de testimonios -->
 			<?php get_template_part( 'sidebar', 'testimonios' ); ?>
 		<!-- /sidebar de testimonios -->

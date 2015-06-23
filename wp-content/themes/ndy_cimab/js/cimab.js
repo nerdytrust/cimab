@@ -17,6 +17,11 @@ $(function(){
 	$("#menu-m").click(function(){
 		$(".nav").slideToggle("2000");
 	});
+
+	$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+	    event.preventDefault();
+	    $(this).ekkoLightbox();
+	});
 });
 
 $(window).load(function(){
