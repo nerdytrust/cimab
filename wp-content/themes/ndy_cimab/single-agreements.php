@@ -11,7 +11,7 @@
 						</div>
 					<?php endif; ?>
 					<?php if ( has_post_thumbnail() ) : ?>
-						<?php the_post_thumbnail( 'large', array( 'class' => 'img-responsive img-full' ) ); ?>
+						<?php the_post_thumbnail( 'nota', array( 'class' => 'img-responsive img-full' ) ); ?>
 					<?php endif; ?>
 					<div class="col-sm-12 entry">
 						<div class="row">

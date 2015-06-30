@@ -70,8 +70,8 @@ add_post_type_support( 'page', 'excerpt' );
 /**
  * Agregando tamaños de imágenes que necesitamos para la plantilla
  */
-add_image_size( 'posts_home', 350, 186, true );
-//add_image_size( 'nota', 840, 477, true );
+add_image_size( 'posts_home', 350, 200, true );
+add_image_size( 'nota', 840, 389, true );
 
 /**
  * Agregando parámetro para la calidad de las imágenes
@@ -100,6 +100,8 @@ function theme_ndy_scripts(){
     wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array(), '20150324', true );
     wp_enqueue_script( 'jquery_easing', get_template_directory_uri() . '/js/jquery.easing.js', array(), '20150324', true );
     wp_enqueue_script( 'jquery_mousewheel', get_template_directory_uri() . '/js/jquery.mousewheel.js', array(), '20150324', true );
+    wp_enqueue_script( 'spinner_min', get_template_directory_uri() . '/js/spin.min.js', array(), '20150623', true );
+    wp_enqueue_script( 'jquery_form', get_template_directory_uri() . '/js/jquery.form.min.js', array(), '20150623', true );
     wp_enqueue_script( 'cimab', get_template_directory_uri() . '/js/cimab.js', array(), '20150324', true );
 }
 add_action( 'wp_enqueue_scripts', 'theme_ndy_scripts' );
@@ -108,8 +110,8 @@ add_action( 'wp_enqueue_scripts', 'theme_ndy_scripts' );
  * Método para dar de alta widgets y agregar soporte para widgets al theme
  * @return
  */
-/*function ndy_cimab_widgets_init(){
-    $widgets = array( __( 'Catálogo Sidebar' ) );
+function ndy_cimab_widgets_init(){
+    $widgets = array( __( 'Newsletter Sidebar' ) );
     foreach ( $widgets as $widget ){
         register_sidebar( array(
             'name'          => $widget,
@@ -122,7 +124,7 @@ add_action( 'wp_enqueue_scripts', 'theme_ndy_scripts' );
         ) );
     }
 }
-add_action( 'widgets_init', 'ndy_cimab_widgets_init' );*/
+add_action( 'widgets_init', 'ndy_cimab_widgets_init' );
 
 /**
  * Método para agregar la leyenda de Power by en el Footer
@@ -132,237 +134,6 @@ function remove_footer_admin(){
     return 'Creador por <a href="http://www.nerdytrust.com" target="_blank">Nerdy Trust</a> &copy; ' . date( 'Y' );
 }
 add_filter( 'admin_footer_text', 'remove_footer_admin' );
-
-/**
- * Método para agregar posts tipo slider
- * @return
- */
-function create_posts_sliders_type(){
-    register_post_type( 'sliders', array(
-        'labels'    => array(
-            'name'          => __( 'Sliders', 'cimab' ),
-            'singular_name' => __( 'Slider', 'cimab' ),
-        ),
-        'public'            => true,
-        'has_archive'       => true,
-        'rewrite'           => array( 'slug' => 'sliders' ),
-        'supports'          => array( 'title' ),
-        'capability_type'   => 'post',
-        'menu_icon'         => 'dashicons-money'
-    ) );
-}
-add_action( 'init', 'create_posts_sliders_type' );
-
-/**
- * Método para agregar posts tipo banners
- * @return
- */
-function create_posts_banners_type(){
-    register_post_type( 'banners', array(
-        'labels' => array(
-            'name'          => __( 'Banners' ),
-            'singular'      => __( 'Banner' ),
-        ),
-        'public'            => true,
-        'has_archive'       => true,
-        'rewrite'           => array( 'slug' => 'banners' ),
-        'supports'          => array( 'title' ),
-        'capability_type'   => 'post',
-        'menu_icon'         => 'dashicons-images-alt'
-    ) );
-}
-add_action( 'init', 'create_posts_banners_type' );
-
-/**
- * Método para agregar posts tipo galerías
- * @return
- */
-function create_posts_gallery_type(){
-    register_post_type( 'galleries', array(
-        'labels' => array(
-            'name'          => __( 'Galerías' ),
-            'singular'      => __( 'Galería' ),
-        ),
-        'public'            => true,
-        'has_archive'       => true,
-        'rewrite'           => array( 'slug' => 'galerias' ),
-        'supports'          => array( 'title', 'excerpt', 'thumbnail', 'comments' ),
-        'capability_type'   => 'post',
-        'menu_icon'         => 'dashicons-format-gallery',
-        'taxonomies'        => array( 'category-gallery' )
-    ) );
-}
-add_action( 'init', 'create_posts_gallery_type' );
-
-/**
- * Método para agregar categorías que aplican sólo para los posts tipo galerías
- * @return
- */
-function create_category_gallery_types_taxonomies(){
-    $labels = array(
-        'name'              => _x( 'Categorías', 'taxonomy general name' ),
-        'singular_items'    => _x( 'Categoría', 'taxonomy singular name' ),
-        'parent_item'       => __( 'Parent Category' ),
-        'parent_item_colon' => __( 'Parent Category:' ),
-        'edit_item'         => __( 'Edit Category' ),
-        'update_item'       => __( 'Update Category' ),
-        'add_new_item'      => __( 'Add New Category' ),
-        'new_item_name'     => __( 'New Category Name' ),
-        'menu_name'         => __( 'Categorías' )
-    );
-
-    $args = array(
-        'hierarchical'      => true,
-        'labels'            => $labels,
-        'show_ui'           => true,
-        'show_admin_column' => true,
-        'query_var'         => true
-    );
-
-    register_taxonomy( 'category-gallery', array( 'galleries' ), $args );
-}
-add_action( 'init', 'create_category_gallery_types_taxonomies' );
-
-/**
- * Método para agregar posts tipo video
- * @return
- */
-function create_posts_video_type(){
-    $labels = array(
-        'name'              => _x( 'Videos', 'post type general name' ),
-        'singular'          => _x( 'Video', 'post type singular name' ),
-        'menu_name'         => _x( 'Videos', 'admin-menu' ),
-        'name_admin_bar'    => _x( 'Video', 'add new on admin bar' ),
-        'add_new'           => _x( 'Agregar nuevo', 'video' ),
-        'add_new_item'      => __( 'Agregar nuevo video' )
-    );
-
-    $args = array(
-        'labels'            => $labels,
-        'public'            => true,
-        'show_ui'           => true,
-        'show_ui_menu'      => true,
-        'query_var'         => true,
-        'has_archive'       => true,
-        'rewrite'           => array( 'slug' => 'videos' ),
-        'supports'          => array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments' ),
-        'capability_type'   => 'post',
-        'menu_icon'         => 'dashicons-format-video'
-    );
-    register_post_type( 'videos', $args );
-
-    add_filter( 'manage_edit-videos_columns', function( $columns ){
-        $columns = array(
-            'cb'        => '<input type="checkbox" />',
-            'title'     => __( 'Nombre del video' ),
-            'author'    => __( 'Autor' ),
-            'comments'  => '<span class="vers comment-grey-bubble" title="Comentarios"><span class="screen-reader-text">Comentarios</span></span>',
-            'date'      => __( 'Fecha' )
-        );
-        return $columns;
-    } );
-}
-add_action( 'init', 'create_posts_video_type' );
-
-/**
- * Método para agregar posts tipo ONG's
- * @return
- */
-function create_posts_ongs_type(){
-    register_post_type( 'ongs', array(
-        'labels' => array(
-            'name'          => __( "ONG's" ),
-            'singular'      => __( 'ONG' ),
-        ),
-        'public'            => true,
-        'has_archive'       => true,
-        'rewrite'           => array( 'slug' => 'ongs' ),
-        'supports'          => array( 'title' ),
-        'capability_type'   => 'post',
-        'menu_icon'         => 'dashicons-groups'
-    ) );
-}
-add_action( 'init', 'create_posts_ongs_type' );
-
-/**
- * Método para agregar posts tipo Convenios Médicos
- * @return
- */
-function create_posts_agreements_type(){
-    register_post_type( 'agreements', array(
-        'labels' => array(
-            'name'          => __( 'Convenios Médicos' ),
-            'singular'      => __( 'Convenio Médico' )
-        ),
-        'public'            => true,
-        'has_archive'       => true,
-        'rewrite'           => array( 'slug' => 'convenios' ),
-        'supports'          => array( 'title', 'editor', 'thumbnail' ),
-        'capability_type'   => 'post',
-        'menu_icon'         => 'dashicons-share'
-    ) );
-
-    add_filter( 'manage_edit-agreements_columns', function( $columns ){
-        $columns = array(
-            'cb'        => '<input type="checkbox" />',
-            'title'     => __( 'Nombre del Hospital / Especialista' ),
-            'author'    => __( 'Autor' ),
-            'comments'  => '<span class="vers comment-grey-bubble" title="Comentarios"><span class="screen-reader-text">Comentarios</span></span>',
-            'date'      => __( 'Fecha' )
-        );
-        return $columns;
-    } );
-}
-add_action( 'init', 'create_posts_agreements_type' );
-
-/**
- * Método para agregar categorías a los Posts Personalizados tipo Convenios Médicos
- * @return [type] [description]
- */
-function create_category_agreements_types_taxonomies(){
-    $labels = array(
-        'name'              => _x( 'Categorías', 'taxonomy general name' ),
-        'singular_items'    => _x( 'Categoría', 'taxonomy singular name' ),
-        'parent_item'       => __( 'Parent Category' ),
-        'parent_item_colon' => __( 'Parent Category:' ),
-        'edit_item'         => __( 'Edit Category' ),
-        'update_item'       => __( 'Update Category' ),
-        'add_new_item'      => __( 'Add New Category' ),
-        'new_item_name'     => __( 'New Category Name' ),
-        'menu_name'         => __( 'Categorías' )
-    );
-
-    $args = array(
-        'hierarchical'      => true,
-        'labels'            => $labels,
-        'show_ui'           => true,
-        'show_admin_column' => true,
-        'query_var'         => true
-    );
-
-    register_taxonomy( 'category-agreements', array( 'agreements' ), $args );
-}
-add_action( 'init', 'create_category_agreements_types_taxonomies' );
-
-/**
- * Método para crear posts tipo Alianzas con Empresas
- * @return
- */
-function create_posts_partnerships_type(){
-    register_post_type( 'partnerships', array(
-        'labels' => array(
-            'name'          => __( 'Alianzas' ),
-            'singular'      => __( 'Alianza' ),
-        ),
-        'public'            => true,
-        'has_archive'       => true,
-        'rewrite'           => array( 'slug' => 'partnerships' ),
-        'supports'          => array( 'title', 'thumbnail' ),
-        'capability_type'   => 'post',
-        'menu_icon'         => 'dashicons-share-alt'
-    ) );
-}
-add_action( 'init', 'create_posts_partnerships_type' );
 
 /**
  * Método para customizar y limitar el excerpt a los caracteres que se quiera
@@ -545,36 +316,6 @@ function vimeo_shortcode( $atts ){
 add_shortcode( 'vimeo-responsive', 'vimeo_shortcode' );
 
 /**
- * Método para obtener el nombre de la categoría de los tipos de posts personalizados
- * @return string Nombre de la Categoría
- */
-function get_category_tax(){
-    global $wp_query;
-    $term = $wp_query->get_queried_object();
-    $title = $term->labels->name;
-    return $title;
-}
-
-/**
- * Método para obtener la categoría de los posts personalizados
- * @param  boolean $id
- * @param  string  $tcat
- * @return string        Nombre de la categoría
- */
-function get_the_category_custompost( $id = false, $tcat = '' ){
-    $categories = get_the_terms( $id, 'category-' . $tcat );
-    if ( ! $categories )
-        $category = array();
-
-    $category = array_values( $categories );
-    foreach (array_keys( $categories ) as $key ) {
-        _make_cat_compat( $categories[$key] );
-    }
-
-    return apply_filters( 'get_the_categories', $categories );
-}
-
-/**
  * Metodo para agregar variables GET aplicables para filtros de querys
  * @param array $vars Arreglo de variables
  */
@@ -585,5 +326,33 @@ function add_query_vars_filter( $vars ){
 }
 add_filter( 'query_vars', 'add_query_vars_filter' );
 
+function add_opengraph_doctype( $output ){
+    return $output . 'xmlns:og="http://opengraphprotocol.org/schema/"
+    xmlns:fb="http://www.facebook.com/2008/fbml"';
+}
+add_filter( 'language_attributes', 'add_opengraph_doctype' );
+
+function insert_fb_markup(){
+    global $post;
+    if ( ! is_singular() )
+        return;
+    echo '<meta property="og:title" content="' . get_the_title() . '">';
+    echo '<meta property="og:type" content="article">';
+    echo '<meta property="og:url" content="' . get_permalink() . '">';
+    echo '<meta property="og:site_name" content="' . get_bloginfo( 'name' ) . '">';
+    if ( ! has_post_thumbnail( $post->ID ) ){
+        $default_image = get_template_directory_uri() . '/img/splash_tienda.png';
+        echo '<meta property="og:image" content="' . $default_image . '">';
+    } else {
+        $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
+        echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '">';
+    }
+    echo "";
+}
+add_action( 'wp_head', 'insert_fb_markup', 5 );
+
 
 flush_rewrite_rules();
+require_once( 'inc/theme_walker_page_list.php' );
+require_once( 'inc/custom-posts-taxonomies.php' );
+require_once( 'inc/custom-posts-types.php' );

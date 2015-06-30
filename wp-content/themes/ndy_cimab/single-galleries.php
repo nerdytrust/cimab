@@ -13,8 +13,8 @@
 							$images = get_field( 'fotos' );
 							if ( $images ) :
 						?>
-							<?php foreach ( $images as $image) : ?>
-								<a href="<?php echo $image['sizes']['large']; ?>" data-toggle="lightbox" data-gallery="imagesizes" class="col-md-3">
+							<?php foreach ( $images as $image ) : ?>
+								<a href="<?php echo $image['sizes']['nota']; ?>" data-toggle="lightbox" data-gallery="imagesizes" class="col-md-3">
 									<img src="<?php echo $image['sizes']['posts_home']; ?>" alt="<?php echo $image['alt']; ?>" class="img-thumbnail img-responsive">
 								</a>
 								<p><?php echo $image['caption']; ?></p>

@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+	</div>
 	<div class="row">
 		<div class="col-md-7 cont">
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -9,7 +10,7 @@
 				<?php endif; ?>
 			</div>
 			<?php if ( has_post_thumbnail() ) : ?>
-				<?php the_post_thumbnail( 'large', array( 'class' => 'img-responsive' ) ); ?>
+				<?php the_post_thumbnail( 'nota', array( 'class' => 'img-responsive' ) ); ?>
 			<?php endif; ?>
 			<div class="col-md-12 entry">
 				<?php the_content(); ?>

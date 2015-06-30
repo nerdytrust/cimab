@@ -5,13 +5,13 @@
 			<section class="col-md-6">
 				<h4 class="text-left"><?php echo __( 'Actividades & Entrevistas' ); ?></h4>
 				<p class="text-left">
-					<em class="colours-pink">Adriary Ortíz</em>
+					<em class="colours-pink">Frida Mizrahi</em>
 				</p>
 				<p class="text-left">
 					Coordinadora de Comunicación Social
 				</p>
 				<p class="text-left">
-					<a class="" href="mailto:adriay@cibam.org" target="_blank">adriay@cibam.org</a>
+					<a class="" href="mailto:comunicacion.social@cimab.org" target="_blank">comunicacion.social@cimab.org</a>
 				</p>
 				<p class="text-left">
 					Tel. 5574 9058 Ext. 107
@@ -23,7 +23,7 @@
 					<em class="colours-pink">Begoña Zavalza Gracia</em>
 				</p>
 				<p class="text-left">
-					<a class="" href="mailto:adriay@cibam.org" target="_blank">begona@cibam.org</a>
+					<a class="" href="mailto:begona@cimab.org" target="_blank">begona@cimab.org</a>
 				</p>
 			</section>
 		</div>

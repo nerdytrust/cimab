@@ -6,15 +6,17 @@
 				<div class="notas">
 					<?php if ( have_posts() ) : ?>
 						<h1 class="seccion">
-							Resultados de <strong><?php echo esc_html( the_search_query() ); ?></strong> son:
+							Resultados de <strong>"<?php echo esc_html( the_search_query() ); ?>"</strong> son:
 						</h1>
 						<?php while ( have_posts() ) : the_post(); ?>
 							<div class="nota">
-								<?php if ( has_post_thumbnail() ) : ?>
-									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'medium', array( 'class' => 'img-responsive' ) ); ?></a>
-								<?php else : ?>
-									<img src="<?php echo bloginfo( 'template_url' ); ?>/img/splash_tienda.png" alt="" class="img-responsive">
-								<?php endif; ?>
+								<a href="<?php the_permalink(); ?>">
+									<?php if ( has_post_thumbnail() ) : ?>
+										<?php the_post_thumbnail( 'medium', array( 'class' => 'img-responsive' ) ); ?>
+									<?php else : ?>
+										<img src="<?php echo bloginfo( 'template_url' ); ?>/img/splash_tienda.png" alt="" class="img-responsive">
+									<?php endif; ?>
+								</a>
 								<div class="info">
 									<h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 									<?php echo custom_excerpt(12); ?>

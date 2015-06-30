@@ -1,0 +1,39 @@
+<?php
+/**
+ * Template Name: Cáncer de mama / Interiores
+ */
+?>
+<?php get_header(); ?>
+	</div>
+	<div class="row">
+		<div class="col-md-7 cont">
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+				<h1><?php the_title(); ?></h1>
+				<div class="col-md-12 intro">
+					<?php if ( has_excerpt( $post->ID ) ) : ?>
+						<h2><?php the_excerpt(); ?></h2>
+					<?php endif; ?>
+				</div>
+				<?php if ( has_post_thumbnail() ) : ?>
+					<?php the_post_thumbnail( 'nota', array( 'class' => 'img-responsive' ) ); ?>
+				<?php endif; ?>
+				<div class="col-md-12 entry">
+					<?php the_content(); ?>
+				</div>
+				<!-- módulo de relacionados paginas -->
+					<?php get_template_part( 'widget', 'temas-relacionados' ); ?>
+				<!-- /módulo de relacionados paginas -->
+
+				<!-- módulo de compartir -->
+					<?php get_template_part( 'shareit' ); ?>
+				<!-- /módulo de compartir -->
+			<?php endwhile; ?>
+			<?php else: ?>
+				<h2><?php echo __( 'No existe el contenido' ); ?></h2>
+			<?php endif; ?>
+		</div>
+		<!-- sidebar -->
+			<?php get_sidebar(); ?>
+		<!-- /sidebar -->
+	</div>
+<?php get_footer(); ?>

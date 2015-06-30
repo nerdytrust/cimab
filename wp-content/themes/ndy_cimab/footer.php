@@ -54,11 +54,9 @@
 					<div class="col-md-12 sk">
 						<h3><?php echo __( 'Síguenos' ); ?></h3>
 						<div class="row sgns">
-							<a href="https://instagram.com/fundacion_cimab/" class="" target="_blank"><img src="<?php echo bloginfo( 'template_url' ); ?>/img/bt1.png" alt="" class=""></a>
+							<a href="https://instagram.com/fundacion_cimab" class="" target="_blank"><img src="<?php echo bloginfo( 'template_url' ); ?>/img/bt1.png" alt="" class=""></a>
 							<a href="https://twitter.com/fundacion_cimab" class="" target="_blank"><img src="<?php echo bloginfo( 'template_url' ); ?>/img/bt2.png" alt="" class=""></a>
 							<a href="https://www.facebook.com/pages/Fundacion-Cimab/126791140757052" class="" target="_blank"><img src="<?php echo bloginfo( 'template_url' ); ?>/img/bt3.png" alt="" class=""></a>
-							<!--<a href="http://plus.google.com" class="" target="_blank"><img src="<?php echo bloginfo( 'template_url' ); ?>/img/bt4.png" alt="" class=""></a>
-							<a href="http://pinterest.com" class="" target="_blank"><img src="<?php echo bloginfo( 'template_url' ); ?>/img/bt5.png" alt="" class=""></a>-->
 							<a href="<?php echo bloginfo( 'rss2_url' ); ?>" class="" target="_blank"><img src="<?php echo bloginfo( 'template_url' ); ?>/img/bt6.png" alt="" class=""></a>
 						</div>
 					</div>

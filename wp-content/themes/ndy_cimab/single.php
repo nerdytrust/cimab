@@ -10,10 +10,15 @@
 							<h2><?php the_excerpt(); ?></h2>
 						</div>
 					<?php endif; ?>
-					<?php if ( has_post_thumbnail() ) : ?>
-						<?php the_post_thumbnail( 'large', array( 'class' => 'img-responsive img-full' ) ); ?>
+					<?php if ( ! in_category( 'testimonios' ) ) : ?>
+						<?php if ( has_post_thumbnail() ) : ?>
+							<?php the_post_thumbnail( 'nota', array( 'class' => 'img-responsive img-full' ) ); ?>
+						<?php endif; ?>
 					<?php endif; ?>
 					<div class="col-md-12 entry">
+						<?php if ( in_category( 'testimonios' ) ) : ?>
+							<?php the_post_thumbnail( 'nota', array( 'class' => 'img-responsive img-old' ) ); ?>
+						<?php endif; ?>
 						<?php the_content(); ?>
 					</div>
 					<?php if ( get_field( 'nombre_fuente' ) ) : ?>

@@ -20,3 +20,5 @@ Thumbs.db
 wp-config.php
 *.sql
 wp-content/uploads*
+sistema/*/config/config.php
+sistema/*/config/database.php
