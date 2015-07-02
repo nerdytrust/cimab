@@ -88,6 +88,7 @@ function theme_ndy_scripts(){
     wp_enqueue_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', '20150622' );
     wp_enqueue_style( 'fontawesome-min', get_template_directory_uri() . '/css/font-awesome.min.css', '20150324' );
     wp_enqueue_style( 'ekko-lightbox-min', get_template_directory_uri() . '/css/ekko-lightbox.min.css', '20150622' );
+    wp_enqueue_style( 'gallery-style', get_template_directory_uri() . '/css/gallery-style.css', '20150701' );
     wp_enqueue_style( 'cimab', get_template_directory_uri() . '/css/cimab.css', '20150324' );
     wp_enqueue_style( 'flexslider', get_template_directory_uri() . '/css/flexslider.css', '20150324' );
     
@@ -211,7 +212,7 @@ add_action( 'login_enqueue_scripts', 'custom_login_logo' );
  */
 function custom_dashboard_widget(){
     echo '<ul>
-                <li>Release Date: Mayo 2015</li>
+                <li>Release Date: Julio 2015</li>
                 <li>Author: Eric Bravo para Nerdy Trust</li>
                 <li>Hosting Provider: Nerdy Trust</li>
             </ul>';

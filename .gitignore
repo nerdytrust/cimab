@@ -22,3 +22,4 @@ wp-config.php
 wp-content/uploads*
 sistema/*/config/config.php
 sistema/*/config/database.php
+_backup/

@@ -14,10 +14,15 @@
 						<h2><?php the_excerpt(); ?></h2>
 					<?php endif; ?>
 				</div>
-				<?php if ( has_post_thumbnail() ) : ?>
-					<?php the_post_thumbnail( 'nota', array( 'class' => 'img-responsive' ) ); ?>
-				<?php endif; ?>
 				<div class="col-md-12 entry">
+					<?php if ( has_post_thumbnail() ) : ?>
+						<?php $src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'nota' ); ?>
+						<?php if ( $src[3] ) : ?>
+							<?php the_post_thumbnail( 'nota', array( 'class' => 'img-responsive img-full' ) ); ?>
+						<?php else : ?>
+							<?php the_post_thumbnail( 'nota', array( 'class' => 'img-responsive img-old' ) ); ?>
+						<?php endif; ?>
+					<?php endif; ?>
 					<?php the_content(); ?>
 				</div>
 				<!-- módulo de relacionados paginas -->

@@ -46,6 +46,18 @@ body{
     z-index: 999999;
 }
 
+.aligncenter {
+	margin: 0 auto;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
 .img-old {
 	float: left;
 	margin-right: 15px !important;
@@ -209,6 +221,14 @@ body{
 	font-size: 12px;
 }
 
+.entry p {
+	margin: 10px 0;
+}
+
+.cont p {
+	margin: 10px 0;
+}
+
 .entry p:first-child {
 	font-weight: bold;
 	margin-top: 20px;
@@ -349,7 +369,7 @@ body{
 }
 
 .contenido .biblioteca .info {
-	width: 65%;
+	width: 60%;
 }
 
 .contenido .biblioteca .info p {
@@ -1096,6 +1116,21 @@ div.g-apoyo span img{
     padding-top: 30px;
     height: 0;
     overflow: hidden;
+}
+
+.cont p img.aligncenter{
+	display: block;
+	margin: 0 auto;
+}
+
+.cont p img.alignright{
+	display: block;
+	float: right;
+}
+
+.cont p img.alignleft{
+	display: block;
+	float: left;
 }
 
 .video-container iframe {

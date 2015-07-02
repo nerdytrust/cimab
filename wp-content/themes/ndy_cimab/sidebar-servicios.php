@@ -8,5 +8,9 @@
 			<span class="fecha"><?php echo $category->count; ?></span>
 		</li>
 		<?php endforeach; ?>
+		<li>
+			<p><a href="<?php bloginfo( 'url' ); ?>/programas-comunitarios">Programas Comunitarios</a></p>
+			<span class="fecha">+</span>
+		</li>
 	</ul>
 </article>

@@ -9,15 +9,15 @@
 						<div class="col-md-12 intro">
 							<h2><?php the_excerpt(); ?></h2>
 						</div>
-					<?php endif; ?>
-					<?php if ( ! in_category( 'testimonios' ) ) : ?>
-						<?php if ( has_post_thumbnail() ) : ?>
-							<?php the_post_thumbnail( 'nota', array( 'class' => 'img-responsive img-full' ) ); ?>
-						<?php endif; ?>
-					<?php endif; ?>
+					<?php endif; ?>				
 					<div class="col-md-12 entry">
-						<?php if ( in_category( 'testimonios' ) ) : ?>
-							<?php the_post_thumbnail( 'nota', array( 'class' => 'img-responsive img-old' ) ); ?>
+						<?php if ( has_post_thumbnail() ) : ?>
+							<?php $src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'nota' ); ?>
+							<?php if ( $src[3] ) : ?>
+								<?php the_post_thumbnail( 'nota', array( 'class' => 'img-responsive img-full' ) ); ?>
+							<?php else : ?>
+								<?php the_post_thumbnail( 'nota', array( 'class' => 'img-responsive img-old' ) ); ?>
+							<?php endif; ?>
 						<?php endif; ?>
 						<?php the_content(); ?>
 					</div>
