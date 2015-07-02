@@ -140,6 +140,46 @@ $(function(){
 		return false;
 	});
 
+	$('#form_nuevo_contacto').submit(function(){
+		var spinner = new Spinner(opts).spin(target);
+		$(this).ajaxSubmit({
+			beforeSubmit: function(){
+				$('#foo').css('display','block');
+			},
+			success: function(data){
+				if ( data.success != true){
+					$('#messages').html( data.errors );
+					$('#messages').hide().slideDown("slow");
+					$("#messages").delay(3500).slideUp(800, function(){
+					$("#messages").html("");
+						spinner.stop();
+						$('#foo').css('display','none');
+					});
+				}else{
+					$('#messages').css('background-color','#48bf06');
+					$('#messages').html( data.messages );
+					$('#messages').hide().slideDown("slow");
+					$("#messages").delay(4500).slideUp(800, function(){
+						$("#messages").html("");
+						spinner.stop();
+						$('#foo').css('display','none');
+						$('#form_nuevo_contacto')[0].reset();
+					});
+				}
+			},
+			error: function(data){
+				$('#messages').html(data.errors);
+				$('#messages').hide().slideDown("slow");
+				$("#messages").delay(3500).slideUp(800, function(){
+				$("#messages").html("");
+					spinner.stop();
+					$('#foo').css('display','none');
+				});
+			}
+		});
+		return false;
+	});
+
 	var toggles = $('.toggle a'),
 	codes = $('.code');
 

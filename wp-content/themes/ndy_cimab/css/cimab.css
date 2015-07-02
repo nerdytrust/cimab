@@ -158,6 +158,10 @@ body{
 	border-radius: 15px;
 }
 
+.colours-black {
+	color: #333 !important;
+}
+
 .colours-pink {
 	color: #dc3771 !important;
 }
@@ -466,7 +470,6 @@ body{
 	font-weight: bold;
 	text-align: center;
 	font-size: 2em;
-	color: #000;
 	margin: 0 0 45px 0;
 }
 
