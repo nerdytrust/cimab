@@ -49,6 +49,60 @@ class Index extends CI_Controller {
 	}
 
 	/**
+	 * Método para guardar los datos del formulario de contacto
+	 * @return string JSON con datos success, errors, messages
+	 */
+	public function nuevo_contacto(){
+		if ( ! $this->input->is_ajax_request() )
+			return $this->output
+					->set_content_type( 'application/json' )
+					->set_output( json_encode( array( 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar almacenar tu información.</span>' ) ) );
+
+		$this->form_validation->set_rules( 'name', 'Nombre', 'trim|required|callback_nombre_valido|min_length[3]|max_length[180]' );
+		$this->form_validation->set_rules( 'lastname', 'Apellido', 'trim|required|callback_nombre_valido|min_length[3]|max_length[180]' );
+		$this->form_validation->set_rules( 'phone', 'Teléfono', 'trim|required|callback_valid_phone|min_length[10]|max_length[10]' );
+		$this->form_validation->set_rules( 'email', 'Email', 'required|trim|valid_email' );
+		$this->form_validation->set_rules( 'state', 'Estado', 'required|callback_valid_option');
+		$this->form_validation->set_rules( 'contact_type', 'Tipo de Contacto', 'required|callback_valid_option');
+		$this->form_validation->set_rules( 'message', 'Mensaje', 'trim|required|min_length[15]|max_length[400]');
+		
+
+		if ( $this->form_validation->run() === FALSE )
+			return $this->output
+					->set_content_type( 'application/json' )
+					->set_output( json_encode( array( 'success' => false, 'errors' => validation_errors('<span class="error">','</span>') ) ) );
+
+		$data['name']			= $this->input->post( 'name' );
+		$data['lastname']		= $this->input->post( 'lastname' );
+		$data['phone']			= $this->input->post( 'phone' );
+		$data['email']			= $this->input->post( 'email' );
+		$data['state']			= $this->input->post( 'state' );
+		$data['contact_type']	= $this->input->post( 'contact_type' );
+		$data['message']		= $this->input->post( 'message' );
+		$data['ip']				= $this->input->ip_address();
+		$data['browser']		= $this->input->user_agent();
+		$data 					= $this->security->xss_clean( $data );
+		$contact				= $this->core->add_contact( $data );
+		if ( $contact !== TRUE )
+			return $this->output
+					->set_content_type('application/json')
+					->set_output( json_encode( array( 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar enviar tu solicitud.</span>' ) ) );
+
+		$this->email->from( 'no-reply@cimab.org', '[No Responser] Auto-mensaje - Portal Web Fundación CIMAB' );
+        $this->email->to( 'info@cimab.org' );
+        $this->email->subject( 'Mensaje enviado desde el formulario de contacto' );
+        $this->email->message( $this->load->view( 'mail/nuevo_contacto', $data, TRUE ) );
+        if ( ! $this->email->send() )
+        	return $this->output
+					->set_content_type('application/json')
+					->set_output( json_encode( array( 'success' => true, 'messages' => '<span class="success"><b>¡Ups!</b> Ocurrió un problema al intentar enviar por correo electrónico tu solicitud, pero ya fué guardada en nuestro sistema, en breve nos pondremos en contacto contigo.</span>' ) ) );
+
+		return $this->output
+				->set_content_type('application/json')
+				->set_output( json_encode( array( 'success' => true, 'messages' => '<span class="success"><b>¡Gracias!</b> tu información se ha sido enviada, en breve nos pondremos en contacto contigo.</span>' ) ) );
+	}
+
+	/**
 	 * Método para guardar una solicitud de pláticas de sensibilización
 	 * @return string JSON con datos success, errors, messages
 	 */
@@ -109,6 +163,10 @@ class Index extends CI_Controller {
 				->set_output( json_encode( array( 'success' => true, 'messages' => '<span class="success"><b>¡Gracias!</b> tu información se ha sido enviada, en breve nos pondremos en contacto contigo.</span>' ) ) );
 	}
 
+	/**
+	 * Método para guardar una solicitud de voluntario
+	 * @return string JSON con datos success, errors, messages
+	 */
 	public function nuevo_voluntario(){
 		if ( ! $this->input->is_ajax_request() )
 			return $this->output

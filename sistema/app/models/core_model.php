@@ -6,6 +6,25 @@ class Core_model extends CI_Model {
 		parent::__construct();
         $this->load->database();
 	}
+
+    /**
+     * Método para guardar en la base de datos un registro de contacto
+     * @param array $data Datos del Formulario
+     */
+    public function add_contact( $data ){
+        $this->db->set( 'name', $data['name'] );
+        $this->db->set( 'lastname', $data['lastname'] );
+        $this->db->set( 'phone', $data['phone'] );
+        $this->db->set( 'email', $data['email'] );
+        $this->db->set( 'contact_type', $data['contact_type'] );
+        $this->db->set( 'state', $data['state'] );
+        $this->db->set( 'message', $data['message'] );
+        $this->db->set( 'ip', $data['ip'] );
+        $this->db->set( 'browser', $data['browser'] );
+        $this->db->insert( $this->db->dbprefix( 'contacto' ) );
+        if ( $this->db->affected_rows() > 0 )
+            return TRUE;
+    }
 	
     /**
      * Método para guardar en la base de datos un registro de subscriptor de Newsletter

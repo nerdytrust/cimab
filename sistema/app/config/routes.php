@@ -42,6 +42,7 @@ $route['default_controller'] = "index";
 $route['404_override'] = '';
 
 $route['newsletter']		= 'index/newsletter';
+$route['contacto']			= 'index/nuevo_contacto';
 $route['platicas']			= 'index/nueva_platica';
 $route['voluntarios']		= 'index/nuevo_voluntario';
 
