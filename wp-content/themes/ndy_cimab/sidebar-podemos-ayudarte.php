@@ -13,17 +13,5 @@
 			<p><a href="<?php bloginfo( 'url' ); ?>/materiales-educativos"><?php echo __( 'Materiales Educativos' ); ?></a></p>
 			<span class="fecha">+</span>
 		</li>
-		<li>
-			<p><a href="<?php bloginfo( 'url' ); ?>/platicas-de-sensibilizacion"><?php echo __( 'Platicas de sensibilización' ); ?></a></p>
-			<span class="fecha">+</span>
-		</li>
-		<li>
-			<p><a href="<?php bloginfo( 'url' ); ?>/voluntariado"><?php echo __( 'Voluntariado' ); ?></a></p>
-			<span class="fecha">+</span>
-		</li>
-		<li>
-			<p><a href="<?php bloginfo( 'url' ); ?>/alianza-con-empresas"><?php echo __( 'Alianzas' ); ?></a></p>
-			<span class="fecha">+</span>
-		</li>
 	</ul>
 </article>

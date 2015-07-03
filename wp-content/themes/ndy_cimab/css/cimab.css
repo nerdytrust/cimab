@@ -1215,7 +1215,7 @@ h2.back-peach{
 }
 
 .height32{
-	height: 400px !important;
+	min-height: 400px !important;
 	height: auto;
 	padding-top: 15px;
 }
@@ -1328,9 +1328,29 @@ ul.list2 li{
 	background-color: #02938b;
 }
 
+p.form-submit {
+	display: none;
+}
+
+.comment-submit {
+	padding: 20px 0px;
+}
+
+.text-resalte {
+	color: #00aba2;
+	display: inline-block;
+	font-weight: bold;
+}
+
 @media screen and (max-width: 1024px){
 	.bloq1 div img{
 		margin-left: 0px;
+	}
+
+	.height32{
+		min-height: 150px !important;
+		height: auto;
+		padding-top: 15px;
 	}
 
 	.nav > li{
@@ -1368,20 +1388,6 @@ ul.list2 li{
 		margin-right: 0;
 		margin-left: 0;
 	}
-}
-
-p.form-submit {
-	display: none;
-}
-
-.comment-submit {
-	padding: 20px 0px;
-}
-
-.text-resalte {
-	color: #00aba2;
-	display: inline-block;
-	font-weight: bold;
 }
 
 @media screen and (max-width: 640px){

@@ -38,19 +38,19 @@
 					<p>Nos encontramos profundamente agradecidas con las personas, empresas, organizaciones e instituciones públicas que nos han acompañado en este camino, que han confiado en nuestro trabajo y nos han ayudado a crear una cultura en la mujer mexicana con respecto al conocimiento y cuidado del cuerpo con la práctica de la autoexploración mensual, la exploración clínica mamaria y la realización de una mastografía como factores clave para detectar de manera temprana el cáncer de mama.</p>
 					<p>Te invitamos a unir esfuerzos con Fundación Cimab para difundir nuestro mensaje más importante: "El cáncer de mama no significa muerte".</p>
 					<hr class="he">
-					<div class="col-xs-12 col-md-4 text-left back-pink2 no-padding width32 height32">
+					<div class="col-sm-12 col-md-12 col-lg-4 text-left back-pink2 no-padding width32 height32">
 						<h2 class="back-pink padding15">Misión</h2>
 						<p class="padding15 white">
 							Somos una organización no gubernamental, sin fines de lucro, que contribuye a disminuir la mortalidad por cáncer de mama en México a través de cuatro líneas de acción: educación, información, servicios a pacientes e incidencia en políticas públicas.
 						</p>
 					</div>
-					<div class="col-xs-12 col-md-4 text-left back-peach2 no-padding width32 height32">
+					<div class="col-sm-12 col-md-12 col-lg-4 text-left back-peach2 no-padding width32 height32">
 						<h2 class="back-peach padding15">Visión</h2>
 						<p class="padding15 white">
 							Hacer del cáncer de mama una enfermedad que no te arranque la vida. 
 						</p>
 					</div>
-					<div class="col-xs-12 col-md-4 text-left back-pink4 no-padding width32 height32">
+					<div class="col-sm-12 col-md-12 col-lg-4 text-left back-pink4 no-padding width32 height32">
 						<h2 class="back-pink3 padding15">Objetivos</h2>
 						<p class="padding15 white">
 							1. Mejorar el conocimiento sobre la importancia de la detección oportuna del cáncer de mama entre la sociedad mexicana. </br></br>
@@ -83,7 +83,7 @@
 						</div>
 					</div>
 					<hr class="he">
-					<div class="col-md-12 no-padding">	
+					<div class="col-md-12 no-padding">
 						<ul class="nav nav-pills dpcl">
 							<li role="presentation" class="">
 								<a class="dropdown-toggle cv" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
