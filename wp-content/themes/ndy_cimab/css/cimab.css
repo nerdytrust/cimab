@@ -372,9 +372,9 @@ body{
 	min-height: 200px;
 }
 
-.contenido .biblioteca .info {
+/*.contenido .biblioteca .info {
 	width: 60%;
-}
+}*/
 
 .contenido .biblioteca .info p {
 	font-size: 14px;
@@ -569,7 +569,7 @@ body{
 
 .nota .info {
 	padding-left: 15px;
-	width: 40%;
+	/*width: 40%;*/
 	float: left;
 	vertical-align: top;
 }
@@ -1342,6 +1342,12 @@ p.form-submit {
 	font-weight: bold;
 }
 
+@media screen and (max-width: 1366px){
+	.contenido .biblioteca {
+		min-height: 220px;
+	}
+}
+
 @media screen and (max-width: 1024px){
 	.bloq1 div img{
 		margin-left: 0px;
@@ -1351,6 +1357,10 @@ p.form-submit {
 		min-height: 150px !important;
 		height: auto;
 		padding-top: 15px;
+	}
+
+	.contenido .biblioteca {
+		min-height: 285px;
 	}
 
 	.nav > li{

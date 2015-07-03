@@ -9,12 +9,14 @@
 					</h1>
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 						<div class="nota biblioteca">
-							<?php if ( has_post_thumbnail() ) : ?>
-								<?php the_post_thumbnail( 'posts_home', array( 'class' => 'img-responsive' ) ); ?>
-							<?php else : ?>
-								<img src="<?php echo bloginfo( 'template_url' ); ?>/img/splash_tienda.png" alt="" class="img-responsive">
-							<?php endif; ?>
-							<div class="info">
+							<div class="col-md-5">
+								<?php if ( has_post_thumbnail() ) : ?>
+									<?php the_post_thumbnail( 'posts_home', array( 'class' => 'img-responsive' ) ); ?>
+								<?php else : ?>
+									<img src="<?php echo bloginfo( 'template_url' ); ?>/img/splash_tienda.png" alt="" class="img-responsive">
+								<?php endif; ?>
+							</div>
+							<div class="info col-sm-6 col-md-6">
 								<h5><?php the_title(); ?></h5>
 								<?php if ( has_excerpt( $post->ID ) ) : ?>
 									<?php the_excerpt(); ?>

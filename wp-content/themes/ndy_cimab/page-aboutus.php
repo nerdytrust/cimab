@@ -62,7 +62,7 @@
 					<div class="col-md-12 no-padding">
 						<div class="dropdown">
 							<div class="dropdown-toggle cv" data-toggle="dropdown" role="button">
-								<img src="<?php bloginfo( 'template_url' ); ?>/img/bullet-somos.png" alt=""><strong>Curriculum Fundación CIMAB</strong> <span class="caret"></span>
+								<img src="<?php bloginfo( 'template_url' ); ?>/img/bullet-somos.png" alt=""><strong>Curriculum Fundación Cim*ab</strong> <span class="caret"></span>
 							</div>
 							<ul class="dropdown-menu list">
 								<li><span class="bullet">&bull;</span>	Miembro del Comité Nacional de Cáncer de la Secretaría de Salud desde 2003.</li>
@@ -133,7 +133,7 @@
 							</li>
 							<li class="">
 								<a class="cv" href="<?php bloginfo( 'url' ) ?>/logros">
-									<img src="<?php bloginfo( 'template_url' ); ?>/img/bullet-somos.png" alt=""> <strong>Logros de la fundación CIMAB</strong> 
+									<img src="<?php bloginfo( 'template_url' ); ?>/img/bullet-somos.png" alt=""> <strong>Logros de Fundación Cim*ab</strong> 
 								</a>
 							</li>
 						</ul>

@@ -9,14 +9,16 @@
 					</h1>
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 						<div class="nota">
-							<a href="<?php the_permalink(); ?>">
-								<?php if ( has_post_thumbnail() ) : ?>
-									<?php the_post_thumbnail( 'posts_home', array( 'class' => 'img-responsive' ) ); ?>
-								<?php else : ?>
-									<img src="<?php echo bloginfo( 'template_url' ); ?>/img/splash_tienda.png" alt="" class="img-responsive">
-								<?php endif; ?>
-							</a>
-							<div class="info">
+							<div class="col-md-5">
+								<a href="<?php the_permalink(); ?>">
+									<?php if ( has_post_thumbnail() ) : ?>
+										<?php the_post_thumbnail( 'posts_home', array( 'class' => 'img-responsive' ) ); ?>
+									<?php else : ?>
+										<img src="<?php echo bloginfo( 'template_url' ); ?>/img/splash_tienda.png" alt="" class="img-responsive">
+									<?php endif; ?>
+								</a>
+							</div>
+							<div class="info col-sm-6 col-md-6">
 								<h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 								<?php echo custom_excerpt(12); ?>
 							</div>

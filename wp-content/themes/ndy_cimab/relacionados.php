@@ -22,7 +22,7 @@
 								<?php endif; ?>
 							</a>
 						</div>
-						<div class="info">
+						<div class="info col-md-6">
 							<?php $category = get_the_category(); ?>
 							<h5><?php the_title(); ?> <span>&bull; <?php echo $category[0]->cat_name; ?></span></h5>
 							<?php echo custom_excerpt(12); ?>
