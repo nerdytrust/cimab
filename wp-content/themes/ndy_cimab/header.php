@@ -51,7 +51,7 @@
 	<div id="messages"></div>
 	<div class="container-fluid">
 		<div class="row redes">
-			<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 pull-right">
+			<div class="col-xs-12 col-sm-8 col-md-6 col-lg-5 pull-right">
 				<span class="colours-white f22"><strong>ÚNETE <i class="fa fa-angle-double-right"></i></strong></span>
 				<a href="mailto:info@cimab.org"><i class="fa fa-envelope fa-2x"></i></a>
 				<a href="https://twitter.com/fundacion_cimab" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>

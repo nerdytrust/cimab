@@ -3,15 +3,15 @@
 	<ul class="syp">
 		<li>
 			<p><a href="<?php bloginfo( 'url' ); ?>/el-cancer-de-mama"><?php echo __( 'El cáncer de mama' ); ?></a></p>
-			<span class="fecha">+</span>
+			<span class="fecha"></span>
 		</li>
 		<li>
 			<p><a href="<?php bloginfo( 'url' ); ?>/convenios"><?php echo __( 'Convenios Médicos' ); ?></a></p>
-			<span class="fecha">+</span>
+			<span class="fecha"></span>
 		</li>
 		<li>
 			<p><a href="<?php bloginfo( 'url' ); ?>/materiales-educativos"><?php echo __( 'Materiales Educativos' ); ?></a></p>
-			<span class="fecha">+</span>
+			<span class="fecha"></span>
 		</li>
 	</ul>
 </article>

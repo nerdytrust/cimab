@@ -54,7 +54,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/woocommerce/issues\n"
-"POT-Creation-Date: 2015-06-10 17:29:07+00:00\n"
+"POT-Creation-Date: 2015-07-07 16:47:13+00:00\n"
 "PO-Revision-Date: 2015-06-09 14:49+0000\n"
 "Last-Translator: Claudio Sanches <contato@claudiosmweb.com>\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/projects/p/woocommerce/language/es_ES/)\n"
@@ -5099,20 +5099,20 @@ msgstr "(Incluye %s)"
 msgid "WooCommerce"
 msgstr "WooCommerce"
 
-#: includes/abstracts/abstract-wc-order.php:2136
+#: includes/abstracts/abstract-wc-order.php:2143
 msgid "Order status changed from %s to %s."
 msgstr "El estado del pedido ha cambiado de %s a %s."
 
-#: includes/abstracts/abstract-wc-order.php:2398
+#: includes/abstracts/abstract-wc-order.php:2405
 msgid "Item's #%s variation #%s stock reduced from %s to %s."
 msgstr "En el item #%s la variación #%s ha sufrido una reducción de stock de  %s a %s."
 
-#: includes/abstracts/abstract-wc-order.php:2400
+#: includes/abstracts/abstract-wc-order.php:2407
 #: includes/class-wc-ajax.php:1264 includes/class-wc-ajax.php:1265
 msgid "Item #%s stock reduced from %s to %s."
 msgstr "Existencias del artículo #%s reducidas de %s a %s."
 
-#: includes/abstracts/abstract-wc-order.php:2412
+#: includes/abstracts/abstract-wc-order.php:2419
 msgid "Order item stock reduced successfully."
 msgstr "Existencias del artículo reducidas con éxito."
 
@@ -6317,7 +6317,7 @@ msgid "Please re-enter your password."
 msgstr "Por favor vuelve a escribir tu contraseña."
 
 #: includes/class-wc-form-handler.php:203
-#: includes/class-wc-form-handler.php:852
+#: includes/class-wc-form-handler.php:854
 msgid "Passwords do not match."
 msgstr "Las contraseñas no coinciden."
 
@@ -6390,7 +6390,7 @@ msgstr "Por favor, elige un producto para agregar al carrito&hellip;"
 #: includes/class-wc-form-handler.php:766
 #: includes/class-wc-form-handler.php:770
 #: includes/class-wc-form-handler.php:779
-#: includes/class-wc-form-handler.php:908
+#: includes/class-wc-form-handler.php:910
 msgid "Error"
 msgstr "Error"
 
@@ -6406,15 +6406,15 @@ msgstr "Se requiere contraseña."
 msgid "A user could not be found with this email address."
 msgstr "No hay ningún usuario registrado con esa dirección de correo electrónico."
 
-#: includes/class-wc-form-handler.php:804
+#: includes/class-wc-form-handler.php:806
 msgid "You are now logged in as <strong>%s</strong>"
 msgstr "Has iniciado sesión como <strong>%s</ strong>"
 
-#: includes/class-wc-form-handler.php:848
+#: includes/class-wc-form-handler.php:850
 msgid "Please enter your password."
 msgstr "Por favor, introduce tu contraseña."
 
-#: includes/class-wc-form-handler.php:891
+#: includes/class-wc-form-handler.php:893
 msgid "Anti-spam field was filled in."
 msgstr "El campo Anti-spam fue rellenado."
 
@@ -9950,7 +9950,7 @@ msgstr "Buscar por:"
 msgid "Clear selection"
 msgstr "Limpiar selección"
 
-#: templates/single-product/add-to-cart/variable.php:93
+#: templates/single-product/add-to-cart/variable.php:96
 msgid "This product is currently out of stock and unavailable."
 msgstr "No existe disponibilidad de este producto ni está disponible."
 

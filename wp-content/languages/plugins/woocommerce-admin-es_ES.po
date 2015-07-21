@@ -7,10 +7,12 @@
 # Andres Valle <nellsavedra@gmail.com>, 2014
 # Angeles Portillo <zanguanga@gmail.com>, 2014
 # Art Project Group <info@artprojectgroup.com>, 2014
+# César Gómez <cegomez@gmail.com>, 2015
 # Claudio Sanches <contato@claudiosmweb.com>, 2014
 # David Perez <david@closemarketing.es>, 2014
 # Dani M <faktotum.cat@gmail.com>, 2015
 # David Perez <david@closemarketing.es>, 2014-2015
+# Enrique Errando <contacto@enriqueerrando.com>, 2015
 # Francisco José García Inclán <fjgarciainclan@gmail.com>, 2015
 # Gabriel Gil <gabriel@gabrielgil.es>, 2014
 # Gonzalo De Spirito <gonzunigad@gmail.com>, 2014
@@ -39,9 +41,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/woocommerce/issues\n"
-"POT-Creation-Date: 2015-06-10 17:29:07+00:00\n"
-"PO-Revision-Date: 2015-06-10 17:19+0000\n"
-"Last-Translator: Claudio Sanches <contato@claudiosmweb.com>\n"
+"POT-Creation-Date: 2015-07-07 16:47:14+00:00\n"
+"PO-Revision-Date: 2015-06-17 09:57+0000\n"
+"Last-Translator: César Gómez <cegomez@gmail.com>\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/projects/p/woocommerce/language/es_ES/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -149,7 +151,7 @@ msgstr "Por favor, selecciona algún artículo."
 #: includes/admin/class-wc-admin-assets.php:215
 msgid ""
 "Are you sure you wish to process this refund? This action cannot be undone."
-msgstr "¿Estás seguro de que deseas procesar este reembolso? Está acción no se puede deshacer."
+msgstr "¿Estás seguro de que deseas procesar este reembolso? Esta acción no se puede deshacer."
 
 #: includes/admin/class-wc-admin-assets.php:216
 msgid ""
@@ -213,7 +215,7 @@ msgstr "Introduce algún texto o algún atributo separando los valores con el s�
 #: includes/admin/class-wc-admin-assets.php:225
 #: includes/admin/meta-boxes/views/html-product-attribute.php:66
 msgid "Visible on the product page"
-msgstr "Visible en la página del productos"
+msgstr "Visible en la página de productos"
 
 #: includes/admin/class-wc-admin-assets.php:226
 #: includes/admin/meta-boxes/views/html-product-attribute.php:72
@@ -269,7 +271,7 @@ msgid ""
 "Could not grant access - the user may already have permission for this file "
 "or billing email is not set. Ensure the billing email is set, and the order "
 "has been saved."
-msgstr "No se puede conceder acceso - el usuario ya tenía acceso para este archivo o bien no se ha establecido el email de facturación. Asegúrate de que se ha establecido el email de facturación y de que el pedido ha sido grabado."
+msgstr "No se puede conceder acceso - el usuario ya tenía acceso para este archivo o bien no se ha establecido el email de facturación. Asegúrate de que se ha establecido el email de facturación y de que el pedido ha sido guardado."
 
 #: includes/admin/class-wc-admin-assets.php:261
 msgid "Are you sure you want to revoke access to this download?"
@@ -571,7 +573,7 @@ msgid ""
 "After %sreading the documentation%s, for further assistance you can use the "
 "%sWordPress.org support forum%s. For help with premium add-ons from "
 "WooThemes, or if you are a WooThemes customer, you can %suse our helpdesk%s."
-msgstr ""
+msgstr "Después de %sleer la documentación%s, para más asistencia puede utilizar nuestro %sforo comunitario%s si no encuentra una solución. Para ayudar con las extensiones premium de WooThemes, o si usted es un cliente de WooThemes, puede %sutilizar nuestro centro de asistencia%s."
 
 #: includes/admin/class-wc-admin-help.php:57
 msgid ""
@@ -589,7 +591,7 @@ msgstr "Estado del Sistema"
 
 #: includes/admin/class-wc-admin-help.php:59
 msgid "WordPress.org Support Forum"
-msgstr ""
+msgstr "Foro de Soporte de WordPress.org"
 
 #: includes/admin/class-wc-admin-help.php:59
 msgid "WooThemes Customer Support"
@@ -1972,7 +1974,7 @@ msgstr "Hemos actualizado la interfaz de usuario tanto del front como del backen
 
 #: includes/admin/class-wc-admin-welcome.php:254
 msgid "Frontend UI Improvements"
-msgstr "Frontend UI Mejoras"
+msgstr "Mejoras de la interfaz del frontend"
 
 #: includes/admin/class-wc-admin-welcome.php:255
 msgid ""
@@ -1980,50 +1982,50 @@ msgid ""
 "from cart link and responsive table design as well as a fresh, modern look "
 "which meshes more fluidly with the current design trends of default "
 "WordPress themes."
-msgstr "En el frontend hay varias mejoras UX como el de deshacer-eliminar-del carrito enlace y diseño de la tabla de respuesta, así como una mirada fresca, moderna que engrana de forma más fluida con las tendencias actuales de diseño de temas de WordPress por defecto."
+msgstr "En el frontend hay varias mejoras de UX, como el enlace de deshacer-eliminar-del carrito o el diseño repsonsivo de las tablas, así como un aspecto moderno y renovado que encaja mejor con las tendencias actuales de diseño de los temas por defecto de WordPress."
 
 #: includes/admin/class-wc-admin-welcome.php:258
 msgid "Backend UI Improvements"
-msgstr "Backend UI Mejoras"
+msgstr "Mejoras de la interfaz del Backend"
 
 #: includes/admin/class-wc-admin-welcome.php:259
 msgid ""
 "On the backend, settings have been re-organised and perform better on hand-"
 "held devices for an all round improved user experience. "
-msgstr "En el back-end, los ajustes se han reorganizado y obtener mejores resultados en los dispositivos de mano para una experiencia de usuario durante todo mejorado."
+msgstr "En el back-end, los ajustes se han reorganizado y funcionan mejor en dispositivos móviles, mejorando la experiencia global del usuario."
 
 #: includes/admin/class-wc-admin-welcome.php:262
 msgid "Webhooks UI"
-msgstr "WebHooks UI"
+msgstr "Interfaz de los WebHooks"
 
 #: includes/admin/class-wc-admin-welcome.php:263
 msgid ""
 "As part of the API, we've introduced a UI for the Webhook system in "
 "WooCommerce 2.3. This makes it easier for 3rd party apps to integrate with "
 "WooCommerce. Read more in our %sdocs%s."
-msgstr "Como parte de la API, hemos introducido una interfaz de usuario para el sistema Webhook en WooCommerce 2.3. Esto hace que sea más fácil para las aplicaciones 3 ª parte que se integran con WooCommerce. Lea más en nuestra %sdocs%s."
+msgstr "Como parte de la API, hemos introducido una interfaz de usuario para el sistema de Webhooks en WooCommerce 2.3. Esto facilita la integración de aplicaciones de terceros. Lea más en nuestra %sdocs%s."
 
 #: includes/admin/class-wc-admin-welcome.php:271
 msgid "Geo-locating Customer Location"
-msgstr "Geo-localización de los clientes Ubicación"
+msgstr "Geo-localización de la Ubicación de los Clientes"
 
 #: includes/admin/class-wc-admin-welcome.php:272
 msgid ""
 "We have added a new option to geolocate the \"Default Customer Location\". "
 "Coupled with ability to show taxes in your store based on this location, you"
 " can show relevant prices store-wide. Enable this in the %ssettings%s."
-msgstr "Hemos añadido una nueva opción de geolocalizar la \"Ubicación predeterminada del cliente\". Junto con la capacidad de mostrar los impuestos en su tienda basada en esta ubicación, puede mostrar los precios pertinentes tienda de todo. Habilite esta en el %sajustes%s."
+msgstr "Hemos añadido una nueva opción de geolocalizar la \"Ubicación predeterminada del cliente\". Unido a la capacidad de mostrar los impuestos de tu tienda en función a esta ubicación, puedes mostrar los precios pertinentes tienda de todo. Habilítalo en los %sajustes%s."
 
 #: includes/admin/class-wc-admin-welcome.php:275
 msgid "Color Customization"
-msgstr "Personalización del color"
+msgstr "Personalización de los Colores"
 
 #: includes/admin/class-wc-admin-welcome.php:276
 msgid ""
 "If you're looking to customise the look and feel of the frontend in 2.3, "
 "take a look at the free %sWooCommerce Colors plugin%s. This lets you change "
 "the colors with a live preview."
-msgstr "Si usted está buscando para personalizar la apariencia de la interfaz en 2.3, echar un vistazo a la libre %sWooCommerce Colores plugins%s. Esto le permite cambiar los colores con una vista previa en vivo."
+msgstr "Si estás intentando personalizar la apariencia de la interfaz en 2.3, échale un vistazo a los %sPlugins gratuitos de Colores para WooCommerce%s. Te permiten cambiar los colores previsualizándolos en vivo."
 
 #: includes/admin/class-wc-admin-welcome.php:279
 msgid "Improved Reports"
@@ -2037,53 +2039,53 @@ msgstr "Informes de ventas ahora pueden mostrar importes netos y brutos, hemos a
 
 #: includes/admin/class-wc-admin-welcome.php:285
 msgid "Improved Simplify Gateway"
-msgstr "Mejora Simplificar pasarela"
+msgstr "Pasarela de Simpify mejorada"
 
 #: includes/admin/class-wc-admin-welcome.php:286
 msgid ""
 "The built in Simplify Commerce Gateway (available in the US) now supports "
 "%sHosted Payments%s - a PCI Compliant hosted payment platform."
-msgstr "El construido en Simplifique Commerce Gateway (disponible en los EE.UU.) ahora soporta %sPagos Hosted%s Cumple un PCI acogió plataforma de pago."
+msgstr "La pasarela integrada de Simplify (disponible en los EEUU) ahora soporta %sPagos Hopedados%s - una plataforma de pagos hospedados que cumple con la normativa PCI."
 
 #: includes/admin/class-wc-admin-welcome.php:289
 msgid "Email Template Improvements"
-msgstr "Mejoras plantilla de correo electrónico"
+msgstr "Mejoras en las plantilla de email"
 
 #: includes/admin/class-wc-admin-welcome.php:290
 msgid ""
 "To make email customization simpler, we've included a CSS Inliner in this "
 "release, some new template files for styling emails, and some additional "
 "hooks for developers. Read more on our %sdeveloper blog%s."
-msgstr "Para hacer más sencilla la personalización de correo electrónico, hemos incluimos una Inliner CSS en esta versión, algunos de los nuevos archivos de plantillas para correos electrónicos de estilo, y algunos ganchos adicionales para los desarrolladores. Lea más en nuestra %sblog de desarrolladores%s."
+msgstr "Para hacer más sencilla la personalización de los emails, hemos incluimos un integrador de CSS en esta versión, algunas plantillas nuevas para darle estilo a los emails y algunos hooks adicionales para desarrolladores. Lee más es nuestro %sblog para desarrolladores%s."
 
 #: includes/admin/class-wc-admin-welcome.php:293
 msgid "Simplified Coupon System"
-msgstr "Sistema de Cupón simplificado"
+msgstr "Sistema de cupones simplificado"
 
 #: includes/admin/class-wc-admin-welcome.php:294
 msgid ""
 "We have simplified the coupon system to ensure discounts are never applied "
 "to taxes, and we've improved support for discounting products inclusive of "
 "tax. Read more on our %sdevelop blog%s."
-msgstr "Hemos simplificado el sistema de cupones para asegurar descuentos no se aplican a los impuestos, y hemos mejorado el soporte para el descuento de los productos, impuestos incluidos. Lea más en nuestra %sdesarrollar el blog%s."
+msgstr "Hemos simplificado el sistema de cupones para asegurar que los descuentos no se aplican nunca a los impuestos, y hemos mejorado el soporte para el descuento de los productos con impuestos incluídos. Lee más en nuestro %sblog para desarrolladores%s."
 
 #: includes/admin/class-wc-admin-welcome.php:302
 msgid "Go to WooCommerce Settings"
-msgstr "Vaya a Configuración WooCommerce"
+msgstr "Ir a los ajustes de WooCommerce"
 
 #: includes/admin/class-wc-admin-welcome.php:317
 msgid ""
 "WooCommerce is developed and maintained by a worldwide team of passionate "
 "individuals and backed by an awesome developer community. Want to see your "
 "name? <a href=\"%s\">Contribute to WooCommerce</a>."
-msgstr "WooCommerce es desarrollado y mantenido por un equipo mundial de individuos apasionados y respaldado por una comunidad impresionante desarrollador. ¿Quieres ver tu nombre? <a href=\"%s\">Contribuir a WooCommerce </a>"
+msgstr "WooCommerce es desarrollado y mantenido por un equipo internacional de individuos apasionados y respaldado por una alucinante comunidad de desarrolladores. ¿Quieres ver tu nombre? <a href=\"%s\">Contribuye a WooCommerce </a>"
 
 #: includes/admin/class-wc-admin-welcome.php:333
 msgid ""
 "WooCommerce has been kindly translated into several other languages thanks "
 "to our translation team. Want to see your name? <a href=\"%s\">Translate "
 "WooCommerce</a>."
-msgstr "WooCommerce ha traducido amablemente en varios otros idiomas gracias a nuestro equipo de traducción. ¿Quieres ver tu nombre? <a href=\"%s\">traducir WooCommerce</a>."
+msgstr "WooCommerce ha sigo generosamente traducido a varios otros idiomas gracias a nuestro equipo de traducción. ¿Quieres ver tu nombre? <a href=\"%s\">Traduce WooCommerce</a>."
 
 #: includes/admin/class-wc-admin-welcome.php:381
 msgid "View %s"
@@ -2098,7 +2100,7 @@ msgid ""
 "If you like <strong>WooCommerce</strong> please leave us a "
 "%s&#9733;&#9733;&#9733;&#9733;&#9733;%s rating. A huge thank you from "
 "WooThemes in advance!"
-msgstr "Si te gusta <strong>WooCommerce</strong> por favor nos deje una %s&#9733;&#9733;&#9733;&#9733;&#9733;%s calificación. Un enorme gracias por WooThemes por adelantado!"
+msgstr "Si te gusta <strong>WooCommerce</strong> déjanos una calificación de %s&#9733;&#9733;&#9733;&#9733;&#9733;%s. ¡Muchísimas gracias por adelantado de parte de WooThemes!"
 
 #: includes/admin/class-wc-admin.php:177
 msgid "Thanks :)"
@@ -2106,19 +2108,19 @@ msgstr "Gracias :)"
 
 #: includes/admin/class-wc-admin.php:185
 msgid "Thank you for selling with WooCommerce."
-msgstr "Gracias por tratar con WooCommerce usted."
+msgstr "Gracias por vender con WooCommerce."
 
 #: includes/admin/importers/class-wc-tax-rate-importer.php:102
 msgid "The file does not exist, please try again."
-msgstr "El archivo no existe, por favor intente de nuevo."
+msgstr "El archivo no existe, inténtalo de nuevo, por favor."
 
 #: includes/admin/importers/class-wc-tax-rate-importer.php:137
 msgid "The CSV is invalid."
-msgstr "El CSV es válido."
+msgstr "El CSV no es válido."
 
 #: includes/admin/importers/class-wc-tax-rate-importer.php:145
 msgid "Import complete - imported <strong>%s</strong> tax rates."
-msgstr "Completa Importación - importados <strong>%s</strong> las tasas de impuestos."
+msgstr "Importación completa - se han importado <strong>%s</strong> tasas de impuestos."
 
 #: includes/admin/importers/class-wc-tax-rate-importer.php:155
 msgid "All done!"
@@ -2126,11 +2128,11 @@ msgstr "¡Todo listo!"
 
 #: includes/admin/importers/class-wc-tax-rate-importer.php:155
 msgid "View Tax Rates"
-msgstr "Precios Ver Tributarias"
+msgstr "Ver Tasas de Impuestos"
 
 #: includes/admin/importers/class-wc-tax-rate-importer.php:191
 msgid "Import Tax Rates"
-msgstr "Tasas de Impuestos de Importación"
+msgstr "Importar Tasas de Impuestos"
 
 #: includes/admin/importers/class-wc-tax-rate-importer.php:207
 msgid ""
@@ -2915,7 +2917,7 @@ msgstr "Atributo de producto personalizado"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:469
 msgid "Save attributes"
-msgstr "Ahorre atributos"
+msgstr "Guardar atributos"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:477
 msgid "Up-Sells"
@@ -3074,23 +3076,23 @@ msgid "Product SKU must be unique."
 msgstr "SKU del producto debe ser único."
 
 #: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1259
-#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1531
+#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1535
 msgid ""
 "The downloadable file %s cannot be used as it does not have an allowed file "
 "type. Allowed types include: %s"
 msgstr "El fichero descargable %s no puede utilizarse porque no es de un tipo permitido. Los tipos permitidos incluyen: %s"
 
-#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1266
-#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1538
+#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1269
+#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1542
 msgid ""
 "The downloadable file %s cannot be used as it does not exist on the server."
 msgstr "El fichero descargable %s no puede utlizarse porque no existe en el servidor."
 
-#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1367
+#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1371
 msgid "Variation #%s of %s"
 msgstr "Variación #%s de %s"
 
-#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1411
+#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1415
 msgid "Variation SKU must be unique."
 msgstr "Variación SKU debe ser único."
 
@@ -4175,29 +4177,29 @@ msgstr "Correos electronicos"
 msgid "Email Options"
 msgstr "Correo electrónico"
 
-#: includes/admin/settings/class-wc-settings-emails.php:70
+#: includes/admin/settings/class-wc-settings-emails.php:69
 msgid "Email Sender Options"
 msgstr "Correo electrónico de Opciones Sender"
 
-#: includes/admin/settings/class-wc-settings-emails.php:70
+#: includes/admin/settings/class-wc-settings-emails.php:69
 msgid ""
 "The following options affect the sender (email address and name) used in "
 "WooCommerce emails."
 msgstr "Las siguientes opciones afectan al remitente (dirección de correo electrónico y nombre) que se utiliza en los correos electrónicos WooCommerce."
 
-#: includes/admin/settings/class-wc-settings-emails.php:73
+#: includes/admin/settings/class-wc-settings-emails.php:72
 msgid "\"From\" Name"
 msgstr "\"Desde\" Nombre"
 
-#: includes/admin/settings/class-wc-settings-emails.php:83
+#: includes/admin/settings/class-wc-settings-emails.php:82
 msgid "\"From\" Email Address"
 msgstr "\"Desde\" Dirección de correo electrónico"
 
-#: includes/admin/settings/class-wc-settings-emails.php:97
+#: includes/admin/settings/class-wc-settings-emails.php:96
 msgid "Email Template"
 msgstr "Plantilla de correo electrónico"
 
-#: includes/admin/settings/class-wc-settings-emails.php:97
+#: includes/admin/settings/class-wc-settings-emails.php:96
 msgid ""
 "This section lets you customise the WooCommerce emails. <a href=\"%s\" "
 "target=\"_blank\">Click here to preview your email template</a>. For more "
@@ -4205,61 +4207,61 @@ msgid ""
 "<code>yourtheme/woocommerce/emails/</code>."
 msgstr "Esta sección le permite personalizar los mensajes de correo electrónico WooCommerce. <a href=\"%s\" target=\"_blank\">Haga clic aquí para obtener una vista previa de su plantilla de correo electrónico</a>. Para obtener más ejemplar de control avanzado <code>woocommerce/templates/emails/</code> a <code>yourtheme/woocommerce/emails/</code>."
 
-#: includes/admin/settings/class-wc-settings-emails.php:100
+#: includes/admin/settings/class-wc-settings-emails.php:99
 msgid "Header Image"
 msgstr "Imagen de cabecera"
 
-#: includes/admin/settings/class-wc-settings-emails.php:101
+#: includes/admin/settings/class-wc-settings-emails.php:100
 msgid ""
 "Enter a URL to an image you want to show in the email's header. Upload your "
 "image using the <a href=\"%s\">media uploader</a>."
 msgstr "Introduzca una URL a una imagen que desea mostrar en el encabezado del correo electrónico. Sube tu imagen con el <a href=\"%s\">cargador de medios</a>."
 
-#: includes/admin/settings/class-wc-settings-emails.php:110
+#: includes/admin/settings/class-wc-settings-emails.php:109
 msgid "Email Footer Text"
 msgstr "Email Texto del pie"
 
-#: includes/admin/settings/class-wc-settings-emails.php:111
+#: includes/admin/settings/class-wc-settings-emails.php:110
 msgid "The text to appear in the footer of WooCommerce emails."
 msgstr "El texto que aparece en el pie de página de mensajes de correo electrónico WooCommerce."
 
-#: includes/admin/settings/class-wc-settings-emails.php:115
+#: includes/admin/settings/class-wc-settings-emails.php:114
 msgid "Powered by WooCommerce"
 msgstr "Desarrollado por WooCommerce"
 
-#: includes/admin/settings/class-wc-settings-emails.php:120
+#: includes/admin/settings/class-wc-settings-emails.php:119
 msgid "Base Colour"
 msgstr "Base Color"
 
-#: includes/admin/settings/class-wc-settings-emails.php:121
+#: includes/admin/settings/class-wc-settings-emails.php:120
 msgid ""
 "The base colour for WooCommerce email templates. Default "
 "<code>#557da1</code>."
 msgstr "El color base de plantillas de correo electrónico WooCommerce. defecto <code>#557da1</code>."
 
-#: includes/admin/settings/class-wc-settings-emails.php:130
+#: includes/admin/settings/class-wc-settings-emails.php:129
 msgid "Background Colour"
 msgstr "Color de fondo"
 
-#: includes/admin/settings/class-wc-settings-emails.php:131
+#: includes/admin/settings/class-wc-settings-emails.php:130
 msgid ""
 "The background colour for WooCommerce email templates. Default "
 "<code>#f5f5f5</code>."
 msgstr "El color de fondo para las plantillas de correo electrónico WooCommerce. defecto <code>#f5f5f5</code>."
 
-#: includes/admin/settings/class-wc-settings-emails.php:140
+#: includes/admin/settings/class-wc-settings-emails.php:139
 msgid "Email Body Background Colour"
 msgstr "Email fondo Color del cuerpo"
 
-#: includes/admin/settings/class-wc-settings-emails.php:141
+#: includes/admin/settings/class-wc-settings-emails.php:140
 msgid "The main body background colour. Default <code>#fdfdfd</code>."
 msgstr "El color de fondo principal cuerpo. defecto <code>#fdfdfd</code>."
 
-#: includes/admin/settings/class-wc-settings-emails.php:150
+#: includes/admin/settings/class-wc-settings-emails.php:149
 msgid "Email Body Text Colour"
 msgstr "Correo electrónico Texto Color del cuerpo"
 
-#: includes/admin/settings/class-wc-settings-emails.php:151
+#: includes/admin/settings/class-wc-settings-emails.php:150
 msgid "The main body text colour. Default <code>#505050</code>."
 msgstr "El color principal cuerpo del texto. defecto <code>#505050</code>."
 

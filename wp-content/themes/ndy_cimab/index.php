@@ -7,7 +7,8 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-7 apoyo">
-				<?php get_template_part( 'loop', 'index' ); ?>
+				<?php get_template_part( 'apoyo', 'emocional' ); ?>
+				<?php //get_template_part( 'loop', 'index' ); ?>
 				<?php get_template_part( 'loop', 'galleries' ) ?>
 			</div>
 

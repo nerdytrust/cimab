@@ -206,32 +206,30 @@ $(function(){
 });
 
 $(window).load(function(){
-	/*$('.flexslider').flexslider({
-		animation: "slide",
-		controlNav: "thumbnails",
-		start: function(slider){
-			$('body').removeClass('loading');
-		}
-	});*/
 	$('#carousel').flexslider({
 		animation: "slide",
+		easing: "linear",
 		controlNav: false,
 		animationLoop: false,
 		slideshow: false,
 		itemMargin: 5,
 		itemWidth: 480,
 		asNavFor: "#slider",
+		prevText: "",
+		nextText: "",
 	});
 
 	$('#slider').flexslider({
 		animation: "slide",
+		easing: "linear",
 		controlNav: false,
 		animationLoop: false,
 		slideshow: true,
 		sync: false,
 		//manualControls: '#carousel'
 		touch: true,
-		slideshowSpeed: 3600,
+		slideshowSpeed: 3800,
+		animationSpeed: 2600,
 		prevText: "",
 		nextText: "",
 	});
