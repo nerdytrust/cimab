@@ -1125,7 +1125,7 @@ div.g-apoyo span img{
 
 .woocommerce div.product img {
 	max-width: none;
-	width: 100%;
+	/*width: 100%;*/
 }
 
 .woocommerce-pagination {
