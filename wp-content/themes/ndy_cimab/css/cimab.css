@@ -1495,4 +1495,7 @@ p.form-submit {
 	.redes a {
 		width: 13%;
 	}
+	#carousel{
+		display: none;
+	}
 }
