@@ -2,7 +2,6 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="author" content="Nerdy Trust">
 	<link rel="apple-touch-icon-precomposed" href="<?php bloginfo( 'template_url' ); ?>/img/favicon-152.png">
 	<meta name="msapplication-TileColor" content="#FFFFFF">
 	<meta name="msapplication-TileImage" content="<?php bloginfo( 'template_url' ); ?>/img/favicon-144.png">

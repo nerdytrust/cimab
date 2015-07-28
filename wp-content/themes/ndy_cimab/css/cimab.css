@@ -1173,6 +1173,17 @@ div.g-apoyo span img{
 	float: left;
 }
 
+.side article.download-sidebar h2 {
+	color: #ffffff;
+	background: #804e8c !important;
+	padding: 2.5% 0;
+}
+
+.side article.download-sidebar h2 a:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+
 .video-container iframe {
 	position: absolute;
     top:0;
@@ -1415,6 +1426,10 @@ p.form-submit {
 	.nav > li{
 		margin-right: 0;
 	}
+
+	.woocommerce div.product img{
+		width: 100%;
+	}
 }
 
 @media screen and (max-width: 768px){
@@ -1495,7 +1510,16 @@ p.form-submit {
 	.redes a {
 		width: 13%;
 	}
+
 	#carousel{
 		display: none;
 	}
+
+	.img-old{
+		width: 100% !important;
+	}
+
+	/*.woocommerce div.product img{
+		width: 100%;
+	}*/
 }
