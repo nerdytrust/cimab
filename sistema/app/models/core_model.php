@@ -5,6 +5,8 @@ class Core_model extends CI_Model {
 	public function __construct(){
 		parent::__construct();
         $this->load->database();
+        //$this->key_encrypt  = $_SERVER['HASH_ENCRYPT'];
+        $this->key_encrypt  = 'i2qogr7IHw4M0UdIYGjKbHxaGLN0Aec9uSrk';
 	}
 
     /**

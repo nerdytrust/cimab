@@ -45,6 +45,7 @@ $route['newsletter']		= 'index/newsletter';
 $route['contacto']			= 'index/nuevo_contacto';
 $route['platicas']			= 'index/nueva_platica';
 $route['voluntarios']		= 'index/nuevo_voluntario';
+$route['login-process']		= 'login/login_form';
 
 
 /* End of file routes.php */
