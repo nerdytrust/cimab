@@ -36,7 +36,7 @@
 								<ul class="list-unstyled">
 									<li>Matamoros, Esq. Calle 5 de Mayo, Palo Blanco, San Pedro Garza García, C.P. 66230, Nuevo León</li>
 									<li><strong class="colours-purple">Horario de atención: </strong>lunes a viernes de <strong>9 a 18 hrs.</strong></li>
-									<li><strong class="colours-purple">Teléfonos: </strong>81.83.38.70.88 y 81.83.38.00.88</li>
+									<li><strong class="colours-purple">Teléfonos: </strong>01.81.83.38.70.88 y 01.81.83.38.00.88</li>
 									<li><strong class="colours-purple">Correo electrónico: </strong><a href="mailto:infonl@cimab.org" class="colours-black">infonl@cimab.org</a></li>
 								</ul>
 							</div>

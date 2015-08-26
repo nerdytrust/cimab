@@ -45,7 +45,7 @@
 							<?php echo __( 'San Pedro Garza García,' ); ?></br>
 							<?php echo __( 'C.P.66230, Nuevo León.' ); ?></br>
 							<?php echo __( 'Horario de atención de L-V 9 a 18hrs.' ); ?></br>
-							<?php echo __( 'Teléfonos | 81.83.70.88 y 81.83.00.88' ); ?></br>
+							<?php echo __( 'Teléfonos | 01.81.83.38.00.88 y 01.81.83.38.70.88' ); ?></br>
 							<?php echo __( 'infonl@cimab.org' ); ?>
 						</p>
 					</div>	

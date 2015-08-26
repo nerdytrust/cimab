@@ -72,7 +72,7 @@
 						<p>Tel. 5574.9058 / 5574.9073</p>
 						<hr>
 						<strong class="text-uppercase">&bull; En Monterrey</strong>
-						<p>Tel. 81.83.38.70.88</p>
+						<p>Tel. 01.81.83.38.70.88</p>
 					</div>
 				</div>
 
