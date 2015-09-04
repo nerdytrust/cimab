@@ -143,20 +143,20 @@ class Index extends CI_Controller {
 		$data['ip']				= $this->input->ip_address();
 		$data['browser']		= $this->input->user_agent();
 		$data 					= $this->security->xss_clean( $data );
-		$speak				= $this->core->add_speak( $data );
+		$speak					= $this->core->add_speak( $data );
 		if ( $speak !== TRUE )
 			return $this->output
 					->set_content_type('application/json')
 					->set_output( json_encode( array( 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar enviar tu solicitud.</span>' ) ) );
 
 		$this->email->from( 'no-reply@cimab.org', '[No Responser] Auto-mensaje - Portal Web Fundación CIMAB' );
-        $this->email->to( 'info@cimab.org' );
-        $this->email->subject( 'Solicitud para pláticas de sensibilización' );
-        $this->email->message( $this->load->view( 'mail/solicitud_platica', $data, TRUE ) );
-        if ( ! $this->email->send() )
-        	return $this->output
-					->set_content_type('application/json')
-					->set_output( json_encode( array( 'success' => true, 'messages' => '<span class="success"><b>¡Ups!</b> Ocurrió un problema al intentar enviar por correo electrónico tu solicitud, pero ya fué guardada en nuestro sistema, en breve nos pondremos en contacto contigo.</span>' ) ) );
+		$this->email->to( 'info@cimab.org' );
+		$this->email->subject( 'Solicitud para pláticas de sensibilización' );
+		$this->email->message( $this->load->view( 'mail/solicitud_platica', $data, TRUE ) );
+		if ( ! $this->email->send() )
+			return $this->output
+				->set_content_type('application/json')
+				->set_output( json_encode( array( 'success' => true, 'messages' => '<span class="success"><b>¡Ups!</b> Ocurrió un problema al intentar enviar por correo electrónico tu solicitud, pero ya fué guardada en nuestro sistema, en breve nos pondremos en contacto contigo.</span>' ) ) );
 
 		return $this->output
 				->set_content_type('application/json')
