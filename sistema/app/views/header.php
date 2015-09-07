@@ -30,7 +30,7 @@
 		<div class="row redes navbar-fixed-top">
 			<div class="container text-right">
 				<div class="col-md-12 color-white">
-					<span class="title-system">Sistema de Registro de Pacientes</span>
+					<span class="title-system">Sistema de Registro de Entrevista inicial para pacientes que reciben apoyo emocional</span>
 					<span class="logo-system">
 						<img src="<?php echo base_url(); ?>img/logo_cimab.png" alt="" class="pull-right">
 					</span>

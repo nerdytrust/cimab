@@ -1,3 +1,7 @@
+/**
+ * @author Eric Bravo <http://twitter.com/@gmaniako>
+ */
+
 $(function(){
 	var opts = {
 		lines: 13,
