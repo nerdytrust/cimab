@@ -27,6 +27,7 @@ $(function(){
 
 	$('#form_login').submit(function(){
 		var spinner = new Spinner(opts).spin(target);
+		console.log($(this));
 		$(this).ajaxSubmit({
 			beforeSubmit: function(){
 				$('#foo').css('display','block');

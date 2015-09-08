@@ -57,6 +57,11 @@
 									<div class="col-md-12">
 										<select name="" id="" class="form-control">
 											<option value="0">Entidad Federativa</option>
+											<?php
+												foreach($estados as $estado){
+													echo '<option value="'.$estado->id.'">'.$estado->nombre.'</option>';
+												}
+											?>
 										</select>
 									</div>
 								</div>

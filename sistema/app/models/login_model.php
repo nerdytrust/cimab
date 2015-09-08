@@ -10,13 +10,13 @@ class Login_model extends CI_Model {
 	}
 
 	public function get_login( $credentials ){
-		$this->db->select( 'uid_user, name, lastname, role');
-        $this->db->select( "AES_DECRYPT( email,'{$this->key_encrypt}') AS email", FALSE );
-        $this->db->where( 'email', "AES_ENCRYPT('{$this->db->escape_str( $credentials['email'] )}','{$this->key_encrypt}')", FALSE );
-        $this->db->where( 'password', "AES_ENCRYPT('{$this->db->escape_str( $credentials['password'] )}','{$this->key_encrypt}')", FALSE );
-        $result = $this->db->get( $this->db->dbprefix( 'system_users' ) );
-        if ( $result->num_rows() === 1 ) return $result->row();
-        else return FALSE;
+        	$this->db->select( 'uid_user, name, lastname, role');
+                $this->db->select( "AES_DECRYPT( email,'{$this->key_encrypt}') AS email", FALSE );
+                $this->db->where( 'email', "AES_ENCRYPT('{$this->db->escape_str( $credentials['email'] )}','{$this->key_encrypt}')", FALSE );
+                $this->db->where( 'password', "AES_ENCRYPT('{$this->db->escape_str( $credentials['password'] )}','{$this->key_encrypt}')", FALSE );
+                $result = $this->db->get( $this->db->dbprefix( 'system_users' ) );
+                if ( $result->num_rows() === 1 ) return $result->row();
+                        else return FALSE;
 	}
 	
 }

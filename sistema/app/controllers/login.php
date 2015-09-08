@@ -10,13 +10,14 @@ class Login extends CI_Controller {
 
 	public function index(){
 		if ( $this->session->userdata( 'session' ) )
-			redirect('sistema/pacientes');
+			redirect(base_url('pacientes'));
 
 		$data['title'] = 'Iniciar Sesión';
 		$this->load->view('login/index', $data);
 	}
 
 	public function login_form(){
+
 		if ( ! $this->input->is_ajax_request() )
 			return $this->output
 					->set_content_type( 'application/json' )
@@ -34,6 +35,7 @@ class Login extends CI_Controller {
 		$data['password']	= $this->input->post( 'password' );
 		$data 				= $this->security->xss_clean( $data );
 		$credentials		= $this->core->get_login( $data );
+
 		if ( $credentials === FALSE )
 			return $this->output
 					->set_content_type('application/json')
@@ -53,6 +55,11 @@ class Login extends CI_Controller {
 		return $this->output
 				->set_content_type('application/json')
 				->set_output( json_encode( [ 'success' => true, 'redirect' => 'pacientes' ] ) );
+	}
+
+	public function logout(){
+		$this->session->sess_destroy();
+		redirect(base_url('login'));
 	}
 
 }

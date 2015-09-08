@@ -30,9 +30,13 @@
 		<div class="row redes navbar-fixed-top">
 			<div class="container text-right">
 				<div class="col-md-12 color-white">
+				<?php
+					if( $this->session->userdata( 'session' ) )
+						echo '<span class="text-left title-system"><a href="'.base_url('logout').'" class="salir">Salir</a></span>';
+				?>
 					<span class="title-system">Sistema de Registro de Entrevista inicial para pacientes que reciben apoyo emocional</span>
 					<span class="logo-system">
-						<img src="<?php echo base_url(); ?>img/logo_cimab.png" alt="" class="pull-right">
+						<img src="<?=base_url();?>img/logo_cimab.png" alt="" class="pull-right">
 					</span>
 				</div>
 			</div>

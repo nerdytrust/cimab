@@ -5,14 +5,15 @@ class Pacientes extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
+		if ( ! $this->session->userdata( 'session' ) )
+			redirect(base_url('login'));
+		
 	}
 
 	public function index(){
-		/*if ( ! $this->session->userdata( 'session' ) )
-			redirect('sistema/login');
-		*/
-
-		$data['title'] = 'Formulario de Entrevista para Pacientes que reciben apoyo emocional';
+		$this->load->model( 'address_model', 'address' );
+		$data['title']   = 'Formulario de Entrevista para Pacientes que reciben apoyo emocional';
+		$data['estados'] = $this->address->get_federal_entities(); 
 		$this->load->view('pacientes/generales', $data );
 	}
 

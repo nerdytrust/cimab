@@ -9,7 +9,7 @@
 						<h3 class="panel-title">Login</h3>
 					</div>
 					<div class="panel-body">
-						<?php echo form_open( 'login-process', [ 'id' => 'form_login', 'name' => 'form_login', 'method' => 'POST', 'role' => 'form', 'autocomplete' => 'off' ] ); ?>
+						<?php echo form_open( base_url().'login-process', [ 'id' => 'form_login', 'name' => 'form_login', 'method' => 'POST', 'role' => 'form', 'autocomplete' => 'off' ] ); ?>
 							<div class="form-group">
 								<input type="email" name="email" class="form-control" placeholder="E-mail">
 							</div>

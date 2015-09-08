@@ -196,3 +196,11 @@ body{
 	height: 35px;
 	padding-top: 8px;
 }
+
+.text-left{
+	text-align: left;
+}
+
+a.salir{
+ color: #fff;
+}
