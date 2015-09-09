@@ -33,19 +33,36 @@ class Pacientes extends CI_Controller {
 	}
 
 	public function add_patient(){
+		$this->load->model( 'patient_model', 'core' );
 		if ( ! $this->input->is_ajax_request() )
 			return $this->output
 					->set_content_type( 'application/json' )
 					->set_output( json_encode( [ 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar almacenar tu información.</span>' ] ) );
 
-		$this->form_validation->set_rules( 'name', 'name', 'trim|required' );
-		//$this->form_validation->set_rules( 'password', 'Contraseña', 'trim|required|min_length[8]' );
+		$this->form_validation->set_rules( 'name', 'Nombre', 'trim|required' );
+		$this->form_validation->set_rules( 'federal_entity', 'Entidad Federativa', 'required' );
+		$this->form_validation->set_rules( 'town', 'Municipio', 'required' );
 
 		if ( $this->form_validation->run() === FALSE )
 			return $this->output
 					->set_content_type( 'application/json' )
-					->set_output( json_encode( [ 'success' => false, 'errors' => validation_errors('<span class="error">','</span>') ] ) );
+					->set_output( json_encode( [ 'success' => false, 'errors' => validation_errors('<span class="error">','</span>') ] ) ); 
 
+		$data = $this->input->post();
+		$birthday = explode("/", $this->input->post('birthday'));
+		$birthday = $birthday[2].'-'.$birthday[1].'-'.$birthday[0];
+		$data['birthday'] = $birthday;
+		//$data = $this->security->xss_clean( $data );
+		$save_patient = $this->core->add_patient( $data );
+		
+		if ( $save_patient === FALSE )
+			return $this->output
+					->set_content_type('application/json')
+					->set_output( json_encode( [ 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar registrarte en nuestra lista de subscriptores.</span>' ] ) );
+			
+		return $this->output
+				->set_content_type('application/json')
+				->set_output( json_encode( [ 'success' => true, 'redirect' => 'pacientes/diagnostico' ] ) );
 	}
 
 	public function town( $idFederalEntity ){

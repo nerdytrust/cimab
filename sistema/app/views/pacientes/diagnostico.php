@@ -11,42 +11,42 @@
 						<?php echo form_open( 'add-patient', [ 'class' => 'form-horizontal', 'id' => 'form_add_patient', 'name' => 'form_add_patient', 'method' => 'POST', 'role' => 'form', 'autocomplete' => 'off' ] ); ?>
 							<div class="col-md-12">
 								<div class="form-group">
-									<label for="name" class="col-md-12">Antes del diagnóstico ¿Usted alguna vez se realizó?</label>
+									<label for="" class="col-md-12">Antes del diagnóstico ¿Usted alguna vez se realizó?</label>
 									<div class="col-md-12">
 										<div class="radio">
 											<span class="group-option-title">Autoexploración mamaria</span>
 											<label>
-												<input type="radio">No
+												<input name="b_aut_mamaria" value="0" type="radio">No
 											</label>
 											<label>
-												<input type="radio">Si
+												<input name="b_aut_mamaria" value="1" type="radio">Si
 											</label>
 										</div>
 										<div class="radio">
 											<span class="group-option-title">Exploración clínica</span>
 											<label>
-												<input type="radio">No
+												<input name="b_exp_clinica" value="0" type="radio">No
 											</label>
 											<label>
-												<input type="radio">Si
+												<input name="b_exp_clinica" value="1" type="radio">Si
 											</label>
 										</div>
 										<div class="radio">
 											<span class="group-option-title">Ultrasonido mamario</span>
 											<label>
-												<input type="radio">No
+												<input name="b_ultrasonido" value="0" type="radio">No
 											</label>
 											<label>
-												<input type="radio">Si
+												<input name="b_ultrasonido" value="1" type="radio">Si
 											</label>
 										</div>
 										<div class="radio">
 											<span class="group-option-title">Mastografía</span>
 											<label>
-												<input type="radio">No
+												<input name="b_mastografia" value="0" type="radio">No
 											</label>
 											<label>
-												<input type="radio">Si
+												<input name="b_mastografia" value="1" type="radio">Si
 											</label>
 										</div>
 									</div>
@@ -54,84 +54,84 @@
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<label for="birthday" class="col-md-12">¿En qué Institución de Salud recibe atención médica?</label>
+									<label for="" class="col-md-12">¿En qué Institución de Salud recibe atención médica?</label>
 									<div class="col-md-12">
 										<label class="checkbox-inline">
-											<input type="checkbox">IMSS
+											<input name="imss" value="1" type="checkbox">IMSS
 										</label>
 										<label class="checkbox-inline">
-											<input type="checkbox">ISSSTE
+											<input name="issste" value="1" type="checkbox">ISSSTE
 										</label>
 										<label class="checkbox-inline">
-											<input type="checkbox">Seguro Popular
+											<input name="popular" value="1" type="checkbox">Seguro Popular
 										</label>
 										<label class="checkbox-inline">
-											<input type="checkbox">Servicio Privado
+											<input name="privado" value="1" type="checkbox">Servicio Privado
 										</label>
 										<label class="checkbox-inline">
-											<input type="checkbox">Otro
+											<input name="seguro_otro" value="1" type="checkbox">Otro
 										</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-md-12">
-										<input type="text" class="form-control" placeholder="¿Cuál otra?">
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="" class="col-md-12">¿En cuál Hospital o Clínica es atendida?</label>
-									<div class="col-md-12">
-										<input type="text" class="form-control" placeholder="¿En cuál Hospital o Clínica es atendida?">
+										<input type="text" name="otro_seguro" class="form-control" placeholder="¿Cuál otra?">
 									</div>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<label for="telephone" class="col-md-12">¿Cuál es el nombre del médico tratante?</label>
+									<label for="hospital" class="col-md-12">¿En cuál Hospital o Clínica es atendida?</label>
 									<div class="col-md-12">
-										<input type="tel" class="form-control" placeholder="¿Cuál es el nombre del médico tratante?">
+										<input type="text" name="hospital" id="hospital" class="form-control" placeholder="¿En cuál Hospital o Clínica es atendida?">
 									</div>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<label for="cellphone" class="col-md-12">¿En qué fecha aproximadamente le dijeron que tenía cáncer? (DD/MM/AA)?</label>
+									<label for="medico" class="col-md-12">¿Cuál es el nombre del médico tratante?</label>
 									<div class="col-md-12">
-										<input type="tel" class="form-control" placeholder="¿En qué fecha aproximadamente le dijeron que tenía cáncer? (DD/MM/AA)?">
+										<input type="tel" name="medico" id="medico" class="form-control" placeholder="¿Cuál es el nombre del médico tratante?">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="fecha_cancer" class="col-md-12">¿En qué fecha aproximadamente le dijeron que tenía cáncer? (DD/MM/AA)?</label>
+									<div class="col-md-12">
+										<input type="tel" name="fecha_cancer" id="fecha_cancer" class="form-control" placeholder="¿En qué fecha aproximadamente le dijeron que tenía cáncer? (DD/MM/AA)?">
 									</div>
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<label for="birthday" class="col-md-12">¿De qué forma fue diagnosticada?</label>
+									<label for="" class="col-md-12">¿De qué forma fue diagnosticada?</label>
 									<div class="col-md-12">
 										<label class="checkbox-inline">
-											<input type="checkbox">Examen de rutina
+											<input name="rutina" value="1" type="checkbox">Examen de rutina
 										</label>
 										<label class="checkbox-inline">
-											<input type="checkbox">En una campaña
+											<input name="campaña" value="1" type="checkbox">En una campaña
 										</label>
 										<label class="checkbox-inline">
-											<input type="checkbox">Yo detecté algo anormal
+											<input name="yo" value="1" type="checkbox">Yo detecté algo anormal
 										</label>
 										<label class="checkbox-inline">
-											<input type="checkbox">Otro
+											<input name="forma_otro" value="1" type="checkbox">Otro
 										</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-md-12">
-										<input type="text" class="form-control" placeholder="¿Cuál otra?">
+										<input type="text" name="forma" class="form-control" placeholder="¿Cuál otra?">
 									</div>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<label for="" class="col-md-12">¿Cuál era su edad al momento del diagnóstico?</label>
+									<label for="edad_diagnostico" class="col-md-12">¿Cuál era su edad al momento del diagnóstico?</label>
 									<div class="col-md-12">
-										<select name="" id="" class="form-control">
+										<select name="edad_diagnostico" id="edad_diagnostico" class="form-control">
 											<option value="0">Edad</option>
 										</select>
 									</div>
@@ -139,99 +139,99 @@
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<label for="" class="col-md-12">¿Qué fue lo primero que pensó cuando le dieron la noticia del cáncer?</label>
+									<label for="noticia" class="col-md-12">¿Qué fue lo primero que pensó cuando le dieron la noticia del cáncer?</label>
 									<div class="col-md-12">
-										<input type="text" class="form-control" placeholder="¿Qué fue lo primero que pensó cuando le dieron la noticia del cáncer?">
+										<input type="text" name="noticia" id="noticia" class="form-control" placeholder="¿Qué fue lo primero que pensó cuando le dieron la noticia del cáncer?">
 									</div>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<label for="" class="col-md-12">¿Conoce su tipo de cáncer de mama?</label>
+									<label for="tipo_cancer" class="col-md-12">¿Conoce su tipo de cáncer de mama?</label>
 									<div class="col-md-12">
 										<label class="radio-inline">
-											<input type="radio">No sé
+											<input name="tipo_cancer" vlaue="0" type="radio">No sé
 										</label>
 										<label class="radio-inline">
-											<input type="radio">ER+
+											<input name="tipo_cancer" vlaue="1" type="radio">ER+
 										</label>
 										<label class="radio-inline">
-											<input type="radio">Her2
+											<input name="tipo_cancer" vlaue="2" type="radio">Her2
 										</label>
 										<label class="radio-inline">
-											<input type="radio">Triple negativo
-										</label>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="" class="col-md-12">¿Conoce la etapa clínica en la que se le detectó el cáncer?</label>
-									<div class="col-md-12">
-										<label class="radio-inline">
-											<input type="radio">No sé
-										</label>
-										<label class="radio-inline">
-											<input type="radio">Etapa 1
-										</label>
-										<label class="radio-inline">
-											<input type="radio">Etapa 2
-										</label>
-										<label class="radio-inline">
-											<input type="radio">Etapa 3
-										</label>
-										<label class="radio-inline">
-											<input type="radio">Etapa 4
+											<input name="tipo_cancer" vlaue="3" type="radio">Triple negativo
 										</label>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<label for="" class="col-md-12">¿En qué fecha aproximadamente inicio el tratamiento? (DD/MM/AA)</label>
+									<label for="etapa_cancer" class="col-md-12">¿Conoce la etapa clínica en la que se le detectó el cáncer?</label>
 									<div class="col-md-12">
-										<input type="text" name="" id="" class="form-control" placeholder="¿En qué fecha aproximadamente inicio el tratamiento? (DD/MM/AA)">
+										<label class="radio-inline">
+											<input name="etapa_cancer" vlaue="0" type="radio">No sé
+										</label>
+										<label class="radio-inline">
+											<input name="etapa_cancer" vlaue="1" type="radio">Etapa 1
+										</label>
+										<label class="radio-inline">
+											<input name="etapa_cancer" vlaue="2" type="radio">Etapa 2
+										</label>
+										<label class="radio-inline">
+											<input name="etapa_cancer" vlaue="3" type="radio">Etapa 3
+										</label>
+										<label class="radio-inline">
+											<input name="etapa_cancer" vlaue="4" type="radio">Etapa 4
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="fecha_tratamiento" class="col-md-12">¿En qué fecha aproximadamente inicio el tratamiento? (DD/MM/AA)</label>
+									<div class="col-md-12">
+										<input type="text" name="fecha_tratamiento" id="fecha_tratamiento" class="form-control" placeholder="¿En qué fecha aproximadamente inicio el tratamiento? (DD/MM/AA)">
 									</div>
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<label for="" class="col-md-12">¿Qué tipo de tratamiento recibe, recibió o recibirá?</label>
+									<label for="tipo_tratamiento" class="col-md-12">¿Qué tipo de tratamiento recibe, recibió o recibirá?</label>
 									<div class="col-md-12">
 										<div class="radio">
 											<span class="group-option-title">Cirugía</span>
 											<label>
-												<input type="radio">Primer lugar
+												<input name="tipo_tratamiento" value="0" type="radio">Primer lugar
 											</label>
 											<label>
-												<input type="radio">Segundo lugar
+												<input name="tipo_tratamiento" value="1" type="radio">Segundo lugar
 											</label>
 											<label>
-												<input type="radio">Tercer lugar
+												<input name="tipo_tratamiento" value="2" type="radio">Tercer lugar
 											</label>
 										</div>
 										<div class="radio">
 											<span class="group-option-title">Quimioterapia</span>
 											<label>
-												<input type="radio">Primer lugar
+												<input name="quimioterapia" value="0" type="radio">Primer lugar
 											</label>
 											<label>
-												<input type="radio">Segundo lugar
+												<input name="quimioterapia" value="1" type="radio">Segundo lugar
 											</label>
 											<label>
-												<input type="radio">Tercer lugar
+												<input name="quimioterapia" value="2" type="radio">Tercer lugar
 											</label>
 										</div>
 										<div class="radio">
 											<span class="group-option-title">Radioterapia</span>
 											<label>
-												<input type="radio">Primer lugar
+												<input name="radioterapia" value="0" type="radio">Primer lugar
 											</label>
 											<label>
-												<input type="radio">Segundo lugar
+												<input name="radioterapia" value="0" type="radio">Segundo lugar
 											</label>
 											<label>
-												<input type="radio">Tercer lugar
+												<input name="radioterapia" value="0" type="radio">Tercer lugar
 											</label>
 										</div>
 									</div>

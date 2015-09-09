@@ -39,7 +39,7 @@ class Login extends CI_Controller {
 		if ( $credentials === FALSE )
 			return $this->output
 					->set_content_type('application/json')
-					->set_output( json_encode( [ 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar registrarte en nuestra lista de subscriptores.</span>' ] ) );
+					->set_output( json_encode( [ 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> El usuario y/o contraseña no son validos, por favor intente de nuevo.</span>' ] ) );
 
 		$session = [
 			'session'	 	=> TRUE,

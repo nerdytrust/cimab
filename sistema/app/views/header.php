@@ -25,7 +25,7 @@
 	<?= link_tag('css/datepicker.css'); ?>
 </head>
 <body>
-	<div class="foo"></div>
+	<div id="foo"></div>
 	<div id="messages"></div>
 	<div class="container-fluid">
 		<div class="row redes navbar-fixed-top">

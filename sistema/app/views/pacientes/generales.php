@@ -21,16 +21,16 @@
 								<div class="form-group">
 									<label for="birthday" class="col-md-12">Fecha de Nacimiento (DD/MM/AA)</label>
 									<div class="col-md-12">
-										<input type="text" name="birthday" id="birthday" class="form-control datepicker" placeholder="Fecha de Nacimiento (DD/MM/AA)">
+										<input type="text" name="birthday" id="birthday" class="datepicker form-control" placeholder="Fecha de Nacimiento (DD/MM/AA)">
 									</div>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<label for="civilStatus" class="col-md-12">Estado Civil</label>
+									<label for="civil_status" class="col-md-12">Estado Civil</label>
 									<div class="col-md-12">
-										<select name="civilStatus" id="civilStatus" class="form-control">
-											<option value="0">Estado Civil</option>
+										<select name="civil_status" id="civil_status" class="form-control">
+											<option value="">Estado Civil</option>
 											<option value="1">Soltero(a)</option>
 											<option value="2">Casado(a)</option>
 											<option value="3">Divorciado(a)</option>
@@ -58,10 +58,10 @@
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<label for="federal-entity" class="col-md-12">Entidad Federativa</label>
+									<label for="federal_entity" class="col-md-12">Entidad Federativa</label>
 									<div class="col-md-12">
-										<select name="federal-entity" id="federal-entity" class="form-control">
-											<option value="0">Entidad Federativa</option>
+										<select name="federal_entity" id="federal_entity" class="form-control">
+											<option value="">Entidad Federativa</option>
 											<?php
 												foreach($estados as $estado){
 													echo '<option value="'.$estado->id.'">'.$estado->nombre.'</option>';
@@ -76,7 +76,7 @@
 									<label for="town" class="col-md-12">Delegación/Municipio</label>
 									<div class="col-md-12">
 										<select name="town" id="town" class="form-control">
-											<option value="0">Delegación/Municipio</option>
+											<option value="">Delegación/Municipio</option>
 										</select>
 									</div>
 								</div>
@@ -86,7 +86,7 @@
 									<label for="education" class="col-md-12">Escolaridad</label>
 									<div class="col-md-12">
 										<select name="education" id="education" class="form-control">
-											<option value="0">Escolaridad</option>
+											<option value="">Escolaridad</option>
 											<option value="1">Ninguna</option>
 											<option value="2">Primaria</option>
 											<option value="3">Secundaria</option>
@@ -110,7 +110,7 @@
 									<label for="relation" class="col-md-12">¿Con quién vive?</label>
 									<div class="col-md-3">
 										<select name="relation" id="relation" class="form-control">
-											<option value="0">Parentesco</option>
+											<option value="">Parentesco</option>
 											<option value="1">Esposo(a)</option>
 											<option value="2">Hijo(a)</option>
 											<option value="3">Padre/Madre</option>
@@ -121,7 +121,7 @@
 									</div>
 									<div class="col-md-3">
 										<select name="age_ralation" id="age_ralation" class="form-control">
-											<option value="0">Edad</option>
+											<option value="">Edad</option>
 											<?php 
 												for($i=0;$i<=99;$i++){
 													echo '<option val="'.$i.'">'.$i.'</option>';
@@ -152,10 +152,10 @@
 									<label for="b_receive_support" class="col-md-12">¿Siente que le ha faltado recibir algún tipo de apoyo o ayuda de alguien que esperaba que le ayudara?</label>
 									<div class="col-md-2">
 										<label class="radio-inline">
-											<input name="b_receive_support" type="radio">No
+											<input name="b_receive_support" value="0" type="radio">No
 										</label>
 										<label class="radio-inline">
-											<input name="b_receive_support" type="radio">Si
+											<input name="b_receive_support" value="1" type="radio">Si
 										</label>
 									</div>
 									<div class="col-md-10">
@@ -168,10 +168,10 @@
 									<label for="b_relation_psicology" class="col-md-12">¿Considera que algún(os) miembro(s) de su familia necesita(n) recibir terapia psicológica?</label>
 									<div class="col-md-2">
 										<label class="radio-inline">
-											<input name="b_relation_psicology" type="radio">No
+											<input name="b_relation_psicology" value="0" type="radio">No
 										</label>
 										<label class="radio-inline">
-											<input name="b_relation_psicology" type="radio">Si
+											<input name="b_relation_psicology" value="1" type="radio">Si
 										</label>
 									</div>
 									<div class="col-md-10">
@@ -192,10 +192,10 @@
 									<label for="b_employment_know" class="col-md-12">¿En su empleo saben acerca de su enfermedad?</label>
 									<div class="col-md-2">
 										<label class="radio-inline">
-											<input name="b_employment_know" type="radio">No
+											<input name="b_employment_know" value="0" type="radio">No
 										</label>
 										<label class="radio-inline">
-											<input name="b_employment_know" type="radio">Si
+											<input name="b_employment_know" value="1" type="radio">Si
 										</label>
 									</div>
 									<div class="col-md-10">
@@ -208,10 +208,10 @@
 									<label for="b_support_boss" class="col-md-12">¿Ha recibido apoyo de su jefe inmediato o compañeros de trabajo durante su enfermedad?</label>
 									<div class="col-md-2">
 										<label class="radio-inline">
-											<input name="b_support_boss" type="radio">No
+											<input name="b_support_boss" value="0" type="radio">No
 										</label>
 										<label class="radio-inline">
-											<input name="b_support_boss" type="radio">Si
+											<input name="b_support_boss" value="1" type="radio">Si
 										</label>
 									</div>
 									<div class="col-md-10">
@@ -229,9 +229,9 @@
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<label for="support" class="col-md-12">¿Qué tipo de apoyo espera de Cim*ab?</label>
+									<label for="type_support" class="col-md-12">¿Qué tipo de apoyo espera de Cim*ab?</label>
 									<div class="col-md-12">
-										<input type="text" name="support" id="support" class="form-control" placeholder="¿Qué tipo de apoyo espera de Cim*ab?">
+										<input type="text" name="type_support" id="type_support" class="form-control" placeholder="¿Qué tipo de apoyo espera de Cim*ab?">
 									</div>
 								</div>
 							</div>
@@ -240,10 +240,10 @@
 									<label for="b_other_organization" class="col-md-12">¿Asiste a otra organización?</label>
 									<div class="col-md-2">
 										<label class="radio-inline">
-											<input name="b_other_organization" type="radio">No
+											<input name="b_other_organization" value="0" type="radio">No
 										</label>
 										<label class="radio-inline">
-											<input name="b_other_organization" type="radio">Si
+											<input name="b_other_organization" value="1" type="radio">Si
 										</label>
 									</div>
 									<div class="col-md-5">

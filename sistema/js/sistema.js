@@ -34,9 +34,9 @@ $(function(){
 			success: function(data){
 				if ( data.success != true ){
 					$('#messages').html( data.errors );
-					$('#messages').hide().slideDown("slow");
-					$("#messages").delay(3500).slideUp(800, function(){
-					$("#messages").html("");
+					$('#messages').hide().slideDown('slow');
+					$('#messages').delay(3000).slideUp(800, function(){
+					$('#messages').html('');
 						spinner.stop();
 						$('#foo').css('display','none');
 					});
@@ -51,16 +51,16 @@ $(function(){
 						$('#foo').css('display','none');
 						$('#form_nueva_platica')[0].reset();
 					});
-					 */
+					 
 					spinner.stop();
-					$('#foo').css('display','none');
+					$('#foo').css('display','none');*/
 					window.location.href = data.redirect;
 				}
 			},
 			error: function(data){
 				$('#messages').html(data.errors);
 				$('#messages').hide().slideDown('slow');
-				$('#messages').delay(3500).slideUp(800, function(){
+				$('#messages').delay(3000).slideUp(800, function(){
 				$('#messages').html('');
 					spinner.stop();
 					$('#foo').css('display','none');
@@ -72,6 +72,7 @@ $(function(){
 
 	$('#form_add_patient').submit(function(){
 		var spinner = new Spinner(opts).spin(target);
+		console.log(spinner);
 		$(this).ajaxSubmit({
 			beforeSubmit: function(){
 				$('#foo').css('display','block');
@@ -79,22 +80,20 @@ $(function(){
 			success: function(data){
 				if ( data.success != true ){
 					$('#messages').html( data.errors );
-					$('#messages').hide().slideDown("slow");
-					$("#messages").delay(3500).slideUp(800, function(){
-					$("#messages").html("");
+					$('#messages').hide().slideDown('slow');
+					$('#messages').delay(3000).slideUp(800, function(){
+					$('#messages').html('');
 						spinner.stop();
 						$('#foo').css('display','none');
 					});
 				} else {
-					spinner.stop();
-					$('#foo').css('display','none');
 					window.location.href = data.redirect;
 				}
 			},
 			error: function(data){
 				$('#messages').html(data.errors);
 				$('#messages').hide().slideDown('slow');
-				$('#messages').delay(3500).slideUp(800, function(){
+				$('#messages').delay(3000).slideUp(800, function(){
 				$('#messages').html('');
 					spinner.stop();
 					$('#foo').css('display','none');
@@ -104,7 +103,7 @@ $(function(){
 		return false;
 	});
 
-	$('#federal-entity').change(function(){
+	$('#federal_entity').change(function(){
 		var idFederalEntity = $(this).val();
 		var optionMun = '<option>Cargando municipios ...</option>';
 		$('#town').html(optionMun);
@@ -117,6 +116,10 @@ $(function(){
 		});
 	});
 
-	
+	$('.datepicker').datepicker({
+   		format: 'dd/mm/yyyy'
+   	}).on('changeDate', function (ev) {
+    	$(this).datepicker('hide');
+	});
 
 });
