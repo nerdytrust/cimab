@@ -45,6 +45,7 @@ $route['newsletter']		= 'index/newsletter';
 $route['contacto']			= 'index/nuevo_contacto';
 $route['platicas']			= 'index/nueva_platica';
 $route['voluntarios']		= 'index/nuevo_voluntario';
+$route['add-patient']		= 'pacientes/add_patient';
 $route['login-process']		= 'login/login_form';
 $route['logout']  			= 'login/logout';
 

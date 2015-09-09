@@ -9,9 +9,17 @@ class Address_model extends CI_Model {
 
 	public function get_federal_entities(){
         	$this->db->select( 'id, nombre');
-                $result = $this->db->get( $this->db->dbprefix( 'system_estados' ) );
-                if ( $result->num_rows() > 0 ) return $result->result_object();
-                        else return FALSE;
+            $result = $this->db->get( $this->db->dbprefix( 'system_estados' ) );
+            if ( $result->num_rows() > 0 ) return $result->result_object();
+            else return FALSE;
+	}
+
+	public function get_town( $idFederalEntity ){
+        	$this->db->select( 'id, nombre');
+        	$this->db->where( 'estado_id', $idFederalEntity);
+            $result = $this->db->get( $this->db->dbprefix( 'system_municipios' ) );
+            if ( $result->num_rows() > 0 ) return $result->result_object();
+            else return FALSE;
 	}
 	
 }

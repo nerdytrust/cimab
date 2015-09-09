@@ -21,7 +21,8 @@
 	<meta http-equiv="Cache-control" content="no-cache">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<?php echo link_tag('css/sistema.css'); ?>
+	<?= link_tag('css/sistema.css'); ?>
+	<?= link_tag('css/datepicker.css'); ?>
 </head>
 <body>
 	<div class="foo"></div>

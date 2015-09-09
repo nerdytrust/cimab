@@ -27,7 +27,6 @@ $(function(){
 
 	$('#form_login').submit(function(){
 		var spinner = new Spinner(opts).spin(target);
-		console.log($(this));
 		$(this).ajaxSubmit({
 			beforeSubmit: function(){
 				$('#foo').css('display','block');
@@ -60,9 +59,9 @@ $(function(){
 			},
 			error: function(data){
 				$('#messages').html(data.errors);
-				$('#messages').hide().slideDown("slow");
-				$("#messages").delay(3500).slideUp(800, function(){
-				$("#messages").html("");
+				$('#messages').hide().slideDown('slow');
+				$('#messages').delay(3500).slideUp(800, function(){
+				$('#messages').html('');
 					spinner.stop();
 					$('#foo').css('display','none');
 				});
@@ -70,4 +69,54 @@ $(function(){
 		});
 		return false;
 	});
+
+	$('#form_add_patient').submit(function(){
+		var spinner = new Spinner(opts).spin(target);
+		$(this).ajaxSubmit({
+			beforeSubmit: function(){
+				$('#foo').css('display','block');
+			},
+			success: function(data){
+				if ( data.success != true ){
+					$('#messages').html( data.errors );
+					$('#messages').hide().slideDown("slow");
+					$("#messages").delay(3500).slideUp(800, function(){
+					$("#messages").html("");
+						spinner.stop();
+						$('#foo').css('display','none');
+					});
+				} else {
+					spinner.stop();
+					$('#foo').css('display','none');
+					window.location.href = data.redirect;
+				}
+			},
+			error: function(data){
+				$('#messages').html(data.errors);
+				$('#messages').hide().slideDown('slow');
+				$('#messages').delay(3500).slideUp(800, function(){
+				$('#messages').html('');
+					spinner.stop();
+					$('#foo').css('display','none');
+				});
+			}
+		});
+		return false;
+	});
+
+	$('#federal-entity').change(function(){
+		var idFederalEntity = $(this).val();
+		var optionMun = '<option>Cargando municipios ...</option>';
+		$('#town').html(optionMun);
+		$.getJSON( base_url+'pacientes/town/'+idFederalEntity, function( data ) {
+			optionMun = '';
+			$.each(data, function( index, municipio ) {
+  				optionMun += '<option value="'+municipio.id+'">'+municipio.nombre+'</option>';
+			});
+			$('#town').html(optionMun);
+		});
+	});
+
+	
+
 });
