@@ -54,7 +54,7 @@ class Login extends CI_Controller {
 
 		return $this->output
 				->set_content_type('application/json')
-				->set_output( json_encode( [ 'success' => true, 'redirect' => 'pacientes' ] ) );
+				->set_output( json_encode( [ 'success' => true, 'redirect' => 'pacientes/list_patients' ] ) );
 	}
 
 	public function logout(){

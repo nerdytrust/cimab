@@ -21,6 +21,13 @@ body{
 	padding-top: 110px;
 }
 
+.margin-top-10{
+	margin-top: 10px;
+}
+
+.margin-bottom-10{
+	margin-bottom: 10px;
+}
 #foo{
     background-color: #00aba2;
     display: none;
@@ -187,7 +194,7 @@ body{
 }
 
 .padding-top-md {
-	padding-top: 35px;
+	/*padding-top: 35px;*/
 }
 
 .pie {

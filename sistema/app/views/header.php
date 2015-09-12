@@ -19,10 +19,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta http-equiv="Cache-control" content="no-cache">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<?= link_tag('css/bootstrap.min.css'); ?>
+	<?= link_tag('css/font-awesome.min.css'); ?>
 	<?= link_tag('css/sistema.css'); ?>
 	<?= link_tag('css/datepicker.css'); ?>
+	<?= link_tag('css/jquery.dataTables.min.css'); ?>
 </head>
 <body>
 	<div id="foo"></div>
