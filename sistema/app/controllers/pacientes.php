@@ -233,7 +233,7 @@ class Pacientes extends CI_Controller {
 
 			if ( ! $this->session->userdata( 'nivel' ) == 1 )
 				redirect(base_url('pacientes/list_patients'));
-			
+
 			$data['recidivism'] = $recidivism[0];
 
 			if($data['recidivism']->fecha_diagnostico == '0000-00-00')
@@ -338,15 +338,17 @@ class Pacientes extends CI_Controller {
 		$this->db->limit($limit,$start);
 		$query = $this->db->get($this->db->dbprefix( 'system_patients' ));
 		$aPatient = array();
-
-		foreach ($query->result_array() as $key => $patient) {
-			
-			$aPatientInt = array();
-			array_push($aPatientInt, $patient['id']);
-			array_push($aPatientInt, $patient['name']);
-			array_push($aPatientInt, $patient['telephone']);
-			array_push($aPatientInt, $patient['cellphone']);
-			$aPatient[$key] = $aPatientInt;
+		
+		if($query->num_rows > 0){
+			foreach ($query->result_array() as $key => $patient) {
+				
+				$aPatientInt = array();
+				array_push($aPatientInt, $patient['id']);
+				array_push($aPatientInt, $patient['name']);
+				array_push($aPatientInt, $patient['telephone']);
+				array_push($aPatientInt, $patient['cellphone']);
+				$aPatient[$key] = $aPatientInt;
+			}
 		}
 		
 		$data['draw'] = $draw;

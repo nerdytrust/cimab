@@ -127,6 +127,7 @@
 							</div>
 							<div class="col-md-12">
 								<button class="btn btn-purple btn-flat btn-lg pull-right" type="submit">Siguiente</button>
+								<button class="btn btn-purple btn-flat btn-lg pull-right margin-right-10" onclick="window.location.href=base_url+'pacientes/list_patients'">Regresar a la lista</button>
 							</div>
 						<?php echo form_close(); ?>
 					</div>
