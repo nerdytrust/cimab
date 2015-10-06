@@ -9,7 +9,7 @@
 						<h3 class="panel-title">Login</h3>
 					</div>
 					<div class="panel-body">
-						<?php echo form_open( base_url().'login-process', [ 'class' => 'form-horizontal', 'id' => 'form_login', 'name' => 'form_login', 'method' => 'POST', 'role' => 'form', 'autocomplete' => 'off' ] ); ?>
+						<?php echo form_open( base_url().'login-process', array( 'class' => 'form-horizontal', 'id' => 'form_login', 'name' => 'form_login', 'method' => 'POST', 'role' => 'form', 'autocomplete' => 'off' ) ); ?>
 							<div class="col-md-12">
 								<div class="form-group">
 									<div class="col-sm-9 col-md-12">

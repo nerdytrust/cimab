@@ -21,7 +21,7 @@ class Login extends CI_Controller {
 		if ( ! $this->input->is_ajax_request() )
 			return $this->output
 					->set_content_type( 'application/json' )
-					->set_output( json_encode( [ 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar almacenar tu información.</span>' ] ) );
+					->set_output( json_encode( array( 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar almacenar tu información.</span>' ) ) );
 
 		$this->form_validation->set_rules( 'email', 'Email', 'trim|required|valid_email' );
 		$this->form_validation->set_rules( 'password', 'Contraseña', 'trim|required|min_length[8]' );
@@ -29,7 +29,7 @@ class Login extends CI_Controller {
 		if ( $this->form_validation->run() === FALSE )
 			return $this->output
 					->set_content_type( 'application/json' )
-					->set_output( json_encode( [ 'success' => false, 'errors' => validation_errors('<span class="error">','</span>') ] ) );
+					->set_output( json_encode( array( 'success' => false, 'errors' => validation_errors('<span class="error">','</span>') ) ) );
 
 		$data['email']		= $this->input->post( 'email' );
 		$data['password']	= $this->input->post( 'password' );
@@ -39,22 +39,28 @@ class Login extends CI_Controller {
 		if ( $credentials === FALSE )
 			return $this->output
 					->set_content_type('application/json')
-					->set_output( json_encode( [ 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> El usuario y/o contraseña no son validos, por favor intente de nuevo.</span>' ] ) );
+					->set_output( json_encode( array( 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> El usuario y/o contraseña no son validos, por favor intente de nuevo.</span>' ) ) );
 
-		$session = [
+		$session = array(
 			'session'	 	=> TRUE,
 			'uid' 		 	=> $credentials->uid_user,
 			'nombre' 	 	=> $credentials->name,
 			'apellidos'		=> $credentials->lastname,
 			'email'			=> $credentials->email,
 			'nivel' 	 	=> $credentials->role
-		];
+		);
 
 		$this->session->set_userdata( $session );
 
-		return $this->output
-				->set_content_type('application/json')
-				->set_output( json_encode( [ 'success' => true, 'redirect' => 'pacientes/list_patients' ] ) );
+		if($this->session->userdata( 'nivel' ) == 1)
+			return $this->output
+					->set_content_type('application/json')
+					->set_output( json_encode( array( 'success' => true, 'redirect' => 'pacientes/list_patients' ) ) );
+		else 
+			return $this->output
+					->set_content_type('application/json')
+					->set_output( json_encode( array( 'success' => true, 'redirect' => 'pacientes' ) ) );
+
 	}
 
 	public function logout(){

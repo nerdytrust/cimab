@@ -9,7 +9,7 @@
 					</div>
 					<div class="panel-body">
 						<?php 
-							echo form_open( base_url().'add-atention', [ 'class' => 'form-horizontal', 'id' => 'form_add_diagnostic', 'name' => 'form_add_diagnostic', 'method' => 'POST', 'role' => 'form', 'autocomplete' => 'off' ] ); 
+							echo form_open( base_url().'add-atention', array( 'class' => 'form-horizontal', 'id' => 'form_add_diagnostic', 'name' => 'form_add_diagnostic', 'method' => 'POST', 'role' => 'form', 'autocomplete' => 'off' ) ); 
 							if(isset($atention)){
 								echo '<input name="edit" value="true" type="hidden">';
 							} 
@@ -219,7 +219,9 @@
 							</div>
 							<div class="col-md-12">
 								<button class="btn btn-purple btn-flat btn-lg pull-right" type="submit">Siguiente</button>
-								<button class="btn btn-purple btn-flat btn-lg pull-right margin-right-10" onclick="window.location.href=base_url+'pacientes/list_patients'">Regresar a la lista</button>
+								<?php if ( $this->session->userdata( 'nivel' ) == 1 ): ?>
+									<button class="btn btn-purple btn-flat btn-lg pull-right margin-right-10" onclick="window.location.href=base_url+'pacientes/list_patients'">Regresar a la lista</button>
+								<?php endif; ?>
 							</div>
 						<?php echo form_close(); ?>
 					</div>

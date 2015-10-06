@@ -22,12 +22,6 @@ class Pacientes extends CI_Controller {
 
 			$patient = $this->core->get_patient($idPatient);
 			$data['patient'] = $patient[0];
-			if($data['patient']->birthday == '0000-00-00')
-				unset($data['patient']->birthday);
-			else{
-				$birthday = explode('-', $data['patient']->birthday);
-				$data['patient']->birthday = $birthday[2].'/'.$birthday[1].'/'.$birthday[0];
-			}
 			$data['municipios'] = $this->address->get_town($data['patient']->federal_entity); 
 		}
 
@@ -38,7 +32,7 @@ class Pacientes extends CI_Controller {
 		if ( ! $this->input->is_ajax_request() )
 			return $this->output
 					->set_content_type( 'application/json' )
-					->set_output( json_encode( [ 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar almacenar tu información.</span>' ] ) );
+					->set_output( json_encode( array('success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar almacenar tu información.</span>' ) ) );
 
 		$this->form_validation->set_rules( 'name', 'Nombre', 'trim|required' );
 		$this->form_validation->set_rules( 'federal_entity', 'Entidad Federativa', 'required' );
@@ -49,14 +43,9 @@ class Pacientes extends CI_Controller {
 		if ( $this->form_validation->run() === FALSE )
 			return $this->output
 					->set_content_type( 'application/json' )
-					->set_output( json_encode( [ 'success' => false, 'errors' => validation_errors('<span class="error">','</span>') ] ) ); 
+					->set_output( json_encode( array( 'success' => false, 'errors' => validation_errors('<span class="error">','</span>') ) ) ); 
 
 		$data = $this->input->post();
-		if($this->input->post('birthday') != ""){
-			$birthday = explode("/", $this->input->post('birthday'));
-			$birthday = $birthday[2].'-'.$birthday[1].'-'.$birthday[0];
-			$data['birthday'] = $birthday;
-		}
 
 		if($this->input->post('edit') == 'true'){
 			unset($data['edit']);
@@ -68,11 +57,11 @@ class Pacientes extends CI_Controller {
 		if ( $save_patient === FALSE )
 			return $this->output
 					->set_content_type('application/json')
-					->set_output( json_encode( [ 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar registrarte en nuestra lista de subscriptores.</span>' ] ) );
+					->set_output( json_encode( array('success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar registrarte en nuestra lista de subscriptores.</span>' ) ) );
 			
 		return $this->output
 				->set_content_type('application/json')
-				->set_output( json_encode( [ 'success' => true, 'redirect' => base_url('pacientes/diagnostico/'.$save_patient) ] ) );
+				->set_output( json_encode( array ('success' => true, 'redirect' => base_url('pacientes/diagnostico/'.$save_patient) ) ) );
 	}
 
 	public function diagnostico( $idPatient = null ){
@@ -87,27 +76,6 @@ class Pacientes extends CI_Controller {
 
 			$data['diagnostic'] = $diagnostic[0];
 
-			if($data['diagnostic']->fecha_cancer == '0000-00-00')
-				unset($data['diagnostic']->fecha_cancer);
-			else{
-				$fechaCancer = explode('-', $data['diagnostic']->fecha_cancer);
-				$data['diagnostic']->fecha_cancer = $fechaCancer[2].'/'.$fechaCancer[1].'/'.$fechaCancer[0];
-			}
-
-			if($data['diagnostic']->fecha_tratamiento == '0000-00-00')
-				unset($data['diagnostic']->fecha_tratamiento);
-			else{
-				$fechaTratamiento = explode('-', $data['diagnostic']->fecha_tratamiento);
-				$data['diagnostic']->fecha_tratamiento = $fechaTratamiento[2].'/'.$fechaTratamiento[1].'/'.$fechaTratamiento[0];
-			}
-
-			if($data['diagnostic']->remision_fecha_tratamiento == '0000-00-00')
-				unset($data['diagnostic']->remision_fecha_tratamiento);
-			else{
-				$remisionFechaTratamiento = explode('-', $data['diagnostic']->remision_fecha_tratamiento);
-				$data['diagnostic']->remision_fecha_tratamiento = $remisionFechaTratamiento[2].'/'.$remisionFechaTratamiento[1].'/'.$remisionFechaTratamiento[0];
-			}
-
 		}
 
 		$this->load->view('pacientes/diagnostico', $data );	
@@ -117,7 +85,7 @@ class Pacientes extends CI_Controller {
 		if ( ! $this->input->is_ajax_request() )
 			return $this->output
 					->set_content_type( 'application/json' )
-					->set_output( json_encode( [ 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar almacenar tu información.</span>' ] ) );
+					->set_output( json_encode( array( 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar almacenar tu información.</span>' ) ) );
 
 		$this->form_validation->set_rules( 'fecha_cancer', 'Fecha aproximadamente le dijeron que tenía cáncer', 'callback__dateRegex');
 		$this->form_validation->set_rules( 'fecha_tratamiento', 'Fecha aproximadamente inicio el tratamiento', 'callback__dateRegex');
@@ -127,24 +95,9 @@ class Pacientes extends CI_Controller {
 		if ( $this->form_validation->run() === FALSE )
 			return $this->output
 					->set_content_type( 'application/json' )
-					->set_output( json_encode( [ 'success' => false, 'errors' => validation_errors('<span class="error">','</span>') ] ) );
+					->set_output( json_encode( array( 'success' => false, 'errors' => validation_errors('<span class="error">','</span>') ) ) );
 
 		$data = $this->input->post();
-		if($this->input->post('fecha_cancer') != ""){
-			$fechaCancer = explode("/", $this->input->post('fecha_cancer')); 
-			$fechaCancer = $fechaCancer[2].'-'.$fechaCancer[1].'-'.$fechaCancer[0];
-			$data['fecha_cancer'] = $fechaCancer;
-		}
-		if($this->input->post('fecha_tratamiento') != ""){
-			$fechaTratamiento = explode("/", $this->input->post('fecha_tratamiento')); 
-			$fechaTratamiento = $fechaTratamiento[2].'-'.$fechaTratamiento[1].'-'.$fechaTratamiento[0];
-			$data['fecha_tratamiento'] = $fechaTratamiento;
-		}
-		if($this->input->post('remision_fecha_tratamiento') != ""){
-			$remisionFechaTratamiento = explode("/", $this->input->post('remision_fecha_tratamiento')); 
-			$remisionFechaTratamiento = $remisionFechaTratamiento[2].'-'.$remisionFechaTratamiento[1].'-'.$remisionFechaTratamiento[0];
-			$data['remision_fecha_tratamiento'] = $remisionFechaTratamiento;
-		}
 		
 		//$data = $this->security->xss_clean( $data );
 		if($this->input->post('edit') == 'true'){
@@ -170,11 +123,11 @@ class Pacientes extends CI_Controller {
 		if ( $save_diagnostic === FALSE )
 			return $this->output
 					->set_content_type('application/json')
-					->set_output( json_encode( [ 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar registrarte en nuestra lista de subscriptores.</span>' ] ) );
+					->set_output( json_encode( array( 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar registrarte en nuestra lista de subscriptores.</span>' ) ) );
 			
 		return $this->output
 				->set_content_type('application/json')
-				->set_output( json_encode( [ 'success' => true, 'redirect' => base_url('pacientes/atencion/'.$save_diagnostic) ] ) );
+				->set_output( json_encode( array( 'success' => true, 'redirect' => base_url('pacientes/atencion/'.$save_diagnostic) ) ) );
 	}
 
 	public function atencion( $idPatient = null ){
@@ -197,12 +150,12 @@ class Pacientes extends CI_Controller {
 		if ( ! $this->input->is_ajax_request() )
 			return $this->output
 					->set_content_type( 'application/json' )
-					->set_output( json_encode( [ 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar almacenar tu información.</span>' ] ) );
+					->set_output( json_encode( array( 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar almacenar tu información.</span>' ) ) );
 
 		/*if ( $this->form_validation->run() === FALSE )
 			return $this->output
 					->set_content_type( 'application/json' )
-					->set_output( json_encode( [ 'success' => false, 'errors' => validation_errors('<span class="error">','</span>') ] ) );*/
+					->set_output( json_encode( array( 'success' => false, 'errors' => validation_errors('<span class="error">','</span>') ) ) );*/
 
 		$data = $this->input->post();
 		//$data = $this->security->xss_clean( $data );
@@ -217,11 +170,11 @@ class Pacientes extends CI_Controller {
 		if ( $save_atention === FALSE )
 			return $this->output
 					->set_content_type('application/json')
-					->set_output( json_encode( [ 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar registrarte en nuestra lista de subscriptores.</span>' ] ) );
+					->set_output( json_encode( array( 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar registrarte en nuestra lista de subscriptores.</span>' ) ) );
 			
 		return $this->output
 				->set_content_type('application/json')
-				->set_output( json_encode( [ 'success' => true, 'redirect' => base_url('pacientes/reincidencia/'.$save_atention) ] ) );
+				->set_output( json_encode( array( 'success' => true, 'redirect' => base_url('pacientes/reincidencia/'.$save_atention) ) ) );
 	}
 
 	public function reincidencia( $idPatient = null ){
@@ -236,12 +189,6 @@ class Pacientes extends CI_Controller {
 
 			$data['recidivism'] = $recidivism[0];
 
-			if($data['recidivism']->fecha_diagnostico == '0000-00-00')
-				unset($data['recidivism']->fecha_diagnostico);
-			else{
-				$fechaDiagnostico = explode('-', $data['recidivism']->fecha_diagnostico);
-				$data['recidivism']->fecha_diagnostico = $fechaDiagnostico[2].'/'.$fechaDiagnostico[1].'/'.$fechaDiagnostico[0];
-			}
 		}
 
 		$this->load->view('pacientes/reincidencia', $data );	
@@ -251,7 +198,7 @@ class Pacientes extends CI_Controller {
 		if ( ! $this->input->is_ajax_request() )
 			return $this->output
 					->set_content_type( 'application/json' )
-					->set_output( json_encode( [ 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar almacenar tu información.</span>' ] ) );
+					->set_output( json_encode( array( 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar almacenar tu información.</span>' ) ) );
 
 		$this->form_validation->set_rules( 'fecha_diagnostico', 'fecha aproximadamente fue diagnosticada', 'callback__dateRegex');
 		$this->form_validation->set_message('_dateRegex', 'El campo <strong>%s</strong> debe ser de formato dd/mm/aaaa'); 
@@ -259,15 +206,9 @@ class Pacientes extends CI_Controller {
 		if ( $this->form_validation->run() === FALSE )
 			return $this->output
 					->set_content_type( 'application/json' )
-					->set_output( json_encode( [ 'success' => false, 'errors' => validation_errors('<span class="error">','</span>') ] ) );
+					->set_output( json_encode( array( 'success' => false, 'errors' => validation_errors('<span class="error">','</span>') ) ) );
 
 		$data = $this->input->post();
-
-		if($this->input->post('fecha_diagnostico') != ""){
-			$fechaDiagnostico = explode("/", $this->input->post('fecha_diagnostico')); 
-			$fechaDiagnostico = $fechaDiagnostico[2].'-'.$fechaDiagnostico[1].'-'.$fechaDiagnostico[0];
-			$data['fecha_diagnostico'] = $fechaDiagnostico;
-		}
 
 		//$data = $this->security->xss_clean( $data );
 		if($this->input->post('edit') == 'true'){
@@ -290,11 +231,16 @@ class Pacientes extends CI_Controller {
 		if ( $save_recidivism === FALSE )
 			return $this->output
 					->set_content_type('application/json')
-					->set_output( json_encode( [ 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar registrarte en nuestra lista de subscriptores.</span>' ] ) );
-			
-		return $this->output
-				->set_content_type('application/json')
-				->set_output( json_encode( [ 'success' => true, 'redirect' => base_url('pacientes/list_patients') ] ) );
+					->set_output( json_encode( array ( 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar registrarte en nuestra lista de subscriptores.</span>' ) ) );
+
+		if ( $this->session->userdata( 'nivel' ) == 1 )
+			return $this->output
+					->set_content_type('application/json')
+					->set_output( json_encode( array( 'success' => true, 'redirect' => base_url('pacientes/list_patients') ) ) );
+		else 
+			return $this->output
+					->set_content_type('application/json')
+					->set_output( json_encode( array( 'success' => true, 'redirect' => base_url('pacientes/gracias') ) ) );			
 	}
 
 	public function list_patients(){
@@ -302,15 +248,18 @@ class Pacientes extends CI_Controller {
 		if ( $this->session->userdata( 'nivel' ) == 1 )
 			$this->load->view('pacientes/list', $data );
 		else
-			$this->load->view('pacientes/list_apoyo', $data );
+			redirect(base_url('pacientes'));
 	}
 
 	public function list_ajax(){
+		if ( $this->session->userdata( 'nivel' ) != 1 )
+			die;
+
 		if ( ! $this->input->is_ajax_request() )
 			return $this->output
 					->set_content_type( 'application/json' )
-					->set_output( json_encode( [ 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar almacenar tu información.</span>' ] ) );
-					
+					->set_output( json_encode( array( 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar almacenar tu información.</span>' ) ) );
+		
 		$page 		 = $_GET['page'];
 		$draw 		 = $_GET['draw'];
 		$limit 		 = $_GET['length']; 
@@ -331,12 +280,8 @@ class Pacientes extends CI_Controller {
 		if ($page > $total_pages) $page=$total_pages;
 		$start = $limit*$page - $limit; 
 
-		if($searchValue!=""){
-			$this->db->like('name',$searchValue);
-		}
-		$this->db->order_by("id", "desc");
-		$this->db->limit($limit,$start);
-		$query = $this->db->get($this->db->dbprefix( 'system_patients' ));
+		if($start<0)$start=0;
+		$query = $this->core->list_patient($limit,$start,$searchValue);
 		$aPatient = array();
 		
 		if($query->num_rows > 0){
@@ -360,11 +305,16 @@ class Pacientes extends CI_Controller {
 
 	}
 
+	public function Gracias( $idPatient = null ){
+		$data['title']   = 'Formulario de Entrevista para Pacientes que reciben apoyo emocional';
+		$this->load->view('pacientes/gracias', $data );
+	}
+
 	public function town( $idFederalEntity ){
 		if ( ! $this->input->is_ajax_request() )
 			return $this->output
 					->set_content_type( 'application/json' )
-					->set_output( json_encode( [ 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar almacenar tu información.</span>' ] ) );
+					->set_output( json_encode( array( 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar almacenar tu información.</span>' ) ) );
 			$this->load->model( 'address_model', 'address' );
 			$municipios = $this->address->get_town( $idFederalEntity ); 
 			echo json_encode($municipios);

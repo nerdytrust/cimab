@@ -8,10 +8,11 @@ class Index extends CI_Controller {
     }
 
     public function index(){
-    	if ( ! $this->input->is_ajax_request() )
+    	/*if ( ! $this->input->is_ajax_request() )
 			return $this->output
 					->set_content_type( 'application/json' )
-					->set_output( json_encode( array( 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar almacenar tu información.</span>' ) ) );
+					->set_output( json_encode( array( 'success' => false, 'errors' => '<span class="error"><b>¡Ups!</b> Ocurrió un problema al intentar almacenar tu información.</span>' ) ) );*/
+		redirect(base_url('pacientes/list_patients'));			
     }
 
     /**

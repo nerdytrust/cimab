@@ -9,7 +9,7 @@
 					</div>
 					<div class="panel-body">
 						<?php 
-							echo form_open( base_url().'add-diagnostic', [ 'class' => 'form-horizontal', 'id' => 'form_add_diagnostic', 'name' => 'form_add_diagnostic', 'method' => 'POST', 'role' => 'form', 'autocomplete' => 'off' ] );
+							echo form_open( base_url().'add-diagnostic', array( 'class' => 'form-horizontal', 'id' => 'form_add_diagnostic', 'name' => 'form_add_diagnostic', 'method' => 'POST', 'role' => 'form', 'autocomplete' => 'off' ) );
 							if(isset($diagnostic)){
 								echo '<input name="edit" value="true" type="hidden">';
 							} 
@@ -140,7 +140,7 @@
 										<select name="edad_diagnostico" id="edad_diagnostico" class="form-control">
 											<option value="">Edad</option>
 											<?php 
-												for($i=0;$i<=99;$i++){
+												for($i=1;$i<=99;$i++){
 													$selected = (isset($diagnostic->edad_diagnostico) && $diagnostic->edad_diagnostico==$i)?'selected':'';
 													echo '<option val="'.$i.'" '.$selected.'>'.$i.'</option>';
 												} 
@@ -655,7 +655,9 @@
 							</div>
 							<div class="col-md-12">
 								<button class="btn btn-purple btn-flat btn-lg pull-right" type="submit">Siguiente</button>
-								<button class="btn btn-purple btn-flat btn-lg pull-right margin-right-10" onclick="window.location.href=base_url+'pacientes/list_patients'">Regresar a la lista</button>
+								<?php if ( $this->session->userdata( 'nivel' ) == 1 ): ?>
+									<button class="btn btn-purple btn-flat btn-lg pull-right margin-right-10" onclick="window.location.href=base_url+'pacientes/list_patients'">Regresar a la lista</button>
+								<?php endif; ?>
 							</div>
 						<?php echo form_close(); ?>
 					</div>
